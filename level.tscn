@@ -3,16 +3,19 @@
 [ext_resource type="Script" uid="uid://c7tws0nuyvejj" path="res://level.gd" id="1_2orkt"]
 [ext_resource type="PackedScene" uid="uid://2wxgert8xvx8" path="res://Mario_player/Mini_Mario.tscn" id="1_u52ul"]
 [ext_resource type="Texture2D" uid="uid://csdq115ypnjun" path="res://Background/blue_screen.png" id="2_0b4ue"]
-[ext_resource type="Texture2D" uid="uid://blyp7a4j7bo1a" path="res://Background/2 cloud.png" id="3_f2txt"]
-[ext_resource type="Texture2D" uid="uid://d4d6w1ju1n6jl" path="res://Background/1 cloud.png" id="4_1ainy"]
+[ext_resource type="Texture2D" uid="uid://c0kyhodqrws8r" path="res://Background/one cloud.png" id="3_aicyk"]
+[ext_resource type="Texture2D" uid="uid://bd7rhl0c02mas" path="res://Background/kindpng_3017985.png" id="4_8b0r0"]
 [ext_resource type="Texture2D" uid="uid://dqjwv4n020u7j" path="res://Super Mango Platformer Assets by JuhoSprite/Grass_Oneway.png" id="5_f2txt"]
 [ext_resource type="Texture2D" uid="uid://bdu1ylvr1s2up" path="res://mario_texsture/mario_and_items.png" id="6_n6hdu"]
 [ext_resource type="Texture2D" uid="uid://cw7xrk4kvbrgx" path="res://mario_texsture/blocks.png" id="7_km5ld"]
 [ext_resource type="PackedScene" uid="uid://dulk01e46evdl" path="res://Mushroom.tscn" id="8_km5ld"]
 [ext_resource type="Script" uid="uid://c4acv5t3r47gv" path="res://exit.gd" id="9_i2t4f"]
 [ext_resource type="Script" uid="uid://cj2i3l5nqcl23" path="res://label.gd" id="10_2orkt"]
-[ext_resource type="Texture2D" uid="uid://c562qtk1wlmd1" path="res://Background/Frame 34.png" id="12_aicyk"]
 [ext_resource type="Script" uid="uid://cqvmtpmskuej4" path="res://exit_area.gd" id="13_8b0r0"]
+[ext_resource type="Script" uid="uid://b52g5noc1mrvv" path="res://bottom.gd" id="14_h6smj"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8b0r0"]
+load_path = "res://.godot/imported/Frame 34.png-8bd6a7140f21717d615516c19c3dde88.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ainy"]
 texture = ExtResource("5_f2txt")
@@ -163,35 +166,33 @@ sources/2 = SubResource("TileSetAtlasSource_8cye3")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8b0r0"]
 size = Vector2(3, 203)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5j5c"]
+size = Vector2(3647, 13)
+
 [node name="Level" type="Node2D" unique_id=636935181]
 script = ExtResource("1_2orkt")
+
+[node name="Backround" type="Node2D" parent="." unique_id=11449093]
+
+[node name="BlueScreen" type="Sprite2D" parent="Backround" unique_id=1045775382]
+position = Vector2(1822.4999, 324)
+scale = Vector2(3.1710067, 1)
+texture = ExtResource("2_0b4ue")
+
+[node name="OneCloud" type="Sprite2D" parent="Backround" unique_id=126241151]
+position = Vector2(83.79305, 400.375)
+scale = Vector2(0.10477178, 0.104771785)
+texture = ExtResource("3_aicyk")
+
+[node name="Kindpng3017985" type="Sprite2D" parent="Backround" unique_id=1065821210]
+position = Vector2(177.00005, 435)
+scale = Vector2(0.2679181, 0.26791808)
+texture = ExtResource("4_8b0r0")
 
 [node name="Checkpoint" type="Sprite2D" parent="." unique_id=864052727]
 position = Vector2(3252, 382.91345)
 scale = Vector2(0.3871795, 0.5208624)
-texture = ExtResource("12_aicyk")
-
-[node name="Background" type="ParallaxBackground" parent="." unique_id=618884780]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Background" unique_id=668030158]
-
-[node name="BlueScreen" type="Sprite2D" parent="Background/ParallaxLayer" unique_id=1750932295]
-position = Vector2(1823, 324)
-scale = Vector2(3.1649308, 1)
-texture = ExtResource("2_0b4ue")
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="Background" unique_id=1025361578]
-motion_scale = Vector2(0.7, 1)
-
-[node name="2Cloud" type="Sprite2D" parent="Background/ParallaxLayer2" unique_id=1110548137]
-position = Vector2(576, 324)
-texture = ExtResource("3_f2txt")
-
-[node name="ParallaxLayer1" type="ParallaxLayer" parent="Background" unique_id=22771629]
-
-[node name="1Cloud" type="Sprite2D" parent="Background/ParallaxLayer1" unique_id=2120112572]
-position = Vector2(575, 324)
-texture = ExtResource("4_1ainy")
+texture = SubResource("CompressedTexture2D_8b0r0")
 
 [node name="Mario" type="Node2D" parent="." unique_id=811075618]
 
@@ -270,5 +271,13 @@ script = ExtResource("13_8b0r0")
 position = Vector2(3252, 411)
 shape = SubResource("RectangleShape2D_8b0r0")
 
+[node name="Bottom" type="Area2D" parent="." unique_id=2041345343]
+script = ExtResource("14_h6smj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom" unique_id=2002757707]
+position = Vector2(1819, 650)
+shape = SubResource("RectangleShape2D_v5j5c")
+
 [connection signal="pressed" from="Exit/Button" to="Exit" method="_on_button_pressed"]
 [connection signal="body_entered" from="Exit_area" to="Exit_area" method="_on_body_entered"]
+[connection signal="body_entered" from="Bottom" to="." method="_on_bottom_body_entered"]
