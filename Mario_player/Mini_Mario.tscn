@@ -161,11 +161,12 @@ frame_progress = 1.0
 shape = SubResource("CapsuleShape2D_7ljqm")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=367167616]
+offset = Vector2(152, 0)
 zoom = Vector2(2.4, 2.4)
 process_callback = 0
-limit_left = 0
-limit_top = 0
-limit_right = 3644
-limit_bottom = 600
+limit_left = -100
+limit_top = 2
+limit_right = 3494
+limit_bottom = 602
 position_smoothing_enabled = true
 drag_horizontal_enabled = true

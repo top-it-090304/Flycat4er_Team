@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e8g0uxpfvoje"
-path="res://.godot/imported/NicePng_8-bit-mario-png_1648733.png-444797cc0573ddedf666556eb5d17c9e.ctex"
+uid="uid://bd7rhl0c02mas"
+path="res://.godot/imported/double_cloud.png-13b46d6d8a2eeb42ed0f262bd37ea17d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background/NicePng_8-bit-mario-png_1648733.png"
-dest_files=["res://.godot/imported/NicePng_8-bit-mario-png_1648733.png-444797cc0573ddedf666556eb5d17c9e.ctex"]
+source_file="res://Background/double_cloud.png"
+dest_files=["res://.godot/imported/double_cloud.png-13b46d6d8a2eeb42ed0f262bd37ea17d.ctex"]
 
 [params]
 

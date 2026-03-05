@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd7rhl0c02mas"
-path="res://.godot/imported/kindpng_3017985.png-f5256b69761a94eec3e246d57ec07267.ctex"
+uid="uid://e8g0uxpfvoje"
+path="res://.godot/imported/triple_cloud.png-8413506bfb2cc12c4b78296686fbec10.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Background/kindpng_3017985.png"
-dest_files=["res://.godot/imported/kindpng_3017985.png-f5256b69761a94eec3e246d57ec07267.ctex"]
+source_file="res://Background/triple_cloud.png"
+dest_files=["res://.godot/imported/triple_cloud.png-8413506bfb2cc12c4b78296686fbec10.ctex"]
 
 [params]
 

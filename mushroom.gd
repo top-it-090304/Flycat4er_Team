@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void: #обновление 60 раз в 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Mini_Mario": 
-		body.velocity.y = -200
+		body.velocity.y = -125
 		$"../../Mario/Mini_Mario".score += 1
 		alive = false
 
