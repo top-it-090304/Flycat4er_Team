@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c0kyhodqrws8r" path="res://Background/one cloud.png" id="3_aicyk"]
 [ext_resource type="Texture2D" uid="uid://bd7rhl0c02mas" path="res://Background/kindpng_3017985.png" id="4_8b0r0"]
 [ext_resource type="Texture2D" uid="uid://dqjwv4n020u7j" path="res://Super Mango Platformer Assets by JuhoSprite/Grass_Oneway.png" id="5_f2txt"]
+[ext_resource type="Texture2D" uid="uid://e8g0uxpfvoje" path="res://Background/NicePng_8-bit-mario-png_1648733.png" id="5_h6smj"]
 [ext_resource type="Texture2D" uid="uid://bdu1ylvr1s2up" path="res://mario_texsture/mario_and_items.png" id="6_n6hdu"]
 [ext_resource type="Texture2D" uid="uid://cw7xrk4kvbrgx" path="res://mario_texsture/blocks.png" id="7_km5ld"]
 [ext_resource type="PackedScene" uid="uid://dulk01e46evdl" path="res://Mushroom.tscn" id="8_km5ld"]
@@ -15,7 +16,6 @@
 [ext_resource type="Script" uid="uid://b52g5noc1mrvv" path="res://bottom.gd" id="14_h6smj"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8b0r0"]
-load_path = "res://.godot/imported/Frame 34.png-8bd6a7140f21717d615516c19c3dde88.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ainy"]
 texture = ExtResource("5_f2txt")
@@ -175,19 +175,84 @@ script = ExtResource("1_2orkt")
 [node name="Backround" type="Node2D" parent="." unique_id=11449093]
 
 [node name="BlueScreen" type="Sprite2D" parent="Backround" unique_id=1045775382]
-position = Vector2(1822.4999, 324)
+position = Vector2(1825.4998, 325)
 scale = Vector2(3.1710067, 1)
 texture = ExtResource("2_0b4ue")
 
 [node name="OneCloud" type="Sprite2D" parent="Backround" unique_id=126241151]
-position = Vector2(83.79305, 400.375)
+position = Vector2(432.00003, 360.00003)
 scale = Vector2(0.10477178, 0.104771785)
 texture = ExtResource("3_aicyk")
 
-[node name="Kindpng3017985" type="Sprite2D" parent="Backround" unique_id=1065821210]
-position = Vector2(177.00005, 435)
-scale = Vector2(0.2679181, 0.26791808)
+[node name="OneCloud2" type="Sprite2D" parent="Backround" unique_id=424484677]
+position = Vector2(1027, 377.00003)
+scale = Vector2(0.10477178, 0.104771785)
+texture = ExtResource("3_aicyk")
+
+[node name="OneCloud3" type="Sprite2D" parent="Backround" unique_id=1630734609]
+position = Vector2(1175.0001, 361)
+scale = Vector2(0.10477178, 0.104771785)
+texture = ExtResource("3_aicyk")
+
+[node name="OneCloud6" type="Sprite2D" parent="Backround" unique_id=1197495718]
+position = Vector2(1775, 381)
+scale = Vector2(0.10477178, 0.104771785)
+texture = ExtResource("3_aicyk")
+
+[node name="OneCloud7" type="Sprite2D" parent="Backround" unique_id=1130087865]
+position = Vector2(1953, 360)
+scale = Vector2(0.10477178, 0.104771785)
+texture = ExtResource("3_aicyk")
+
+[node name="OneCloud4" type="Sprite2D" parent="Backround" unique_id=1029990692]
+position = Vector2(2551, 371)
+scale = Vector2(0.10477178, 0.104771785)
+texture = ExtResource("3_aicyk")
+
+[node name="OneCloud5" type="Sprite2D" parent="Backround" unique_id=1565302672]
+position = Vector2(2724, 347.00003)
+scale = Vector2(0.10477178, 0.104771785)
+texture = ExtResource("3_aicyk")
+
+[node name="Kindpng3017986" type="Sprite2D" parent="Backround" unique_id=155889558]
+position = Vector2(713.00006, 364)
+scale = Vector2(0.0863908, 0.08639077)
 texture = ExtResource("4_8b0r0")
+
+[node name="Kindpng3017987" type="Sprite2D" parent="Backround" unique_id=97497054]
+position = Vector2(1475, 350)
+scale = Vector2(0.111454934, 0.11145488)
+texture = ExtResource("4_8b0r0")
+
+[node name="Kindpng3017988" type="Sprite2D" parent="Backround" unique_id=1057618271]
+position = Vector2(2236.0002, 348)
+scale = Vector2(0.111454934, 0.11145488)
+texture = ExtResource("4_8b0r0")
+
+[node name="Kindpng3017989" type="Sprite2D" parent="Backround" unique_id=931832205]
+position = Vector2(2996, 339)
+scale = Vector2(0.111454934, 0.11145488)
+texture = ExtResource("4_8b0r0")
+
+[node name="NicePng8BitMarioPng1648733" type="Sprite2D" parent="Backround" unique_id=476034901]
+position = Vector2(604, 384.00003)
+scale = Vector2(0.073823534, 0.073823534)
+texture = ExtResource("5_h6smj")
+
+[node name="NicePng8BitMarioPng1648734" type="Sprite2D" parent="Backround" unique_id=291997979]
+position = Vector2(1322.0001, 378)
+scale = Vector2(0.073823534, 0.073823534)
+texture = ExtResource("5_h6smj")
+
+[node name="NicePng8BitMarioPng1648735" type="Sprite2D" parent="Backround" unique_id=1109586568]
+position = Vector2(2099.0002, 375)
+scale = Vector2(0.073823534, 0.073823534)
+texture = ExtResource("5_h6smj")
+
+[node name="NicePng8BitMarioPng1648736" type="Sprite2D" parent="Backround" unique_id=1718716531]
+position = Vector2(2870.0002, 368.00003)
+scale = Vector2(0.073823534, 0.073823534)
+texture = ExtResource("5_h6smj")
 
 [node name="Checkpoint" type="Sprite2D" parent="." unique_id=864052727]
 position = Vector2(3252, 382.91345)
