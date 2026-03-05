@@ -2,6 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://ceafoshr36m6n" path="res://background.tscn" id="1_lti8b"]
 [ext_resource type="Script" uid="uid://djfhs72lb66k8" path="res://menu.gd" id="1_ouk20"]
+[ext_resource type="Texture2D" uid="uid://c0kyhodqrws8r" path="res://Background/one_cloud.png" id="3_ytr4m"]
+[ext_resource type="Texture2D" uid="uid://bd7rhl0c02mas" path="res://Background/double_cloud.png" id="4_l48gv"]
+[ext_resource type="Texture2D" uid="uid://e8g0uxpfvoje" path="res://Background/triple_cloud.png" id="5_ecwwl"]
 
 [node name="Menu" type="Node2D" unique_id=52025238]
 script = ExtResource("1_ouk20")
@@ -25,6 +28,36 @@ offset_bottom = 550.0
 theme_override_font_sizes/font_size = 34
 text = "Exit
 "
+
+[node name="OneCloud" type="Sprite2D" parent="." unique_id=439600313]
+position = Vector2(90.810684, 70.12501)
+scale = Vector2(0.27282158, 0.27282158)
+texture = ExtResource("3_ytr4m")
+
+[node name="OneCloud2" type="Sprite2D" parent="." unique_id=361182395]
+position = Vector2(442.00003, 307)
+scale = Vector2(0.27282158, 0.27282158)
+texture = ExtResource("3_ytr4m")
+
+[node name="OneCloud3" type="Sprite2D" parent="." unique_id=2036583399]
+position = Vector2(946.99994, 91.000015)
+scale = Vector2(0.27282158, 0.27282158)
+texture = ExtResource("3_ytr4m")
+
+[node name="DoubleCloud" type="Sprite2D" parent="." unique_id=1569447414]
+position = Vector2(216.12886, 177.37498)
+scale = Vector2(0.34556332, 0.3455633)
+texture = ExtResource("4_l48gv")
+
+[node name="DoubleCloud2" type="Sprite2D" parent="." unique_id=216468860]
+position = Vector2(960, 300.00003)
+scale = Vector2(0.34556332, 0.3455633)
+texture = ExtResource("4_l48gv")
+
+[node name="TripleCloud" type="Sprite2D" parent="." unique_id=881867508]
+position = Vector2(638, 140.00002)
+scale = Vector2(0.26941177, 0.26941177)
+texture = ExtResource("5_ecwwl")
 
 [connection signal="pressed" from="Play" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
