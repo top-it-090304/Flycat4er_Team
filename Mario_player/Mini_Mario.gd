@@ -47,6 +47,7 @@ func _physics_process(delta: float) -> void:
 		var tween1 = get_tree().create_tween()
 		tween1.tween_property(self, "position", position - Vector2(0, 5), 0.3)
 		velocity.x = 0
+		$CollisionShape2D.disabled = true
 		anim.play("Death_mini")
 		await anim.animation_finished
 		get_tree().change_scene_to_file.bind("res://menu.tscn").call_deferred()

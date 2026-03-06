@@ -35,7 +35,7 @@ scale = Vector2(0.27282158, 0.27282158)
 texture = ExtResource("3_ytr4m")
 
 [node name="OneCloud2" type="Sprite2D" parent="." unique_id=361182395]
-position = Vector2(442.00003, 307)
+position = Vector2(453.00003, 304)
 scale = Vector2(0.27282158, 0.27282158)
 texture = ExtResource("3_ytr4m")
 

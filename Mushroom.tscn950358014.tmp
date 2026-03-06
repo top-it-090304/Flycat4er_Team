@@ -41,13 +41,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rs2b5"]
-size = Vector2(10, 2)
+size = Vector2(10, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnt1q"]
 size = Vector2(16, 4)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rs2b5"]
-radius = 437.0183
+radius = 138.03261
 
 [node name="Mushroom" type="CharacterBody2D" unique_id=1023285947]
 script = ExtResource("1_rs2b5")
