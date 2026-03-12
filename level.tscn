@@ -1331,7 +1331,7 @@ texture = ExtResource("4_8b0r0")
 
 [node name="Kindpng3017991" type="Sprite2D" parent="Backround" unique_id=1097044090]
 modulate = Color(0.5411765, 0.9098039, 0.21960784, 1)
-position = Vector2(2315, 521)
+position = Vector2(2318, 521.00006)
 scale = Vector2(0.09612336, 0.09612333)
 texture = ExtResource("4_8b0r0")
 
