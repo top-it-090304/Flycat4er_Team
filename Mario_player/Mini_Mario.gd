@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction > 0 and health > 0:
 		$AnimatedSprite2D.flip_h = false
-		velocity.x = move_toward(velocity.x, SPEED, 4.5)
+		velocity.x = move_toward(velocity.x, SPEED * direction, 4)
 		if velocity.y == 0: 
 			anim.play("Walk_mini")
 		if velocity.y < 0:
@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 		anim.play("Idle_mini")
 	elif direction < 0 and health > 0:
 		$AnimatedSprite2D.flip_h = true
-		velocity.x = direction * SPEED
+		velocity.x = move_toward(velocity.x, SPEED * direction, 4)
 		if velocity.y == 0: 
 			anim.play("Walk_mini")
 		if velocity.y < 0:
