@@ -35,13 +35,13 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3d8vl")
 }],
-"loop": false,
+"loop": true,
 "name": &"Walk",
-"speed": 2.0
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rs2b5"]
-size = Vector2(10, 2)
+size = Vector2(10, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnt1q"]
 size = Vector2(16, 4)
@@ -61,11 +61,12 @@ scale = Vector2(0.8333333, 0.8333334)
 sprite_frames = SubResource("SpriteFrames_dd465")
 animation = &"Walk"
 autoplay = "Walk"
+frame_progress = 0.9862822
 
 [node name="Head" type="Area2D" parent="." unique_id=1131812438]
 
 [node name="Head_c" type="CollisionShape2D" parent="Head" unique_id=304358405]
-position = Vector2(0, -6)
+position = Vector2(0, -6.5)
 shape = SubResource("RectangleShape2D_rs2b5")
 
 [node name="Site" type="Area2D" parent="." unique_id=1250624112]
