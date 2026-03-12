@@ -1,9 +1,12 @@
 extends CharacterBody2D
 
 
-const SPEED = 125.0
+const SPEED = 100.0
 
 const JUMP_VELOCITY = -342.0
+
+const acc = 50
+const frocton = 70
 
 var score = 0
 
@@ -22,7 +25,7 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction > 0 and health > 0:
 		$AnimatedSprite2D.flip_h = false
-		velocity.x = direction * SPEED
+		velocity.x = move_toward(velocity.x, SPEED, 4.5)
 		if velocity.y == 0: 
 			anim.play("Walk_mini")
 		if velocity.y < 0:
@@ -30,7 +33,7 @@ func _physics_process(delta: float) -> void:
 		if velocity.y > 0:
 			anim.play("Jump_mini")
 	elif direction == 0 and velocity.y == 0 and health > 0:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, 8)
 		anim.play("Idle_mini")
 	elif direction < 0 and health > 0:
 		$AnimatedSprite2D.flip_h = true
@@ -53,5 +56,6 @@ func _physics_process(delta: float) -> void:
 		get_tree().change_scene_to_file.bind("res://menu.tscn").call_deferred()
 		tween1.tween_callback(queue_free)
 	
+
 
 	move_and_slide()
