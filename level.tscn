@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dqjwv4n020u7j" path="res://Super Mango Platformer Assets by JuhoSprite/Grass_Oneway.png" id="14_v5j5c"]
 [ext_resource type="Texture2D" uid="uid://d1wj8r3ab27q5" path="res://mario_texsture/NES - Super Mario Bros. - Miscellaneous - Tileset.png" id="15_fedht"]
 [ext_resource type="Texture2D" uid="uid://bnmlodxk6prxd" path="res://mario_texsture/NES - Super Mario Bros. - Miscellaneous - Tileset (1).png" id="16_4c15r"]
+[ext_resource type="FontFile" uid="uid://bxsmiggf111ln" path="res://mario_texsture/ConnectionII.otf" id="16_ait7k"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8b0r0"]
 
@@ -1495,8 +1496,9 @@ text = "Exit"
 [node name="Label" type="Label" parent="Score" unique_id=882047644]
 offset_left = 15.0
 offset_top = 8.0
-offset_right = 121.0
-offset_bottom = 33.0
+offset_right = 135.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("16_ait7k")
 theme_override_font_sizes/font_size = 26
 text = "Score"
 script = ExtResource("10_2orkt")
