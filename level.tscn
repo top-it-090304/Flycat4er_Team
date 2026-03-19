@@ -19,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://d1wj8r3ab27q5" path="res://mario_texsture/NES - Super Mario Bros. - Miscellaneous - Tileset.png" id="15_fedht"]
 [ext_resource type="Texture2D" uid="uid://bnmlodxk6prxd" path="res://mario_texsture/NES - Super Mario Bros. - Miscellaneous - Tileset (1).png" id="16_4c15r"]
 [ext_resource type="FontFile" uid="uid://r16tnnr8sddv" path="res://font/vertopal.com_Bm437_Master_512.ttf" id="16_ait7k"]
+[ext_resource type="Script" uid="uid://csixbo7yfyufl" path="res://time.gd" id="16_u3yai"]
+[ext_resource type="Script" uid="uid://bqo0a5pexbhn1" path="res://timer.gd" id="16_y3bce"]
 [ext_resource type="Script" uid="uid://dhw1blpaahiwk" path="res://lives.gd" id="18_42xju"]
 [ext_resource type="Script" uid="uid://dg3fv35ggy2eh" path="res://coins.gd" id="18_v7sqt"]
 [ext_resource type="Script" uid="uid://bptx48h5e7uc" path="res://world.gd" id="19_ilwjd"]
@@ -1510,6 +1512,12 @@ theme_override_fonts/font = SubResource("FontVariation_v7sqt")
 theme_override_font_sizes/font_size = 20
 text = "TIME"
 horizontal_alignment = 1
+script = ExtResource("16_u3yai")
+
+[node name="Timer" type="Timer" parent="Time" unique_id=1693790476]
+wait_time = 0.6
+autostart = true
+script = ExtResource("16_y3bce")
 
 [node name="Exit" type="CanvasLayer" parent="." unique_id=1656994459]
 script = ExtResource("9_i2t4f")
@@ -1587,6 +1595,7 @@ script = ExtResource("14_h6smj")
 position = Vector2(1819, 650)
 shape = SubResource("RectangleShape2D_v5j5c")
 
+[connection signal="timeout" from="Time/Timer" to="Time/Timer" method="_on_timeout"]
 [connection signal="pressed" from="Exit/Button" to="Exit" method="_on_button_pressed"]
 [connection signal="body_entered" from="Exit_area" to="Exit_area" method="_on_body_entered"]
 [connection signal="body_entered" from="Bottom" to="." method="_on_bottom_body_entered"]

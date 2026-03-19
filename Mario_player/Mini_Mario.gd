@@ -13,6 +13,8 @@ var health = 10
 
 var Mario_heat = false
 
+var time = 350
+
 @onready var anim = $AnimatedSprite2D
 
 func _physics_process(delta):
