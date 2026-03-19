@@ -6,8 +6,6 @@ var speed = -25
 
 var alive = true
 
-var mario_live = true
-
 var direction = 1
 
 var trigger = false
@@ -36,7 +34,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_site_body_entered(body: Node2D) -> void:
 	if body.name == "Mini_Mario": 
-		$"../../Mario/Mini_Mario".health -= 100
+		$"../../Mario/Mini_Mario".health -= 1
+		$"../../Mario/Mini_Mario".Mario_heat = true
 		if $"../../Mario/Mini_Mario".score > 0:
 			$"../../Mario/Mini_Mario".score -= 100
 	elif body.name == "TileMap": 

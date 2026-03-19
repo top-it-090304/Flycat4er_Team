@@ -9,7 +9,9 @@ var score = 0
 
 var gravity = 750.0
 
-var health = 1
+var health = 10
+
+var Mario_heat = false
 
 @onready var anim = $AnimatedSprite2D
 
@@ -24,7 +26,7 @@ func _physics_process(delta):
 		velocity.y *= 0.4
 		
 	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction > 0 and health > 0:
+	if direction > 0 and health > 0 and Mario_heat == false:
 		$AnimatedSprite2D.flip_h = false
 		velocity.x = move_toward(velocity.x, SPEED * direction, 4)
 		if velocity.y == 0: 
@@ -33,10 +35,10 @@ func _physics_process(delta):
 			anim.play("Jump_mini")
 		if velocity.y > 0:
 			anim.play("Jump_mini")
-	elif direction == 0 and velocity.y == 0 and health > 0:
+	elif direction == 0 and velocity.y == 0 and health > 0 and Mario_heat == false:
 		velocity.x = move_toward(velocity.x, 0, 8)
 		anim.play("Idle_mini")
-	elif direction < 0 and health > 0:
+	elif direction < 0 and health > 0 and Mario_heat == false:
 		$AnimatedSprite2D.flip_h = true
 		velocity.x = move_toward(velocity.x, SPEED * direction, 4)
 		if velocity.y == 0: 
@@ -45,9 +47,9 @@ func _physics_process(delta):
 			anim.play('Jump_mini')
 		if velocity.y > 0: 
 			anim.play('Fall_mini')
-	elif velocity.y > 0 and health > 0: 
+	elif velocity.y > 0 and health > 0 and Mario_heat == false: 
 		anim.play("Fall_mini")
-	elif health <= 0: 
+	elif health <= 0 and Mario_heat == true: 
 		var tween1 = get_tree().create_tween()
 		tween1.tween_property(self, "position", position - Vector2(0, 5), 0.3)
 		velocity.x = 0
@@ -56,6 +58,10 @@ func _physics_process(delta):
 		await anim.animation_finished
 		get_tree().change_scene_to_file.bind("res://menu.tscn").call_deferred()
 		tween1.tween_callback(queue_free)
+	elif health > 0 and Mario_heat == true:
+		Mario_heat = false
+
+	
 	
 
 

@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://d1wj8r3ab27q5" path="res://mario_texsture/NES - Super Mario Bros. - Miscellaneous - Tileset.png" id="15_fedht"]
 [ext_resource type="Texture2D" uid="uid://bnmlodxk6prxd" path="res://mario_texsture/NES - Super Mario Bros. - Miscellaneous - Tileset (1).png" id="16_4c15r"]
 [ext_resource type="FontFile" uid="uid://r16tnnr8sddv" path="res://font/vertopal.com_Bm437_Master_512.ttf" id="16_ait7k"]
+[ext_resource type="Script" uid="uid://dhw1blpaahiwk" path="res://lives.gd" id="18_42xju"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8b0r0"]
 
@@ -1498,10 +1499,10 @@ position = Vector2(98, 519)
 
 [node name="Time" type="CanvasLayer" parent="." unique_id=1204732229]
 
-[node name="Label" type="Label" parent="Time" unique_id=1564870603]
-offset_left = 779.0
+[node name="Time" type="Label" parent="Time" unique_id=1564870603]
+offset_left = 771.0
 offset_top = 10.0
-offset_right = 862.0
+offset_right = 854.0
 offset_bottom = 30.0
 theme_override_fonts/font = SubResource("FontVariation_v7sqt")
 theme_override_font_sizes/font_size = 20
@@ -1533,10 +1534,10 @@ script = ExtResource("10_2orkt")
 
 [node name="Coins" type="CanvasLayer" parent="." unique_id=2077634598]
 
-[node name="Label" type="Label" parent="Coins" unique_id=28055262]
-offset_left = 309.0
+[node name="Coins" type="Label" parent="Coins" unique_id=28055262]
+offset_left = 301.0
 offset_top = 10.0
-offset_right = 413.0
+offset_right = 405.0
 offset_bottom = 30.0
 theme_override_fonts/font = SubResource("FontVariation_ait7k")
 theme_override_font_sizes/font_size = 20
@@ -1545,10 +1546,10 @@ horizontal_alignment = 1
 
 [node name="World" type="CanvasLayer" parent="." unique_id=952165805]
 
-[node name="Label" type="Label" parent="World" unique_id=1068220064]
-offset_left = 566.0
+[node name="World" type="Label" parent="World" unique_id=1068220064]
+offset_left = 542.0
 offset_top = 10.0
-offset_right = 669.0
+offset_right = 645.0
 offset_bottom = 30.0
 theme_override_fonts/font = SubResource("FontVariation_42xju")
 theme_override_font_sizes/font_size = 20
@@ -1557,7 +1558,7 @@ horizontal_alignment = 1
 
 [node name="Lives" type="CanvasLayer" parent="." unique_id=1315423919]
 
-[node name="Label" type="Label" parent="Lives" unique_id=1160828370]
+[node name="Lives" type="Label" parent="Lives" unique_id=1160828370]
 offset_left = 977.0
 offset_top = 10.0
 offset_right = 1078.0
@@ -1566,6 +1567,7 @@ theme_override_fonts/font = SubResource("FontVariation_ilwjd")
 theme_override_font_sizes/font_size = 20
 text = "LIVES"
 horizontal_alignment = 1
+script = ExtResource("18_42xju")
 
 [node name="Exit_area" type="Area2D" parent="." unique_id=1593656736]
 script = ExtResource("13_8b0r0")
