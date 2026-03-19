@@ -20,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://bnmlodxk6prxd" path="res://mario_texsture/NES - Super Mario Bros. - Miscellaneous - Tileset (1).png" id="16_4c15r"]
 [ext_resource type="FontFile" uid="uid://r16tnnr8sddv" path="res://font/vertopal.com_Bm437_Master_512.ttf" id="16_ait7k"]
 [ext_resource type="Script" uid="uid://dhw1blpaahiwk" path="res://lives.gd" id="18_42xju"]
+[ext_resource type="Script" uid="uid://dg3fv35ggy2eh" path="res://coins.gd" id="18_v7sqt"]
+[ext_resource type="Script" uid="uid://bptx48h5e7uc" path="res://world.gd" id="19_ilwjd"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8b0r0"]
 
@@ -1543,6 +1545,7 @@ theme_override_fonts/font = SubResource("FontVariation_ait7k")
 theme_override_font_sizes/font_size = 20
 text = "COINS"
 horizontal_alignment = 1
+script = ExtResource("18_v7sqt")
 
 [node name="World" type="CanvasLayer" parent="." unique_id=952165805]
 
@@ -1555,6 +1558,7 @@ theme_override_fonts/font = SubResource("FontVariation_42xju")
 theme_override_font_sizes/font_size = 20
 text = "WORLD"
 horizontal_alignment = 1
+script = ExtResource("19_ilwjd")
 
 [node name="Lives" type="CanvasLayer" parent="." unique_id=1315423919]
 
