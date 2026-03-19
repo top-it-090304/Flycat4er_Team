@@ -6,4 +6,4 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	text = "Score: " + str($"../../Mario/Mini_Mario".score)
+	text = "SCORE" + '\n' + str($"../../Mario/Mini_Mario".score)

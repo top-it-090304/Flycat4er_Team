@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dqjwv4n020u7j" path="res://Super Mango Platformer Assets by JuhoSprite/Grass_Oneway.png" id="14_v5j5c"]
 [ext_resource type="Texture2D" uid="uid://d1wj8r3ab27q5" path="res://mario_texsture/NES - Super Mario Bros. - Miscellaneous - Tileset.png" id="15_fedht"]
 [ext_resource type="Texture2D" uid="uid://bnmlodxk6prxd" path="res://mario_texsture/NES - Super Mario Bros. - Miscellaneous - Tileset (1).png" id="16_4c15r"]
-[ext_resource type="FontFile" uid="uid://bxsmiggf111ln" path="res://mario_texsture/ConnectionII.otf" id="16_ait7k"]
+[ext_resource type="FontFile" uid="uid://r16tnnr8sddv" path="res://font/vertopal.com_Bm437_Master_512.ttf" id="16_ait7k"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8b0r0"]
 
@@ -1221,11 +1221,20 @@ sources/2 = SubResource("TileSetAtlasSource_4c15r")
 sources/3 = SubResource("TileSetAtlasSource_ait7k")
 sources/7 = SubResource("TileSetAtlasSource_42xju")
 
+[sub_resource type="FontVariation" id="FontVariation_4c15r"]
+base_font = ExtResource("16_ait7k")
+
+[sub_resource type="FontVariation" id="FontVariation_ait7k"]
+base_font = ExtResource("16_ait7k")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8b0r0"]
 size = Vector2(3, 203)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5j5c"]
 size = Vector2(3647, 13)
+
+[sub_resource type="FontVariation" id="FontVariation_42xju"]
+base_font = ExtResource("16_ait7k")
 
 [node name="Level" type="Node2D" unique_id=636935181]
 script = ExtResource("1_2orkt")
@@ -1494,14 +1503,25 @@ text = "Exit"
 [node name="Score" type="CanvasLayer" parent="." unique_id=977982363]
 
 [node name="Label" type="Label" parent="Score" unique_id=882047644]
-offset_left = 15.0
-offset_top = 8.0
-offset_right = 135.0
-offset_bottom = 35.0
-theme_override_fonts/font = ExtResource("16_ait7k")
+offset_left = 58.0
+offset_top = 12.0
+offset_right = 188.0
+offset_bottom = 39.0
+theme_override_fonts/font = SubResource("FontVariation_4c15r")
 theme_override_font_sizes/font_size = 26
-text = "Score"
+text = "SCORE"
 script = ExtResource("10_2orkt")
+
+[node name="Coins" type="CanvasLayer" parent="." unique_id=2077634598]
+
+[node name="Label" type="Label" parent="Coins" unique_id=28055262]
+offset_left = 270.0
+offset_top = 12.0
+offset_right = 400.0
+offset_bottom = 39.0
+theme_override_fonts/font = SubResource("FontVariation_ait7k")
+theme_override_font_sizes/font_size = 26
+text = "COINS"
 
 [node name="Exit_area" type="Area2D" parent="." unique_id=1593656736]
 script = ExtResource("13_8b0r0")
@@ -1516,6 +1536,17 @@ script = ExtResource("14_h6smj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom" unique_id=2002757707]
 position = Vector2(1819, 650)
 shape = SubResource("RectangleShape2D_v5j5c")
+
+[node name="World" type="CanvasLayer" parent="." unique_id=952165805]
+
+[node name="Label" type="Label" parent="World" unique_id=1068220064]
+offset_left = 484.0
+offset_top = 13.0
+offset_right = 614.0
+offset_bottom = 40.0
+theme_override_fonts/font = SubResource("FontVariation_42xju")
+theme_override_font_sizes/font_size = 26
+text = "WORLD"
 
 [connection signal="pressed" from="Exit/Button" to="Exit" method="_on_button_pressed"]
 [connection signal="body_entered" from="Exit_area" to="Exit_area" method="_on_body_entered"]
