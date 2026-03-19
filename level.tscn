@@ -1506,6 +1506,7 @@ offset_bottom = 30.0
 theme_override_fonts/font = SubResource("FontVariation_v7sqt")
 theme_override_font_sizes/font_size = 20
 text = "TIME"
+horizontal_alignment = 1
 
 [node name="Exit" type="CanvasLayer" parent="." unique_id=1656994459]
 script = ExtResource("9_i2t4f")
@@ -1540,6 +1541,7 @@ offset_bottom = 30.0
 theme_override_fonts/font = SubResource("FontVariation_ait7k")
 theme_override_font_sizes/font_size = 20
 text = "COINS"
+horizontal_alignment = 1
 
 [node name="World" type="CanvasLayer" parent="." unique_id=952165805]
 
@@ -1551,6 +1553,7 @@ offset_bottom = 30.0
 theme_override_fonts/font = SubResource("FontVariation_42xju")
 theme_override_font_sizes/font_size = 20
 text = "WORLD"
+horizontal_alignment = 1
 
 [node name="Lives" type="CanvasLayer" parent="." unique_id=1315423919]
 
@@ -1562,6 +1565,7 @@ offset_bottom = 30.0
 theme_override_fonts/font = SubResource("FontVariation_ilwjd")
 theme_override_font_sizes/font_size = 20
 text = "LIVES"
+horizontal_alignment = 1
 
 [node name="Exit_area" type="Area2D" parent="." unique_id=1593656736]
 script = ExtResource("13_8b0r0")
