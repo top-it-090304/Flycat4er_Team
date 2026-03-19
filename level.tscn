@@ -1221,10 +1221,19 @@ sources/2 = SubResource("TileSetAtlasSource_4c15r")
 sources/3 = SubResource("TileSetAtlasSource_ait7k")
 sources/7 = SubResource("TileSetAtlasSource_42xju")
 
+[sub_resource type="FontVariation" id="FontVariation_v7sqt"]
+base_font = ExtResource("16_ait7k")
+
 [sub_resource type="FontVariation" id="FontVariation_4c15r"]
 base_font = ExtResource("16_ait7k")
 
 [sub_resource type="FontVariation" id="FontVariation_ait7k"]
+base_font = ExtResource("16_ait7k")
+
+[sub_resource type="FontVariation" id="FontVariation_42xju"]
+base_font = ExtResource("16_ait7k")
+
+[sub_resource type="FontVariation" id="FontVariation_ilwjd"]
 base_font = ExtResource("16_ait7k")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8b0r0"]
@@ -1232,9 +1241,6 @@ size = Vector2(3, 203)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v5j5c"]
 size = Vector2(3647, 13)
-
-[sub_resource type="FontVariation" id="FontVariation_42xju"]
-base_font = ExtResource("16_ait7k")
 
 [node name="Level" type="Node2D" unique_id=636935181]
 script = ExtResource("1_2orkt")
@@ -1490,38 +1496,72 @@ layer_0/tile_data = PackedInt32Array(2162688, 65536, 0, 2162689, 65536, 0, 21626
 [node name="Mini_Mario" parent="Mario" unique_id=779611243 instance=ExtResource("1_u52ul")]
 position = Vector2(98, 519)
 
+[node name="Time" type="CanvasLayer" parent="." unique_id=1204732229]
+
+[node name="Label" type="Label" parent="Time" unique_id=1564870603]
+offset_left = 779.0
+offset_top = 10.0
+offset_right = 862.0
+offset_bottom = 30.0
+theme_override_fonts/font = SubResource("FontVariation_v7sqt")
+theme_override_font_sizes/font_size = 20
+text = "TIME"
+
 [node name="Exit" type="CanvasLayer" parent="." unique_id=1656994459]
 script = ExtResource("9_i2t4f")
 
 [node name="Button" type="Button" parent="Exit" unique_id=1321516291]
-offset_left = 1068.0
-offset_top = 4.0
-offset_right = 1148.0
-offset_bottom = 35.0
+offset_left = 1058.0
+offset_top = 612.0
+offset_right = 1138.0
+offset_bottom = 643.0
 text = "Exit"
 
 [node name="Score" type="CanvasLayer" parent="." unique_id=977982363]
 
 [node name="Label" type="Label" parent="Score" unique_id=882047644]
-offset_left = 58.0
-offset_top = 12.0
-offset_right = 188.0
-offset_bottom = 39.0
+offset_left = 71.0
+offset_top = 10.0
+offset_right = 176.0
+offset_bottom = 31.0
 theme_override_fonts/font = SubResource("FontVariation_4c15r")
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 20
 text = "SCORE"
+horizontal_alignment = 1
 script = ExtResource("10_2orkt")
 
 [node name="Coins" type="CanvasLayer" parent="." unique_id=2077634598]
 
 [node name="Label" type="Label" parent="Coins" unique_id=28055262]
-offset_left = 270.0
-offset_top = 12.0
-offset_right = 400.0
-offset_bottom = 39.0
+offset_left = 309.0
+offset_top = 10.0
+offset_right = 413.0
+offset_bottom = 30.0
 theme_override_fonts/font = SubResource("FontVariation_ait7k")
-theme_override_font_sizes/font_size = 26
+theme_override_font_sizes/font_size = 20
 text = "COINS"
+
+[node name="World" type="CanvasLayer" parent="." unique_id=952165805]
+
+[node name="Label" type="Label" parent="World" unique_id=1068220064]
+offset_left = 566.0
+offset_top = 10.0
+offset_right = 669.0
+offset_bottom = 30.0
+theme_override_fonts/font = SubResource("FontVariation_42xju")
+theme_override_font_sizes/font_size = 20
+text = "WORLD"
+
+[node name="Lives" type="CanvasLayer" parent="." unique_id=1315423919]
+
+[node name="Label" type="Label" parent="Lives" unique_id=1160828370]
+offset_left = 977.0
+offset_top = 10.0
+offset_right = 1078.0
+offset_bottom = 30.0
+theme_override_fonts/font = SubResource("FontVariation_ilwjd")
+theme_override_font_sizes/font_size = 20
+text = "LIVES"
 
 [node name="Exit_area" type="Area2D" parent="." unique_id=1593656736]
 script = ExtResource("13_8b0r0")
@@ -1536,17 +1576,6 @@ script = ExtResource("14_h6smj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom" unique_id=2002757707]
 position = Vector2(1819, 650)
 shape = SubResource("RectangleShape2D_v5j5c")
-
-[node name="World" type="CanvasLayer" parent="." unique_id=952165805]
-
-[node name="Label" type="Label" parent="World" unique_id=1068220064]
-offset_left = 484.0
-offset_top = 13.0
-offset_right = 614.0
-offset_bottom = 40.0
-theme_override_fonts/font = SubResource("FontVariation_42xju")
-theme_override_font_sizes/font_size = 26
-text = "WORLD"
 
 [connection signal="pressed" from="Exit/Button" to="Exit" method="_on_button_pressed"]
 [connection signal="body_entered" from="Exit_area" to="Exit_area" method="_on_body_entered"]

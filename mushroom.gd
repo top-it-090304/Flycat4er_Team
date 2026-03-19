@@ -31,14 +31,14 @@ func _physics_process(delta: float) -> void: #обновление 60 раз в 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Mini_Mario": 
 		body.velocity.y = -125
-		$"../../Mario/Mini_Mario".score += 1
+		$"../../Mario/Mini_Mario".score += 100
 		alive = false
 
 func _on_site_body_entered(body: Node2D) -> void:
 	if body.name == "Mini_Mario": 
-		$"../../Mario/Mini_Mario".health -= 1
+		$"../../Mario/Mini_Mario".health -= 100
 		if $"../../Mario/Mini_Mario".score > 0:
-			$"../../Mario/Mini_Mario".score -= 1
+			$"../../Mario/Mini_Mario".score -= 100
 	elif body.name == "TileMap": 
 		direction *= -1 
 
