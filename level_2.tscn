@@ -1,11 +1,118 @@
 [gd_scene format=3 uid="uid://op42koyksabk"]
 
+[ext_resource type="Texture2D" uid="uid://btrpubtwumhly" path="res://Background/Black_screen.png" id="1_ehv2h"]
+[ext_resource type="FontFile" uid="uid://r16tnnr8sddv" path="res://font/vertopal.com_Bm437_Master_512.ttf" id="2_15wb7"]
+[ext_resource type="Script" uid="uid://csixbo7yfyufl" path="res://time.gd" id="3_eoq84"]
+[ext_resource type="Script" uid="uid://bqo0a5pexbhn1" path="res://timer.gd" id="4_yl73a"]
+[ext_resource type="Script" uid="uid://c4acv5t3r47gv" path="res://exit.gd" id="5_xbcdb"]
+[ext_resource type="Script" uid="uid://cj2i3l5nqcl23" path="res://label.gd" id="6_s77qv"]
+[ext_resource type="Script" uid="uid://dg3fv35ggy2eh" path="res://coins.gd" id="7_5hnhx"]
+[ext_resource type="Script" uid="uid://bptx48h5e7uc" path="res://world.gd" id="8_78pok"]
+[ext_resource type="Script" uid="uid://dhw1blpaahiwk" path="res://lives.gd" id="9_lvfll"]
+
+[sub_resource type="FontVariation" id="FontVariation_jcnlr"]
+base_font = ExtResource("2_15wb7")
+
+[sub_resource type="FontVariation" id="FontVariation_5kfcu"]
+base_font = ExtResource("2_15wb7")
+
+[sub_resource type="FontVariation" id="FontVariation_i558w"]
+base_font = ExtResource("2_15wb7")
+
+[sub_resource type="FontVariation" id="FontVariation_cuxq2"]
+base_font = ExtResource("2_15wb7")
+
+[sub_resource type="FontVariation" id="FontVariation_wvr33"]
+base_font = ExtResource("2_15wb7")
+
 [node name="Level_2" type="Node2D" unique_id=886182028]
 
-[node name="Label" type="Label" parent="." unique_id=461051226]
-offset_left = 441.0
-offset_top = 266.0
-offset_right = 702.0
-offset_bottom = 376.0
-theme_override_font_sizes/font_size = 66
-text = "Level_2"
+[node name="Background" type="Node2D" parent="." unique_id=803978577]
+
+[node name="BlackScreen" type="Sprite2D" parent="." unique_id=1087546385]
+position = Vector2(3199.5, 324.00003)
+scale = Vector2(3.3362877, 0.6005561)
+texture = ExtResource("1_ehv2h")
+
+[node name="Time" type="CanvasLayer" parent="." unique_id=1202910248]
+
+[node name="Time" type="Label" parent="Time" unique_id=716218601]
+offset_left = 771.0
+offset_top = 10.0
+offset_right = 854.0
+offset_bottom = 30.0
+theme_override_fonts/font = SubResource("FontVariation_jcnlr")
+theme_override_font_sizes/font_size = 20
+text = "TIME"
+horizontal_alignment = 1
+script = ExtResource("3_eoq84")
+
+[node name="Timer" type="Timer" parent="Time" unique_id=1716063923]
+wait_time = 0.6
+autostart = true
+script = ExtResource("4_yl73a")
+
+[node name="Exit" type="CanvasLayer" parent="." unique_id=474078720]
+script = ExtResource("5_xbcdb")
+
+[node name="Button" type="Button" parent="Exit" unique_id=210483479]
+offset_left = 1058.0
+offset_top = 612.0
+offset_right = 1138.0
+offset_bottom = 643.0
+text = "Exit"
+
+[node name="Score" type="CanvasLayer" parent="." unique_id=1601318734]
+
+[node name="Label" type="Label" parent="Score" unique_id=1954433464]
+offset_left = 71.0
+offset_top = 10.0
+offset_right = 176.0
+offset_bottom = 31.0
+theme_override_fonts/font = SubResource("FontVariation_5kfcu")
+theme_override_font_sizes/font_size = 20
+text = "SCORE"
+horizontal_alignment = 1
+script = ExtResource("6_s77qv")
+
+[node name="Coins" type="CanvasLayer" parent="." unique_id=392406137]
+
+[node name="Coins" type="Label" parent="Coins" unique_id=1226522645]
+offset_left = 301.0
+offset_top = 10.0
+offset_right = 405.0
+offset_bottom = 30.0
+theme_override_fonts/font = SubResource("FontVariation_i558w")
+theme_override_font_sizes/font_size = 20
+text = "COINS"
+horizontal_alignment = 1
+script = ExtResource("7_5hnhx")
+
+[node name="World" type="CanvasLayer" parent="." unique_id=1482648457]
+
+[node name="World" type="Label" parent="World" unique_id=1799961792]
+offset_left = 542.0
+offset_top = 10.0
+offset_right = 645.0
+offset_bottom = 30.0
+theme_override_fonts/font = SubResource("FontVariation_cuxq2")
+theme_override_font_sizes/font_size = 20
+text = "WORLD"
+horizontal_alignment = 1
+script = ExtResource("8_78pok")
+
+[node name="Lives" type="CanvasLayer" parent="." unique_id=713202256]
+
+[node name="Lives" type="Label" parent="Lives" unique_id=1629145217]
+offset_left = 977.0
+offset_top = 10.0
+offset_right = 1078.0
+offset_bottom = 30.0
+theme_override_fonts/font = SubResource("FontVariation_wvr33")
+theme_override_font_sizes/font_size = 20
+text = "LIVES"
+horizontal_alignment = 1
+script = ExtResource("9_lvfll")
+
+[connection signal="timeout" from="Time/Timer" to="Time/Timer" method="_on_timeout"]
+[connection signal="pressed" from="Exit/Button" to="Exit" method="_on_button_pressed"]

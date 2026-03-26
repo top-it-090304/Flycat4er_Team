@@ -13,7 +13,7 @@ var health = 10
 
 var Mario_heat = false
 
-var time = 350
+var time = 350 
 
 @onready var anim = $AnimatedSprite2D
 
