@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://d36seyqxobem4"]
+
+[ext_resource type="Script" uid="uid://cpbrmglmdh7mu" path="res://coin.gd" id="1_0t63x"]
+[ext_resource type="Texture2D" uid="uid://cw7xrk4kvbrgx" path="res://mario_texsture/blocks.png" id="1_d5gmh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0t63x"]
+radius = 5.0
+height = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7riw"]
+atlas = ExtResource("1_d5gmh")
+region = Rect2(144, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdq0q"]
+atlas = ExtResource("1_d5gmh")
+region = Rect2(160, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w14il"]
+atlas = ExtResource("1_d5gmh")
+region = Rect2(176, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h4etq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7riw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdq0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w14il")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="Coin" type="Area2D" unique_id=1855542317]
+script = ExtResource("1_0t63x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2068189966]
+shape = SubResource("CapsuleShape2D_0t63x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=909440331]
+position = Vector2(-4.7683716e-07, 1.1920929e-07)
+scale = Vector2(0.90625006, 0.996875)
+sprite_frames = SubResource("SpriteFrames_h4etq")
+autoplay = "default"
+frame_progress = 0.55340683
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

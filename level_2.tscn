@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bnmlodxk6prxd" path="res://mario_texsture/NES - Super Mario Bros. - Miscellaneous - Tileset (1).png" id="11_yl73a"]
 [ext_resource type="Texture2D" uid="uid://cw7xrk4kvbrgx" path="res://mario_texsture/blocks.png" id="12_s77qv"]
 [ext_resource type="PackedScene" uid="uid://2wxgert8xvx8" path="res://Mario_player/Mini_Mario.tscn" id="12_yl73a"]
+[ext_resource type="PackedScene" uid="uid://d36seyqxobem4" path="res://coin.tscn" id="15_5hnhx"]
 
 [sub_resource type="FontVariation" id="FontVariation_jcnlr"]
 base_font = ExtResource("2_15wb7")
@@ -1163,6 +1164,9 @@ position = Vector2(3199.0002, 324)
 scale = Vector2(3.3362877, 0.6005561)
 texture = ExtResource("1_ehv2h")
 
+[node name="Coin" parent="BlackScreen" unique_id=1855542317 instance=ExtResource("15_5hnhx")]
+position = Vector2(651, 441)
+
 [node name="Time" type="CanvasLayer" parent="." unique_id=1202910248]
 
 [node name="Time" type="Label" parent="Time" unique_id=716218601]
@@ -1260,6 +1264,59 @@ shape = SubResource("RectangleShape2D_xbcdb")
 
 [node name="Mini_Mario" parent="Mario" unique_id=779611243 instance=ExtResource("12_yl73a")]
 position = Vector2(40, 503)
+
+[node name="Collectibles" type="Node2D" parent="." unique_id=1665701688]
+
+[node name="Coin" parent="Collectibles" unique_id=476821009 instance=ExtResource("15_5hnhx")]
+position = Vector2(652, 441)
+
+[node name="Coin2" parent="Collectibles" unique_id=769246300 instance=ExtResource("15_5hnhx")]
+position = Vector2(666, 393)
+
+[node name="Coin3" parent="Collectibles" unique_id=1352992175 instance=ExtResource("15_5hnhx")]
+position = Vector2(682, 393)
+
+[node name="Coin4" parent="Collectibles" unique_id=411392509 instance=ExtResource("15_5hnhx")]
+position = Vector2(698, 393)
+
+[node name="Coin5" parent="Collectibles" unique_id=666119819 instance=ExtResource("15_5hnhx")]
+position = Vector2(714, 393)
+
+[node name="Coin6" parent="Collectibles" unique_id=902747404 instance=ExtResource("15_5hnhx")]
+position = Vector2(731, 441)
+
+[node name="Coin7" parent="Collectibles" unique_id=1452318530 instance=ExtResource("15_5hnhx")]
+position = Vector2(939, 441)
+
+[node name="Coin8" parent="Collectibles" unique_id=609766040 instance=ExtResource("15_5hnhx")]
+position = Vector2(954, 441)
+
+[node name="Coin9" parent="Collectibles" unique_id=889856863 instance=ExtResource("15_5hnhx")]
+position = Vector2(970, 441)
+
+[node name="Coin10" parent="Collectibles" unique_id=656883736 instance=ExtResource("15_5hnhx")]
+position = Vector2(987, 441)
+
+[node name="Coin11" parent="Collectibles" unique_id=282316174 instance=ExtResource("15_5hnhx")]
+position = Vector2(1099, 441)
+
+[node name="Coin12" parent="Collectibles" unique_id=2133986685 instance=ExtResource("15_5hnhx")]
+position = Vector2(1354, 392)
+
+[node name="Coin13" parent="Collectibles" unique_id=951035443 instance=ExtResource("15_5hnhx")]
+position = Vector2(1369, 392)
+
+[node name="Coin14" parent="Collectibles" unique_id=288739544 instance=ExtResource("15_5hnhx")]
+position = Vector2(1385, 392)
+
+[node name="Coin15" parent="Collectibles" unique_id=401146816 instance=ExtResource("15_5hnhx")]
+position = Vector2(1401, 392)
+
+[node name="Coin16" parent="Collectibles" unique_id=772722290 instance=ExtResource("15_5hnhx")]
+position = Vector2(1418, 392)
+
+[node name="Coin17" parent="Collectibles" unique_id=1165116423 instance=ExtResource("15_5hnhx")]
+position = Vector2(1434, 392)
 
 [connection signal="timeout" from="Time/Timer" to="Time/Timer" method="_on_timeout"]
 [connection signal="pressed" from="Exit/Button" to="Exit" method="_on_button_pressed"]

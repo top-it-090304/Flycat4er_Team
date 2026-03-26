@@ -1,4 +1,4 @@
-extends Label
+extends Area2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -8,4 +8,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	text = "COINS" + '\n' + str($"../../Mario/Mini_Mario".coins)
+	pass
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.name == "Mini_Mario":
+		$"../../Mario/Mini_Mario".coins += 1
+		queue_free()
