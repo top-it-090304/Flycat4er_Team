@@ -142,9 +142,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ljqm"]
-radius = 7.0
-height = 18.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24eo0"]
+size = Vector2(15, 14)
 
 [node name="Mini_Mario" type="CharacterBody2D" unique_id=779611243]
 script = ExtResource("1_24eo0")
@@ -158,7 +157,8 @@ autoplay = "Idle_mini"
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1018610171]
-shape = SubResource("CapsuleShape2D_7ljqm")
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_24eo0")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=367167616]
 offset = Vector2(152, 0)
