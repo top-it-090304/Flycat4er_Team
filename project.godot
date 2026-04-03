@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Mario_Bros_original"
-run/main_scene="uid://do58b0qldyexg"
+run/main_scene="uid://op42koyksabk"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 

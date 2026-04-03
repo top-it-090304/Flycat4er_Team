@@ -4,7 +4,7 @@ var platform_preload = preload("res://platform.tscn")
 
 
 func _on_timer_timeout() -> void:
-	platform_1_spawn()
+	pass
 
 func platform_1_spawn():
 	var platform = platform_preload.instantiate()

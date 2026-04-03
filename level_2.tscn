@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://2wxgert8xvx8" path="res://Mario_player/Mini_Mario.tscn" id="12_yl73a"]
 [ext_resource type="PackedScene" uid="uid://d36seyqxobem4" path="res://coin.tscn" id="15_5hnhx"]
 [ext_resource type="Script" uid="uid://ngey3t06lk1f" path="res://platforms_spawn.gd" id="16_78pok"]
+[ext_resource type="PackedScene" uid="uid://bqyf64ig1pwr3" path="res://platform_a.tscn" id="17_lvfll"]
+[ext_resource type="Script" uid="uid://ch0gke5dhd3os" path="res://platform_a.gd" id="18_jcnlr"]
 
 [sub_resource type="FontVariation" id="FontVariation_jcnlr"]
 base_font = ExtResource("2_15wb7")
@@ -1156,12 +1158,51 @@ sources/6 = SubResource("TileSetAtlasSource_jcnlr")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xbcdb"]
 size = Vector2(2948.5, 13)
 
+[sub_resource type="Animation" id="Animation_jcnlr"]
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Platform_A:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5054256, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(105, 506), Vector2(105, 449), Vector2(102, 501)]
+}
+
+[sub_resource type="Animation" id="Animation_5kfcu"]
+resource_name = "platfor_anim"
+length = 2.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Platform_A:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4506829, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(105, 506), Vector2(106, 448), Vector2(103, 498)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i558w"]
+_data = {
+&"RESET": SubResource("Animation_jcnlr"),
+&"platfor_anim": SubResource("Animation_5kfcu")
+}
+
 [node name="Level_2" type="Node2D" unique_id=886182028]
 
 [node name="Background" type="Node2D" parent="." unique_id=803978577]
 
 [node name="BlackScreen" type="Sprite2D" parent="." unique_id=1087546385]
-position = Vector2(3199.0002, 324)
+position = Vector2(3200.0002, 317)
 scale = Vector2(3.3362877, 0.6005561)
 texture = ExtResource("1_ehv2h")
 
@@ -1325,6 +1366,13 @@ script = ExtResource("16_78pok")
 [node name="Timer" type="Timer" parent="Platforms" unique_id=1658129019]
 wait_time = 3.0
 autostart = true
+
+[node name="Platform_A" parent="." unique_id=1940965677 instance=ExtResource("17_lvfll")]
+position = Vector2(105, 506)
+script = ExtResource("18_jcnlr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1286679352]
+libraries/ = SubResource("AnimationLibrary_i558w")
 
 [connection signal="timeout" from="Time/Timer" to="Time/Timer" method="_on_timeout"]
 [connection signal="pressed" from="Exit/Button" to="Exit" method="_on_button_pressed"]

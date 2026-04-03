@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bqyf64ig1pwr3"]
+
+[ext_resource type="Texture2D" uid="uid://bk2npjksl43cm" path="res://Super Mango Platformer Assets by JuhoSprite/Platform.png" id="1_bg4wk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftuy4"]
+size = Vector2(31, 4)
+
+[node name="Platform_A" type="AnimatableBody2D" unique_id=1940965677]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1807109904]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_ftuy4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1739736350]
+position = Vector2(0, 0.625)
+scale = Vector2(0.6944444, 0.328125)
+texture = ExtResource("1_bg4wk")
