@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cw7xrk4kvbrgx" path="res://mario_texsture/blocks.png" id="12_s77qv"]
 [ext_resource type="PackedScene" uid="uid://2wxgert8xvx8" path="res://Mario_player/Mini_Mario.tscn" id="12_yl73a"]
 [ext_resource type="PackedScene" uid="uid://d36seyqxobem4" path="res://coin.tscn" id="15_5hnhx"]
-[ext_resource type="Script" uid="uid://ngey3t06lk1f" path="res://platforms.gd" id="16_78pok"]
+[ext_resource type="Script" uid="uid://ngey3t06lk1f" path="res://platforms_spawn.gd" id="16_78pok"]
 
 [sub_resource type="FontVariation" id="FontVariation_jcnlr"]
 base_font = ExtResource("2_15wb7")
@@ -1264,7 +1264,7 @@ shape = SubResource("RectangleShape2D_xbcdb")
 [node name="Mario" type="Node2D" parent="." unique_id=1253043403]
 
 [node name="Mini_Mario" parent="Mario" unique_id=779611243 instance=ExtResource("12_yl73a")]
-position = Vector2(40, 503)
+position = Vector2(61, 504)
 
 [node name="Collectibles" type="Node2D" parent="." unique_id=1665701688]
 

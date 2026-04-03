@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://enhouuhbp8n2"]
 
 [ext_resource type="Texture2D" uid="uid://bk2npjksl43cm" path="res://Super Mango Platformer Assets by JuhoSprite/Platform.png" id="1_mi635"]
-[ext_resource type="Script" uid="uid://bhrxs26af13cq" path="res://platform.gd" id="1_s8bxr"]
+[ext_resource type="Script" uid="uid://ck1nl2666clcd" path="res://platform.gd" id="1_s8bxr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8bxr"]
-size = Vector2(86, 8)
+size = Vector2(47, 5)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_c1gtx"]
 animations = [{
@@ -17,14 +17,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Platform" type="CharacterBody2D" unique_id=1843641213]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1455435257]
 script = ExtResource("1_s8bxr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1957772510]
-position = Vector2(-3, 7)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1246129186]
+position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_s8bxr")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1213339961]
-position = Vector2(-3.0833292, 8.125)
-scale = Vector2(1.8368052, 0.734375)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=347899673]
+position = Vector2(0, 1)
+scale = Vector2(1, 0.375)
 sprite_frames = SubResource("SpriteFrames_c1gtx")

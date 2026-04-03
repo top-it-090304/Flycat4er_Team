@@ -66,9 +66,14 @@ func _physics_process(delta):
 		tween1.tween_callback(queue_free)
 	elif health > 0 and Mario_heat == true:
 		Mario_heat = false
-
-	
-	
-
-
+		
 	move_and_slide()
+	
+
+
+
+
+func _on_mimi_mario_bottom_body_entered(body: Node2D) -> void:
+	if body.name == "Platform":
+		velocity.y = -10
+		
