@@ -2,9 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://ceafoshr36m6n" path="res://background.tscn" id="1_lti8b"]
 [ext_resource type="Script" uid="uid://djfhs72lb66k8" path="res://menu.gd" id="1_ouk20"]
+[ext_resource type="FontFile" uid="uid://r16tnnr8sddv" path="res://font/vertopal.com_Bm437_Master_512.ttf" id="3_ecwwl"]
 [ext_resource type="Texture2D" uid="uid://c0kyhodqrws8r" path="res://Background/one_cloud.png" id="3_ytr4m"]
 [ext_resource type="Texture2D" uid="uid://bd7rhl0c02mas" path="res://Background/double_cloud.png" id="4_l48gv"]
 [ext_resource type="Texture2D" uid="uid://e8g0uxpfvoje" path="res://Background/triple_cloud.png" id="5_ecwwl"]
+[ext_resource type="Texture2D" uid="uid://kpjehqm2m4an" path="res://Background/NES - Super Mario Bros. - Miscellaneous - Title Screen, HUD and Miscellaneous.png" id="7_ecwwl"]
+
+[sub_resource type="FontVariation" id="FontVariation_nrnbx"]
+base_font = ExtResource("3_ecwwl")
 
 [node name="Menu" type="Node2D" unique_id=52025238]
 script = ExtResource("1_ouk20")
@@ -13,51 +18,59 @@ script = ExtResource("1_ouk20")
 
 [node name="Play" type="Button" parent="." unique_id=802507506]
 physics_interpolation_mode = 1
-offset_left = 205.0
-offset_top = 481.0
-offset_right = 451.0
-offset_bottom = 550.0
+offset_left = 210.0
+offset_top = 487.0
+offset_right = 456.0
+offset_bottom = 556.0
+theme_override_fonts/font = SubResource("FontVariation_nrnbx")
 theme_override_font_sizes/font_size = 34
 text = "Play"
+icon_alignment = 1
 
 [node name="Exit" type="Button" parent="." unique_id=307964076]
-offset_left = 696.0
-offset_top = 481.0
-offset_right = 942.0
-offset_bottom = 550.0
+offset_left = 661.0
+offset_top = 488.0
+offset_right = 907.0
+offset_bottom = 557.0
+theme_override_fonts/font = ExtResource("3_ecwwl")
 theme_override_font_sizes/font_size = 34
 text = "Exit
 "
 
 [node name="OneCloud" type="Sprite2D" parent="." unique_id=439600313]
-position = Vector2(90.810684, 70.12501)
+position = Vector2(924.99994, 576)
 scale = Vector2(0.27282158, 0.27282158)
 texture = ExtResource("3_ytr4m")
 
 [node name="OneCloud2" type="Sprite2D" parent="." unique_id=361182395]
-position = Vector2(453.00003, 304)
+position = Vector2(537, 442)
 scale = Vector2(0.27282158, 0.27282158)
 texture = ExtResource("3_ytr4m")
 
 [node name="OneCloud3" type="Sprite2D" parent="." unique_id=2036583399]
-position = Vector2(946.99994, 91.000015)
+position = Vector2(996.00006, 90)
 scale = Vector2(0.27282158, 0.27282158)
 texture = ExtResource("3_ytr4m")
 
 [node name="DoubleCloud" type="Sprite2D" parent="." unique_id=1569447414]
-position = Vector2(216.12886, 177.37498)
+position = Vector2(186, 562.99994)
 scale = Vector2(0.34556332, 0.3455633)
 texture = ExtResource("4_l48gv")
 
 [node name="DoubleCloud2" type="Sprite2D" parent="." unique_id=216468860]
-position = Vector2(960, 300.00003)
+position = Vector2(995, 355.00003)
 scale = Vector2(0.34556332, 0.3455633)
 texture = ExtResource("4_l48gv")
 
 [node name="TripleCloud" type="Sprite2D" parent="." unique_id=881867508]
-position = Vector2(638, 140.00002)
+position = Vector2(764, 213)
 scale = Vector2(0.26941177, 0.26941177)
 texture = ExtResource("5_ecwwl")
+
+[node name="NesSuperMarioBros_MiscellaneousTitleScreen,HudAndMiscellaneous" type="Sprite2D" parent="." unique_id=412793631]
+position = Vector2(374.99997, 218)
+scale = Vector2(3.596591, 3.596591)
+texture = ExtResource("7_ecwwl")
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ceafoshr36m6n"]
 
 [ext_resource type="Script" uid="uid://dsmpwvmkff43y" path="res://background.gd" id="1_xehqc"]
-[ext_resource type="Texture2D" uid="uid://csdq115ypnjun" path="res://Background/blue_screen.png" id="2_eq6nc"]
+[ext_resource type="Texture2D" uid="uid://defupol80m1g1" path="res://Background/sky.png" id="2_i7s6n"]
 
 [node name="Background" type="ParallaxBackground" unique_id=618884780]
 script = ExtResource("1_xehqc")
@@ -9,13 +9,14 @@ script = ExtResource("1_xehqc")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="." unique_id=668030158]
 motion_mirroring = Vector2(1152, 0)
 
-[node name="BlueScreen" type="Sprite2D" parent="ParallaxLayer" unique_id=1750932295]
-position = Vector2(576, 324)
-texture = ExtResource("2_eq6nc")
-
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="." unique_id=1025361578]
 motion_scale = Vector2(0.7, 1)
 motion_mirroring = Vector2(1152, 0)
 
 [node name="ParallaxLayer1" type="ParallaxLayer" parent="." unique_id=22771629]
 motion_mirroring = Vector2(1152, 0)
+
+[node name="Sky" type="Sprite2D" parent="." unique_id=1401387371]
+position = Vector2(575.99994, 335.37503)
+scale = Vector2(0.6006257, 0.6202502)
+texture = ExtResource("2_i7s6n")
