@@ -143,7 +143,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24eo0"]
-size = Vector2(15, 14)
+size = Vector2(15, 15)
 
 [node name="Mini_Mario" type="CharacterBody2D" unique_id=779611243]
 script = ExtResource("1_24eo0")
@@ -152,12 +152,11 @@ script = ExtResource("1_24eo0")
 position = Vector2(3.8146973e-06, 1.9073486e-06)
 scale = Vector2(1.0277778, 1.0277778)
 sprite_frames = SubResource("SpriteFrames_r2sxd")
-animation = &"Death_mini"
+animation = &"Fall_mini"
 autoplay = "Idle_mini"
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1018610171]
-position = Vector2(0.5, 2)
+position = Vector2(0.5, 1.5)
 shape = SubResource("RectangleShape2D_24eo0")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=367167616]

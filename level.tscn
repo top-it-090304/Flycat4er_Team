@@ -1524,10 +1524,10 @@ script = ExtResource("16_y3bce")
 script = ExtResource("9_i2t4f")
 
 [node name="Button" type="Button" parent="Exit" unique_id=1321516291]
-offset_left = 1058.0
-offset_top = 612.0
-offset_right = 1138.0
-offset_bottom = 643.0
+offset_left = 1057.0
+offset_top = 603.0
+offset_right = 1137.0
+offset_bottom = 634.0
 text = "Exit"
 
 [node name="Score" type="CanvasLayer" parent="." unique_id=977982363]

@@ -25,9 +25,11 @@ func _physics_process(delta):
 
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		anim.play("Jump_mini")
 	
 	if Input.is_action_just_released("ui_accept") and velocity.y < 0:
 		velocity.y *= 0.4
+		anim.play("Jump_mini")
 		
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction > 0 and health > 0 and Mario_heat == false:

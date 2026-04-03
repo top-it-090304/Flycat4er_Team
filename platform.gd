@@ -1,4 +1,6 @@
-extends Area2D
+extends CharacterBody2D
+
+const SPEED = -10
 
 
 # Called when the node enters the scene tree for the first time.
@@ -8,9 +10,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-	
-func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Mini_Mario":
-		queue_free()
-		get_tree().change_scene_to_file("res://menu.tscn")
+	velocity.y = SPEED
+	move_and_slide()
