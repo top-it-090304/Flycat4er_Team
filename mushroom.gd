@@ -38,8 +38,8 @@ func _on_site_body_entered(body: Node2D) -> void:
 		$"../../Mario/Mini_Mario".Mario_heat = true
 		if $"../../Mario/Mini_Mario".score > 0:
 			$"../../Mario/Mini_Mario".score -= 100
-	elif body.name == "TileMap": 
-		direction *= -1 
+	elif body.name == "TileMap" or body.is_in_group("mushroom_above"): 
+		direction *= -1
 
 func _on_trigger_body_entered(body: Node2D) -> void:
 	if body.name == "Mini_Mario":
@@ -47,7 +47,7 @@ func _on_trigger_body_entered(body: Node2D) -> void:
 		
 func _on_trigger_body_exited(body: Node2D) -> void:
 	if body.name == "Mini_Mario":
-		trigger = true
+		trigger = false
 
 func death_mashroom ():
 	anim.play("Die")

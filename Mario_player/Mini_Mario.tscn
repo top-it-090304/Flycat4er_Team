@@ -143,10 +143,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24eo0"]
-size = Vector2(15.5, 15)
-
-[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_24eo0"]
-length = 9.0
+size = Vector2(15, 15)
 
 [node name="Mini_Mario" type="CharacterBody2D" unique_id=779611243]
 script = ExtResource("1_24eo0")
@@ -159,7 +156,7 @@ animation = &"Fall_mini"
 autoplay = "Idle_mini"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1018610171]
-position = Vector2(-0.25, 1.5)
+position = Vector2(-0.5, 1.5)
 shape = SubResource("RectangleShape2D_24eo0")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=367167616]
@@ -172,10 +169,3 @@ limit_right = 3494
 limit_bottom = 602
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
-
-[node name="Mimi_Mario_Bottom" type="Area2D" parent="." unique_id=477881833]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mimi_Mario_Bottom" unique_id=825510764]
-shape = SubResource("SeparationRayShape2D_24eo0")
-
-[connection signal="body_entered" from="Mimi_Mario_Bottom" to="." method="_on_mimi_mario_bottom_body_entered"]

@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://r0xrw50ld0e1"]
+
+[ext_resource type="Texture2D" uid="uid://d2yc8835esilv" path="res://mario_texsture/enemies.png" id="1_nx85c"]
+[ext_resource type="Script" uid="uid://c4mii5hrbm4dg" path="res://plant_entered.gd" id="2_1l26e"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1l26e"]
+radius = 7.0
+height = 22.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cad5h"]
+atlas = ExtResource("1_nx85c")
+region = Rect2(180, 36, 18, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dm3uk"]
+atlas = ExtResource("1_nx85c")
+region = Rect2(162, 36, 18, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g6sbq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cad5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dm3uk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nx85c"]
+radius = 11.0
+height = 24.0
+
+[node name="Plant_enemy" type="AnimatableBody2D" unique_id=1523414578]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1857149734]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_1l26e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1661621339]
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_g6sbq")
+autoplay = "default"
+frame_progress = 0.62050784
+
+[node name="Plant_entered" type="Area2D" parent="." unique_id=24790679]
+script = ExtResource("2_1l26e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plant_entered" unique_id=625074349]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_nx85c")
+
+[connection signal="body_entered" from="Plant_entered" to="Plant_entered" method="_on_body_entered"]

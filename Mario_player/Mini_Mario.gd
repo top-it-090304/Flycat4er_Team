@@ -9,9 +9,9 @@ var score = 0
 
 var gravity = 750.0
 
-var health = 10
+var health = 1
 
-var Mario_heat = false
+var Mario_heat = false # создано для подсчета смертей
 
 var time = 350 
 
@@ -56,24 +56,15 @@ func _physics_process(delta):
 	elif velocity.y > 0 and health > 0 and Mario_heat == false: 
 		anim.play("Fall_mini")
 	elif health <= 0 and Mario_heat == true: 
-		var tween1 = get_tree().create_tween()
-		tween1.tween_property(self, "position", position - Vector2(0, 5), 0.3)
-		velocity.x = 0
 		$CollisionShape2D.disabled = true
 		anim.play("Death_mini")
+		velocity.x = 0
+		velocity.y = -20
+		move_and_slide()
 		await anim.animation_finished
-		get_tree().change_scene_to_file.bind("res://menu.tscn").call_deferred()
-		tween1.tween_callback(queue_free)
+		get_tree().change_scene_to_file.call_deferred("res://menu.tscn")
+		queue_free()
 	elif health > 0 and Mario_heat == true:
-		Mario_heat = false
-		
+		Mario_heat = false	
 	move_and_slide()
 	
-
-
-
-
-func _on_mimi_mario_bottom_body_entered(body: Node2D) -> void:
-	if body.name == "Platform":
-		velocity.y = -10
-		

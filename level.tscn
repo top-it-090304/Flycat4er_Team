@@ -1230,6 +1230,9 @@ sources/7 = SubResource("TileSetAtlasSource_42xju")
 [sub_resource type="FontVariation" id="FontVariation_v7sqt"]
 base_font = ExtResource("16_ait7k")
 
+[sub_resource type="FontVariation" id="FontVariation_u3yai"]
+base_font = ExtResource("16_ait7k")
+
 [sub_resource type="FontVariation" id="FontVariation_4c15r"]
 base_font = ExtResource("16_ait7k")
 
@@ -1528,6 +1531,7 @@ offset_left = 1057.0
 offset_top = 603.0
 offset_right = 1137.0
 offset_bottom = 634.0
+theme_override_fonts/font = SubResource("FontVariation_u3yai")
 text = "Exit"
 
 [node name="Score" type="CanvasLayer" parent="." unique_id=977982363]
