@@ -12,6 +12,6 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Mini_Mario":
+	if body.name == "Mini_Mario" or body.is_in_group("block_under"):
 		$"../../Mario/Mini_Mario".coins += 1
 		queue_free()

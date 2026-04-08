@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://2jc8enyo57l3"]
+
+[ext_resource type="Texture2D" uid="uid://lwsgy8sdxtsy" path="res://mario_texsture/gold.png" id="1_3fd4r"]
+
+[node name="Gold_coin" type="CharacterBody2D" unique_id=2078948044]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1576130695]
+
+[node name="Gold" type="Sprite2D" parent="." unique_id=989166276]
+position = Vector2(1.4901161e-08, 0)
+scale = Vector2(0.95454544, 0.9375)
+texture = ExtResource("1_3fd4r")

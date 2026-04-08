@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://mcowce5k1qfh"]
+
+[ext_resource type="Texture2D" uid="uid://dj7sc42behc2b" path="res://mario_texsture/Block_above.png" id="1_7dhuk"]
+[ext_resource type="Script" uid="uid://mlu8eufxlnyf" path="res://block_above.gd" id="1_8efvd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7dhuk"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8efvd"]
+size = Vector2(16, 1)
+
+[node name="Block_above" type="CharacterBody2D" unique_id=722538031]
+script = ExtResource("1_8efvd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1881788274]
+texture = ExtResource("1_7dhuk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1085197097]
+shape = SubResource("RectangleShape2D_7dhuk")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1617750047]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2028685767]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_8efvd")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bjq5p4g1nfu4j"]
+
+[ext_resource type="Script" uid="uid://cj7iiwuk8gfue" path="res://block_under.gd" id="1_ap2wh"]
+[ext_resource type="Texture2D" uid="uid://bdefkhtn342lp" path="res://mario_texsture/Block_under.png" id="1_emiyw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ap2wh"]
+size = Vector2(14, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ckot5"]
+size = Vector2(6, 1)
+
+[node name="Block_under" type="CharacterBody2D" unique_id=1851158181]
+script = ExtResource("1_ap2wh")
+
+[node name="BlockUnder" type="Sprite2D" parent="." unique_id=848420807]
+position = Vector2(0, -5.684342e-14)
+scale = Vector2(1, 0.99999994)
+texture = ExtResource("1_emiyw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1548606614]
+shape = SubResource("RectangleShape2D_ap2wh")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1571492653]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1770719666]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_ckot5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

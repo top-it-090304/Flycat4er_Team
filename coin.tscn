@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0t63x"]
 radius = 5.0
-height = 16.0
+height = 14.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v7riw"]
 atlas = ExtResource("1_d5gmh")
@@ -43,7 +43,7 @@ script = ExtResource("1_0t63x")
 shape = SubResource("CapsuleShape2D_0t63x")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=909440331]
-position = Vector2(-4.7683716e-07, 1.1920929e-07)
+position = Vector2(8.077936e-28, 0)
 scale = Vector2(0.90625006, 0.996875)
 sprite_frames = SubResource("SpriteFrames_h4etq")
 autoplay = "default"

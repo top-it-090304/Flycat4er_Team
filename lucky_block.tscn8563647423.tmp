@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://s75o2j076fhq"]
+
+[ext_resource type="Script" uid="uid://ca8tlj6sc0s0j" path="res://lucky_block.gd" id="1_57uct"]
+[ext_resource type="Texture2D" uid="uid://cw7xrk4kvbrgx" path="res://mario_texsture/blocks.png" id="1_nfc46"]
+[ext_resource type="PackedScene" uid="uid://2jc8enyo57l3" path="res://gold_coin.tscn" id="2_57uct"]
+[ext_resource type="Script" uid="uid://ba447vp5h34w3" path="res://gold_coin.gd" id="3_u3npn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48m37"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eadpw"]
+atlas = ExtResource("1_nfc46")
+region = Rect2(96, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57uct"]
+atlas = ExtResource("1_nfc46")
+region = Rect2(96, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3npn"]
+atlas = ExtResource("1_nfc46")
+region = Rect2(112, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ag7bo"]
+atlas = ExtResource("1_nfc46")
+region = Rect2(128, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eadpw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eadpw")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57uct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3npn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ag7bo")
+}],
+"loop": true,
+"name": &"full",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdcyi"]
+size = Vector2(16, 1)
+
+[node name="Lucky_block" type="CharacterBody2D" unique_id=39338436]
+script = ExtResource("1_57uct")
+
+[node name="Gold_coin" parent="." unique_id=2078948044 instance=ExtResource("2_57uct")]
+script = ExtResource("3_u3npn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1998636647]
+shape = SubResource("RectangleShape2D_48m37")
+
+[node name="Lucky_block" type="AnimatedSprite2D" parent="." unique_id=1230320960]
+sprite_frames = SubResource("SpriteFrames_eadpw")
+animation = &"full"
+autoplay = "full"
+frame_progress = 0.67548484
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1422217077]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=932969341]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_gdcyi")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
