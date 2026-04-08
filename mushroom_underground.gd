@@ -11,7 +11,7 @@ var trigger = false
 var alive = true
 
 func _physics_process(delta: float) -> void:
-	print("speed: ", speed, " | direction: ", direction, " | velocity.x: ", velocity.x)
+	#print("speed: ", speed, " | direction: ", direction, " | velocity.x: ", velocity.x)
 	if trigger == true:
 		velocity.x = direction * speed
 		if not is_on_floor():
@@ -48,8 +48,15 @@ func _on_body_body_entered(body: Node2D) -> void: #туловище
 		$"../../Mario/Mini_Mario".Mario_heat = true
 		if $"../../Mario/Mini_Mario".score > 0:
 			$"../../Mario/Mini_Mario".score -= 100
-	elif body.name == "TileMap" or body.is_in_group("reverse_mush"):
-		direction *= -1 
+	elif body.name == "TileMap": # or body.is_in_group("turtle_under"):
+		direction *= -1
+	elif body.name == "Turtle_underground":
+		alive = false
+		$Body/Body_colision.disabled = true
+		$CollisionShape2D.disabled = true
+		$"../../Mario/Mini_Mario".score += 100
+		anim.play("Die")
+		queue_free()
 
 func death_mushroom_under():
 	anim.play("Die")

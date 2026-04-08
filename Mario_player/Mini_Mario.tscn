@@ -143,7 +143,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_24eo0"]
-size = Vector2(15, 15)
+size = Vector2(14, 15)
 
 [node name="Mini_Mario" type="CharacterBody2D" unique_id=779611243]
 script = ExtResource("1_24eo0")
@@ -156,15 +156,15 @@ animation = &"Fall_mini"
 autoplay = "Idle_mini"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1018610171]
-position = Vector2(-0.5, 1.5)
+position = Vector2(-1, 1.5)
 shape = SubResource("RectangleShape2D_24eo0")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=367167616]
 offset = Vector2(152, 0)
 zoom = Vector2(2.4, 2.4)
 process_callback = 0
-limit_left = -100
-limit_top = 2
+limit_left = -125
+limit_top = 333
 limit_right = 3494
 limit_bottom = 602
 position_smoothing_enabled = true

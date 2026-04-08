@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://j21iho4bpttd"]
+
+[ext_resource type="Script" uid="uid://duwhr30migywe" path="res://turtle_underground.gd" id="1_3vn2y"]
+[ext_resource type="Texture2D" uid="uid://d2yc8835esilv" path="res://mario_texsture/enemies.png" id="1_jc7ie"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3vn2y"]
+radius = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vn2y"]
+atlas = ExtResource("1_jc7ie")
+region = Rect2(126, 36, 18, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4dvvd"]
+atlas = ExtResource("1_jc7ie")
+region = Rect2(54, 36, 18, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsgdt"]
+atlas = ExtResource("1_jc7ie")
+region = Rect2(72, 36, 18, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6h3g1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vn2y")
+}],
+"loop": true,
+"name": &"Die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4dvvd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsgdt")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_stiw5"]
+size = Vector2(10, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8mmr4"]
+size = Vector2(14, 4)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4dvvd"]
+radius = 287.0157
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vn2y"]
+size = Vector2(2, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4dvvd"]
+size = Vector2(2, 8)
+
+[node name="Turtle_underground" type="CharacterBody2D" unique_id=2055345005]
+script = ExtResource("1_3vn2y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=580599609]
+shape = SubResource("CircleShape2D_3vn2y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=438867879]
+position = Vector2(2.9802322e-08, -7)
+scale = Vector2(0.72222227, 0.72222227)
+sprite_frames = SubResource("SpriteFrames_6h3g1")
+animation = &"Walk"
+autoplay = "Walk"
+
+[node name="Turtle_head" type="Area2D" parent="." unique_id=1047858084]
+
+[node name="Head_colision" type="CollisionShape2D" parent="Turtle_head" unique_id=1127032280]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_stiw5")
+
+[node name="Turle_body" type="Area2D" parent="." unique_id=2103301397]
+
+[node name="Body_colision" type="CollisionShape2D" parent="Turle_body" unique_id=1672107114]
+shape = SubResource("RectangleShape2D_8mmr4")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1713757709]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=766042569]
+visible = false
+shape = SubResource("CircleShape2D_4dvvd")
+
+[node name="Left_bounce" type="Area2D" parent="." unique_id=122588057]
+
+[node name="LB_colision" type="CollisionShape2D" parent="Left_bounce" unique_id=1776975687]
+position = Vector2(-7, 0)
+shape = SubResource("RectangleShape2D_3vn2y")
+
+[node name="Right_bounce" type="Area2D" parent="." unique_id=1959902745]
+
+[node name="RB_colision" type="CollisionShape2D" parent="Right_bounce" unique_id=1542385472]
+position = Vector2(7, 0)
+shape = SubResource("RectangleShape2D_4dvvd")
+
+[connection signal="body_entered" from="Turtle_head" to="." method="_on_turtle_head_body_entered"]
+[connection signal="body_entered" from="Turle_body" to="." method="_on_turle_body_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Left_bounce" to="." method="_on_left_bounce_body_entered"]
+[connection signal="body_entered" from="Right_bounce" to="." method="_on_right_bounce_body_entered"]
