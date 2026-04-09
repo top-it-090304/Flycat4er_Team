@@ -2117,11 +2117,12 @@ script = ExtResource("4_yl73a")
 script = ExtResource("5_xbcdb")
 
 [node name="Button" type="Button" parent="Exit" unique_id=210483479]
-offset_left = 533.0
-offset_top = 610.0
-offset_right = 613.0
-offset_bottom = 641.0
+offset_left = 540.0
+offset_top = 571.0
+offset_right = 650.9678
+offset_bottom = 614.0
 theme_override_fonts/font = SubResource("FontVariation_sgm4o")
+theme_override_font_sizes/font_size = 22
 text = "Exit"
 
 [node name="Score" type="CanvasLayer" parent="." unique_id=1601318734]

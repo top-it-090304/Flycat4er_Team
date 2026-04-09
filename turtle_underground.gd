@@ -17,7 +17,6 @@ var left_bounce = false
 var right_bounce = false
 
 func _physics_process(delta: float) -> void:
-	#print("shots: ", shots)
 	if trigger == true: 
 		velocity.x = direction * speed
 		if not is_on_floor():

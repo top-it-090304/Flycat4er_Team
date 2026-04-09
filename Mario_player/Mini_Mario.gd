@@ -21,7 +21,6 @@ var coins = 0
 @onready var anim = $AnimatedSprite2D
 
 func _physics_process(delta):
-	print(cur_lvl)
 	if not is_on_floor():
 		velocity.y += gravity * delta
 

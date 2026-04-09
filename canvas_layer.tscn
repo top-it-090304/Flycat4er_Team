@@ -10,22 +10,22 @@
 [node name="MobileControl" type="CanvasLayer" unique_id=59747483]
 
 [node name="Left" type="TouchScreenButton" parent="." unique_id=1323475155]
-position = Vector2(173, 538.99994)
-scale = Vector2(2.09375, 2.09375)
+position = Vector2(242, 502)
+scale = Vector2(3.4062505, 3.4062505)
 texture_normal = ExtResource("1_w4oxd")
 texture_pressed = ExtResource("2_fsbdh")
 action = "ui_right"
 
 [node name="Right" type="TouchScreenButton" parent="." unique_id=1513962737]
-position = Vector2(81, 538)
-scale = Vector2(2.09375, 2.09375)
+position = Vector2(58.000008, 503.00006)
+scale = Vector2(3.3437502, 3.3437502)
 texture_normal = ExtResource("3_n6wdb")
 texture_pressed = ExtResource("4_g3huw")
 action = "ui_left"
 
 [node name="Jump" type="TouchScreenButton" parent="." unique_id=104534371]
-position = Vector2(1007.99994, 540)
-scale = Vector2(2.0625, 2.0625)
+position = Vector2(984, 505.00003)
+scale = Vector2(3.3437479, 3.3437479)
 texture_normal = ExtResource("5_280g2")
 texture_pressed = ExtResource("6_5cw7b")
 action = "ui_accept"

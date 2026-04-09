@@ -11,7 +11,6 @@ var trigger = false
 var alive = true
 
 func _physics_process(delta: float) -> void:
-	#print("speed: ", speed, " | direction: ", direction, " | velocity.x: ", velocity.x)
 	if trigger == true:
 		velocity.x = direction * speed
 		if not is_on_floor():

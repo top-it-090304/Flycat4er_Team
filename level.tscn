@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://c7tws0nuyvejj" path="res://level.gd" id="1_2orkt"]
 [ext_resource type="PackedScene" uid="uid://2wxgert8xvx8" path="res://Mario_player/Mini_Mario.tscn" id="1_u52ul"]
-[ext_resource type="Texture2D" uid="uid://defupol80m1g1" path="res://Background/sky.png" id="2_4c15r"]
 [ext_resource type="Texture2D" uid="uid://c0kyhodqrws8r" path="res://Background/one_cloud.png" id="3_aicyk"]
 [ext_resource type="Texture2D" uid="uid://bd7rhl0c02mas" path="res://Background/double_cloud.png" id="4_8b0r0"]
 [ext_resource type="Texture2D" uid="uid://e8g0uxpfvoje" path="res://Background/triple_cloud.png" id="5_h6smj"]
 [ext_resource type="Texture2D" uid="uid://de7458d14mpek" path="res://Background/small_hill.png" id="7_5pxul"]
+[ext_resource type="Texture2D" uid="uid://3k02c0soilc5" path="res://Background/Sky_1920.png" id="7_aoqsc"]
 [ext_resource type="Texture2D" uid="uid://k050y4xbvyx1" path="res://Background/tall_hill.png" id="7_v5j5c"]
 [ext_resource type="PackedScene" uid="uid://dulk01e46evdl" path="res://Mushroom.tscn" id="8_km5ld"]
 [ext_resource type="Script" uid="uid://c4acv5t3r47gv" path="res://exit.gd" id="9_i2t4f"]
@@ -1688,10 +1688,10 @@ texture = SubResource("CompressedTexture2D_8b0r0")
 
 [node name="Backround" type="Node2D" parent="." unique_id=11449093]
 
-[node name="Sky" type="Sprite2D" parent="Backround" unique_id=1178934153]
-position = Vector2(1823.5001, 324.75)
-scale = Vector2(1.9056306, 0.60101944)
-texture = ExtResource("2_4c15r")
+[node name="Sky1920" type="Sprite2D" parent="Backround" unique_id=143744228]
+position = Vector2(1840.5, 345)
+scale = Vector2(2.621354, 1.0111111)
+texture = ExtResource("7_aoqsc")
 
 [node name="OneCloud" type="Sprite2D" parent="Backround" unique_id=126241151]
 position = Vector2(432.00003, 360.00003)
@@ -1956,11 +1956,12 @@ script = ExtResource("16_y3bce")
 script = ExtResource("9_i2t4f")
 
 [node name="Button" type="Button" parent="Exit" unique_id=1321516291]
-offset_left = 530.0
-offset_top = 609.0
-offset_right = 610.0
-offset_bottom = 640.0
+offset_left = 538.0
+offset_top = 570.0
+offset_right = 648.9678
+offset_bottom = 613.0
 theme_override_fonts/font = SubResource("FontVariation_u3yai")
+theme_override_font_sizes/font_size = 22
 text = "Exit"
 
 [node name="Score" type="CanvasLayer" parent="." unique_id=977982363]

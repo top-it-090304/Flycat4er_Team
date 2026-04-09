@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ceafoshr36m6n"]
 
 [ext_resource type="Script" uid="uid://dsmpwvmkff43y" path="res://background.gd" id="1_xehqc"]
-[ext_resource type="Texture2D" uid="uid://defupol80m1g1" path="res://Background/sky.png" id="2_i7s6n"]
+[ext_resource type="Texture2D" uid="uid://3k02c0soilc5" path="res://Background/Sky_1920.png" id="2_i7s6n"]
 
 [node name="Background" type="ParallaxBackground" unique_id=618884780]
 script = ExtResource("1_xehqc")
@@ -16,7 +16,7 @@ motion_mirroring = Vector2(1152, 0)
 [node name="ParallaxLayer1" type="ParallaxLayer" parent="." unique_id=22771629]
 motion_mirroring = Vector2(1152, 0)
 
-[node name="Sky" type="Sprite2D" parent="." unique_id=1401387371]
-position = Vector2(575.99994, 335.37503)
-scale = Vector2(0.6006257, 0.6202502)
+[node name="Sky1920" type="Sprite2D" parent="." unique_id=601833126]
+position = Vector2(586.49994, 280.49994)
+scale = Vector2(2.827604, 2.6361113)
 texture = ExtResource("2_i7s6n")
