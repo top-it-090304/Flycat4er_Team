@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://dg3fv35ggy2eh" path="res://coins.gd" id="7_5hnhx"]
 [ext_resource type="Script" uid="uid://bptx48h5e7uc" path="res://world.gd" id="8_78pok"]
 [ext_resource type="Script" uid="uid://dhw1blpaahiwk" path="res://lives.gd" id="9_lvfll"]
-[ext_resource type="Script" uid="uid://b52g5noc1mrvv" path="res://bottom.gd" id="10_eoq84"]
 [ext_resource type="Texture2D" uid="uid://d1wj8r3ab27q5" path="res://mario_texsture/NES - Super Mario Bros. - Miscellaneous - Tileset.png" id="10_xbcdb"]
 [ext_resource type="Texture2D" uid="uid://bnmlodxk6prxd" path="res://mario_texsture/NES - Super Mario Bros. - Miscellaneous - Tileset (1).png" id="11_yl73a"]
 [ext_resource type="Texture2D" uid="uid://cw7xrk4kvbrgx" path="res://mario_texsture/blocks.png" id="12_s77qv"]
@@ -26,6 +25,9 @@
 [ext_resource type="PackedScene" uid="uid://r0xrw50ld0e1" path="res://plant_enemy.tscn" id="21_wvr33"]
 [ext_resource type="Script" uid="uid://eqwb1ir4k3ti" path="res://bottom_for_turtle.gd" id="24_6r3eb"]
 [ext_resource type="PackedScene" uid="uid://h157jigtdvk7" path="res://lucky_block_under.tscn" id="25_2pufk"]
+[ext_resource type="Script" uid="uid://ctq1i3hcqeevn" path="res://bottom_lvl_2.gd" id="27_i6smf"]
+[ext_resource type="Script" uid="uid://cyqe827l7yttq" path="res://checkpoint_lvl_2.gd" id="27_ikghu"]
+[ext_resource type="Script" uid="uid://6g7u5cpd0kr1" path="res://upper_lvl_2.gd" id="28_i6smf"]
 
 [sub_resource type="FontVariation" id="FontVariation_jcnlr"]
 base_font = ExtResource("2_15wb7")
@@ -1477,10 +1479,7 @@ physics_layer_0/collision_layer = 1
 sources/3 = SubResource("TileSetAtlasSource_sgm4o")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i558w"]
-size = Vector2(3.651184, 49.953796)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbcdb"]
-size = Vector2(2948.5, 13)
+size = Vector2(6.021881, 49.953796)
 
 [sub_resource type="Animation" id="Animation_jcnlr"]
 length = 10.0
@@ -2077,12 +2076,21 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2pufk"]
 size = Vector2(92, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btc8u"]
+size = Vector2(69, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ikghu"]
+size = Vector2(2954, 6.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6smf"]
+size = Vector2(2952.5, 7)
+
 [node name="Level_2" type="Node2D" unique_id=886182028]
 
 [node name="Background" type="Node2D" parent="." unique_id=803978577]
 
 [node name="BlackScreen" type="Sprite2D" parent="." unique_id=1087546385]
-position = Vector2(1473.7501, 326)
+position = Vector2(1481, 326)
 scale = Vector2(1.5372783, 0.6005561)
 texture = ExtResource("1_ehv2h")
 
@@ -2108,10 +2116,10 @@ script = ExtResource("4_yl73a")
 script = ExtResource("5_xbcdb")
 
 [node name="Button" type="Button" parent="Exit" unique_id=210483479]
-offset_left = 1058.0
-offset_top = 612.0
-offset_right = 1138.0
-offset_bottom = 643.0
+offset_left = 533.0
+offset_top = 610.0
+offset_right = 613.0
+offset_bottom = 641.0
 theme_override_fonts/font = SubResource("FontVariation_sgm4o")
 text = "Exit"
 
@@ -2198,13 +2206,13 @@ position = Vector2(1238, 442)
 position = Vector2(1263, 442)
 
 [node name="Mushroom_underground11" parent="Enemies" unique_id=882769633 groups=["mushroom_under"] instance=ExtResource("12_wvr33")]
-position = Vector2(1493, 506)
+position = Vector2(1500, 506)
 
 [node name="Mushroom_underground12" parent="Enemies" unique_id=672754497 groups=["mushroom_under"] instance=ExtResource("12_wvr33")]
 position = Vector2(1533, 506)
 
 [node name="Mushroom_underground13" parent="Enemies" unique_id=2018035189 groups=["mushroom_under"] instance=ExtResource("12_wvr33")]
-position = Vector2(1571, 506)
+position = Vector2(1566, 506)
 
 [node name="Mushroom_underground14" parent="Enemies" unique_id=1243233342 groups=["mushroom_under"] instance=ExtResource("12_wvr33")]
 position = Vector2(1763, 506)
@@ -2248,22 +2256,8 @@ scale = Vector2(3.3362877, 0.6005561)
 script = ExtResource("15_5kfcu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit_lvl_2" unique_id=1320021253]
-position = Vector2(-153.46407, 219.7963)
+position = Vector2(-159.47235, 219.79633)
 shape = SubResource("RectangleShape2D_i558w")
-
-[node name="Bottom" type="Area2D" parent="." unique_id=664704358]
-script = ExtResource("10_eoq84")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom" unique_id=506486642]
-position = Vector2(1469.75, 650)
-shape = SubResource("RectangleShape2D_xbcdb")
-
-[node name="Bottom2" type="Area2D" parent="." unique_id=1922922812]
-script = ExtResource("10_eoq84")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom2" unique_id=1212073123]
-position = Vector2(1469.75, 331)
-shape = SubResource("RectangleShape2D_xbcdb")
 
 [node name="Collectibles" type="Node2D" parent="." unique_id=1665701688]
 
@@ -2415,9 +2409,31 @@ position = Vector2(731, 457)
 [node name="Block_under2" parent="Blocks_underground" unique_id=1851158181 groups=["block_under"] instance=ExtResource("15_btc8u")]
 position = Vector2(651, 457)
 
+[node name="Checkpoint_lvl_2" type="Area2D" parent="." unique_id=826145023]
+script = ExtResource("27_ikghu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint_lvl_2" unique_id=2055557851]
+position = Vector2(70.5, 374)
+shape = SubResource("RectangleShape2D_btc8u")
+
+[node name="Bottom_lvl_2" type="Area2D" parent="." unique_id=1345594181]
+script = ExtResource("27_i6smf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom_lvl_2" unique_id=1473348344]
+position = Vector2(1479, 653.75)
+shape = SubResource("RectangleShape2D_ikghu")
+
+[node name="Upper_lvl_2" type="Area2D" parent="." unique_id=311460844]
+script = ExtResource("28_i6smf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Upper_lvl_2" unique_id=1675619324]
+position = Vector2(1478.75, 333.5)
+shape = SubResource("RectangleShape2D_i6smf")
+
 [connection signal="timeout" from="Time/Timer" to="Time/Timer" method="_on_timeout"]
 [connection signal="pressed" from="Exit/Button" to="Exit" method="_on_button_pressed"]
 [connection signal="body_entered" from="Exit_lvl_2" to="Exit_lvl_2" method="_on_body_entered"]
-[connection signal="body_entered" from="Bottom" to="Bottom" method="_on_body_entered"]
-[connection signal="body_entered" from="Bottom2" to="Bottom2" method="_on_body_entered"]
 [connection signal="body_entered" from="Bottom_for_turtle" to="Bottom_for_turtle" method="_on_body_entered"]
+[connection signal="body_entered" from="Checkpoint_lvl_2" to="Checkpoint_lvl_2" method="_on_body_entered"]
+[connection signal="body_entered" from="Bottom_lvl_2" to="Bottom_lvl_2" method="_on_body_entered"]
+[connection signal="body_entered" from="Upper_lvl_2" to="Upper_lvl_2" method="_on_body_entered"]

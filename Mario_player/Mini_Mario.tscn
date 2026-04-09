@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b2vyfil6jcllq" path="res://Mario_player/Mini_Mario.gd" id="1_24eo0"]
 [ext_resource type="Texture2D" uid="uid://bdu1ylvr1s2up" path="res://mario_texsture/mario_and_items.png" id="2_cx3od"]
+[ext_resource type="PackedScene" uid="uid://dy5t7fcbch4nu" path="res://canvas_layer.tscn" id="3_cx3od"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_24eo0"]
 atlas = ExtResource("2_cx3od")
@@ -169,3 +170,5 @@ limit_right = 3494
 limit_bottom = 602
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
+
+[node name="MobileControl" parent="." unique_id=59747483 instance=ExtResource("3_cx3od")]

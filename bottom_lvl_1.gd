@@ -12,6 +12,5 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Mini_Mario":
-		body.cur_lvl += 1
-		get_tree().change_scene_to_file("res://level_3.tscn")
+	if body.name =="Mini_Mario":
+		get_tree().change_scene_to_file("res://level.tscn")

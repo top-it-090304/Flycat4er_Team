@@ -9,3 +9,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	text = "TIME" + '\n' + str($"../../Mario/Mini_Mario".time)
+
+
+func _on_checkpoint_lvl_2_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

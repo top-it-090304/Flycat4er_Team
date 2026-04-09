@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cw7xrk4kvbrgx" path="res://mario_texsture/blocks.png" id="14_5pxul"]
 [ext_resource type="Texture2D" uid="uid://7fvwsljff6hw" path="res://mario_texsture/NES - Super Mario Bros. - Miscellaneous - Tileset (2).png" id="14_ait7k"]
 [ext_resource type="Texture2D" uid="uid://bk5cnoswyryk5" path="res://mario_texsture/Bright-.png" id="14_fj6e6"]
+[ext_resource type="Script" uid="uid://b52g5noc1mrvv" path="res://bottom.gd" id="14_h6smj"]
 [ext_resource type="Texture2D" uid="uid://dqjwv4n020u7j" path="res://Super Mango Platformer Assets by JuhoSprite/Grass_Oneway.png" id="14_v5j5c"]
 [ext_resource type="Texture2D" uid="uid://d1wj8r3ab27q5" path="res://mario_texsture/NES - Super Mario Bros. - Miscellaneous - Tileset.png" id="15_fedht"]
 [ext_resource type="Texture2D" uid="uid://bnmlodxk6prxd" path="res://mario_texsture/NES - Super Mario Bros. - Miscellaneous - Tileset (1).png" id="16_4c15r"]
@@ -27,7 +28,7 @@
 [ext_resource type="Script" uid="uid://bptx48h5e7uc" path="res://world.gd" id="19_ilwjd"]
 [ext_resource type="PackedScene" uid="uid://mcowce5k1qfh" path="res://block_above.tscn" id="26_2h3vt"]
 [ext_resource type="PackedScene" uid="uid://s75o2j076fhq" path="res://lucky_block_above.tscn" id="27_yjxuc"]
-[ext_resource type="Script" uid="uid://cjj34lg7w785t" path="res://bottom_lvl_1.gd" id="28_hvubb"]
+[ext_resource type="Script" uid="uid://bav0u1ftetufk" path="res://checkppoint_lvl_1.gd" id="29_aoqsc"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8b0r0"]
 
@@ -1674,8 +1675,11 @@ base_font = ExtResource("16_ait7k")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8b0r0"]
 size = Vector2(17.75, 28)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aoqsc"]
-size = Vector2(3667, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5j5c"]
+size = Vector2(3647, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvubb"]
+size = Vector2(13, 30.25)
 
 [node name="Level" type="Node2D" unique_id=636935181]
 script = ExtResource("1_2orkt")
@@ -1887,7 +1891,7 @@ texture = ExtResource("7_5pxul")
 [node name="Mario" type="Node2D" parent="." unique_id=811075618]
 
 [node name="Mini_Mario" parent="Mario" unique_id=779611243 instance=ExtResource("1_u52ul")]
-position = Vector2(97, 519)
+position = Vector2(3267, 507)
 
 [node name="Mobs" type="Node2D" parent="." unique_id=511531558]
 
@@ -1955,10 +1959,10 @@ script = ExtResource("16_y3bce")
 script = ExtResource("9_i2t4f")
 
 [node name="Button" type="Button" parent="Exit" unique_id=1321516291]
-offset_left = 530.0
-offset_top = 609.0
-offset_right = 610.0
-offset_bottom = 640.0
+offset_left = 1058.0
+offset_top = 603.0
+offset_right = 1138.0
+offset_bottom = 634.0
 theme_override_fonts/font = SubResource("FontVariation_u3yai")
 text = "Exit"
 
@@ -2021,6 +2025,13 @@ script = ExtResource("13_8b0r0")
 position = Vector2(3320, 512)
 shape = SubResource("RectangleShape2D_8b0r0")
 
+[node name="Bottom" type="Area2D" parent="." unique_id=2041345343]
+script = ExtResource("14_h6smj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom" unique_id=2002757707]
+position = Vector2(1819, 650)
+shape = SubResource("RectangleShape2D_v5j5c")
+
 [node name="Blocks" type="Node2D" parent="." unique_id=215365427]
 position = Vector2(443, 473)
 
@@ -2072,14 +2083,15 @@ position = Vector2(29, -67)
 [node name="Lucky_block3" parent="Blocks" unique_id=2097793124 instance=ExtResource("27_yjxuc")]
 position = Vector2(45, -1)
 
-[node name="Bottom_lvl_1" type="Area2D" parent="." unique_id=2080663822]
-script = ExtResource("28_hvubb")
+[node name="Checkppoint_lvl_1" type="Area2D" parent="." unique_id=973692430]
+script = ExtResource("29_aoqsc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom_lvl_1" unique_id=1577772088]
-position = Vector2(1832, 659)
-shape = SubResource("RectangleShape2D_aoqsc")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkppoint_lvl_1" unique_id=1189639952]
+position = Vector2(3303.5, 512)
+shape = SubResource("RectangleShape2D_hvubb")
 
 [connection signal="timeout" from="Time/Timer" to="Time/Timer" method="_on_timeout"]
 [connection signal="pressed" from="Exit/Button" to="Exit" method="_on_button_pressed"]
 [connection signal="body_entered" from="Exit_area" to="Exit_area" method="_on_body_entered"]
-[connection signal="body_entered" from="Bottom_lvl_1" to="Bottom_lvl_1" method="_on_body_entered"]
+[connection signal="body_entered" from="Bottom" to="." method="_on_bottom_body_entered"]
+[connection signal="body_entered" from="Checkppoint_lvl_1" to="Checkppoint_lvl_1" method="_on_body_entered"]

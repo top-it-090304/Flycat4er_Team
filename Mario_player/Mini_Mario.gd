@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var cur_lvl = 1
 
 const SPEED = 100.0
 
@@ -20,6 +21,7 @@ var coins = 0
 @onready var anim = $AnimatedSprite2D
 
 func _physics_process(delta):
+	print(cur_lvl)
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
@@ -62,7 +64,12 @@ func _physics_process(delta):
 		velocity.y = -20
 		move_and_slide()
 		await anim.animation_finished
-		get_tree().change_scene_to_file.call_deferred("res://menu.tscn")
+		if cur_lvl == 1:
+			get_tree().change_scene_to_file.call_deferred("res://level.tscn")
+		elif cur_lvl == 2:
+			get_tree().change_scene_to_file.call_deferred("res://level_2.tscn")
+		elif cur_lvl == 3:
+			get_tree().change_scene_to_file.call_deferred("res://level_3.tscn")
 		queue_free()
 	elif health > 0 and Mario_heat == true:
 		Mario_heat = false	
