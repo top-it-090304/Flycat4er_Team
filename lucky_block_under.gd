@@ -21,6 +21,8 @@ func _physics_process(delta: float) -> void:
 	if cnt_hits == 0:
 		anim.play("full")
 	if is_moving:
+		if !$AudioStreamPlayer2D.playing:
+			$AudioStreamPlayer2D.play()
 		anim.play("empty")
 		if moving_up:
 			# Двигаемся вверх

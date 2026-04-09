@@ -2431,9 +2431,10 @@ script = ExtResource("28_i6smf")
 position = Vector2(1478.75, 333.5)
 shape = SubResource("RectangleShape2D_i6smf")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1564914301]
+[node name="Level_2_main_sound" type="AudioStreamPlayer" parent="." unique_id=526410317]
 stream = ExtResource("29_d4rhq")
 autoplay = true
+bus = &"Main_level"
 
 [connection signal="timeout" from="Time/Timer" to="Time/Timer" method="_on_timeout"]
 [connection signal="pressed" from="Exit/Button" to="Exit" method="_on_button_pressed"]

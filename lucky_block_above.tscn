@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ca8tlj6sc0s0j" path="res://lucky_block.gd" id="1_57uct"]
 [ext_resource type="Texture2D" uid="uid://cw7xrk4kvbrgx" path="res://mario_texsture/blocks.png" id="1_nfc46"]
+[ext_resource type="AudioStream" uid="uid://bikatg7ymeepc" path="res://sounds/coin.mp3" id="3_fqtgm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48m37"]
 size = Vector2(14, 16)
@@ -67,5 +68,8 @@ frame_progress = 0.67548484
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=932969341]
 position = Vector2(0, 8.5)
 shape = SubResource("RectangleShape2D_gdcyi")
+
+[node name="Coin_hit" type="AudioStreamPlayer2D" parent="." unique_id=1039199925]
+stream = ExtResource("3_fqtgm")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

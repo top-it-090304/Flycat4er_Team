@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bdu1ylvr1s2up" path="res://mario_texsture/mario_and_items.png" id="2_cx3od"]
 [ext_resource type="PackedScene" uid="uid://dy5t7fcbch4nu" path="res://canvas_layer.tscn" id="3_cx3od"]
 [ext_resource type="AudioStream" uid="uid://begup5p0f6486" path="res://sounds/maro-jump-sound-effect_1.mp3" id="4_31t6w"]
+[ext_resource type="AudioStream" uid="uid://b5le37dvq4c62" path="res://sounds/mario_death.mp3" id="5_ayhlc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_24eo0"]
 atlas = ExtResource("2_cx3od")
@@ -177,3 +178,6 @@ drag_horizontal_enabled = true
 [node name="MoveSound" type="AudioStreamPlayer2D" parent="." unique_id=336702121]
 stream = ExtResource("4_31t6w")
 volume_db = -12.085
+
+[node name="Death_Sound" type="AudioStreamPlayer2D" parent="." unique_id=1684731831]
+stream = ExtResource("5_ayhlc")

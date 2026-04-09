@@ -21,6 +21,8 @@ func _physics_process(delta: float) -> void:
 	if cnt_hits == 0:
 		anim.play("full")
 	if is_moving:
+		if !$Coin_hit.playing:
+			$Coin_hit.play()
 		anim.play("empty")
 		if moving_up:
 			# Двигаемся вверх

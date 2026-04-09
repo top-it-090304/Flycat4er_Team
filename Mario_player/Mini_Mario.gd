@@ -60,11 +60,18 @@ func _physics_process(delta):
 		anim.play("Fall_mini")
 	elif health <= 0 and Mario_heat == true: 
 		$CollisionShape2D.disabled = true
+		if cur_lvl == 1:
+			$"../../Level_1_main_sound".playing = 0
+		if cur_lvl == 2:
+			$"../../Level_2_main_sound".playing = 0
+		if !$Death_Sound.playing:
+			$Death_Sound.play()
 		anim.play("Death_mini")
 		velocity.x = 0
-		velocity.y = -20
+		velocity.y = -5
 		move_and_slide()
 		await anim.animation_finished
+		await $Death_Sound.finished
 		if cur_lvl == 1:
 			get_tree().change_scene_to_file.call_deferred("res://level.tscn")
 		elif cur_lvl == 2:
