@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d2yc8835esilv" path="res://mario_texsture/enemies.png" id="1_dyrla"]
 [ext_resource type="Script" uid="uid://d2nd4qtl4m1fn" path="res://mushroom_underground.gd" id="1_e3q11"]
+[ext_resource type="AudioStream" uid="uid://c4cj4wtat7jb0" path="res://sounds/Mario_shot (mp3cut.net).mp3" id="3_nlfmi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e3q11"]
 radius = 7.0
@@ -79,6 +80,9 @@ shape = SubResource("RectangleShape2D_e3q11")
 [node name="Body_colision" type="CollisionShape2D" parent="Body" unique_id=1876171695]
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_nlfmi")
+
+[node name="Dead_sound" type="AudioStreamPlayer2D" parent="." unique_id=202379121]
+stream = ExtResource("3_nlfmi")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

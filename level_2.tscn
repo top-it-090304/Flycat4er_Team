@@ -28,6 +28,7 @@
 [ext_resource type="Script" uid="uid://ctq1i3hcqeevn" path="res://bottom_lvl_2.gd" id="27_i6smf"]
 [ext_resource type="Script" uid="uid://cyqe827l7yttq" path="res://checkpoint_lvl_2.gd" id="27_ikghu"]
 [ext_resource type="Script" uid="uid://6g7u5cpd0kr1" path="res://upper_lvl_2.gd" id="28_i6smf"]
+[ext_resource type="AudioStream" uid="uid://cg8jpifeomix0" path="res://sounds/OST — Super Mario Bros - Level_2.mp3" id="29_d4rhq"]
 
 [sub_resource type="FontVariation" id="FontVariation_jcnlr"]
 base_font = ExtResource("2_15wb7")
@@ -2429,6 +2430,10 @@ script = ExtResource("28_i6smf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Upper_lvl_2" unique_id=1675619324]
 position = Vector2(1478.75, 333.5)
 shape = SubResource("RectangleShape2D_i6smf")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1564914301]
+stream = ExtResource("29_d4rhq")
+autoplay = true
 
 [connection signal="timeout" from="Time/Timer" to="Time/Timer" method="_on_timeout"]
 [connection signal="pressed" from="Exit/Button" to="Exit" method="_on_button_pressed"]

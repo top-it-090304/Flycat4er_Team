@@ -44,6 +44,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_turtle_head_body_entered(body: Node2D) -> void: #голова
 	if body.name == "Mini_Mario":
+		if !$Dead_sound.playing:
+				$Dead_sound.play()
 		alive = false
 		body.velocity.y -= 125
 		if shots < 1:
@@ -65,6 +67,8 @@ func _on_turle_body_body_entered(body: Node2D) -> void: # туловище
 
 func _on_left_bounce_body_entered(body: Node2D) -> void:
 	if body.name == "Mini_Mario" and shots == 1:
+		if !$Dead_sound.playing:
+				$Dead_sound.play()
 		$"../../Mario/Mini_Mario".score += 100
 		left_bounce = true
 		shots += 1
@@ -72,14 +76,20 @@ func _on_left_bounce_body_entered(body: Node2D) -> void:
 		$"../../Mario/Mini_Mario".health -= 1
 		$"../../Mario/Mini_Mario".Mario_heat = true
 	elif (body.name == "TileMap") and direction < 0:
+		if !$Dead_sound.playing:
+				$Dead_sound.play()
 		direction *= -1
 		$AnimatedSprite2D.flip_h = false 
 	elif (body.name == "TileMap") and direction > 0:
+		if !$Dead_sound.playing:
+				$Dead_sound.play()
 		direction *= -1
 		$AnimatedSprite2D.flip_h = true
 
 func _on_right_bounce_body_entered(body: Node2D) -> void:
 	if body.name == "Mini_Mario" and shots == 1: # первый удар марио по боку
+		if !$Dead_sound.playing:
+				$Dead_sound.play()
 		$"../../Mario/Mini_Mario".score += 100
 		right_bounce = true
 		shots += 1
@@ -87,8 +97,12 @@ func _on_right_bounce_body_entered(body: Node2D) -> void:
 		$"../../Mario/Mini_Mario".health -= 1
 		$"../../Mario/Mini_Mario".Mario_heat = true
 	elif (body.name == "TileMap") and direction < 0:
+		if !$Dead_sound.playing:
+				$Dead_sound.play()
 		direction *= -1
 		$AnimatedSprite2D.flip_h = false 
 	elif (body.name == "TileMap") and direction > 0:
+		if !$Dead_sound.playing:
+				$Dead_sound.play()
 		direction *= -1
 		$AnimatedSprite2D.flip_h = true

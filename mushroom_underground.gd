@@ -38,6 +38,8 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		
 func _on_head_body_entered(body: Node2D) -> void: #голова 
 	if body.name == "Mini_Mario":
+		if !$Dead_sound.playing:
+				$Dead_sound.play()
 		body.velocity.y -= 125
 		$"../../Mario/Mini_Mario".score += 100
 		alive = false
@@ -51,11 +53,14 @@ func _on_body_body_entered(body: Node2D) -> void: #туловище
 	elif body.name == "TileMap": # or body.is_in_group("turtle_under"):
 		direction *= -1
 	elif body.name == "Turtle_underground":
+		if !$Dead_sound.playing:
+				$Dead_sound.play()
 		alive = false
-		$Body/Body_colision.disabled = true
-		$CollisionShape2D.disabled = true
+		$Body/Body_colision.set_deferred("disabled", true)
+		$CollisionShape2D.set_deferred("disabled", true)
 		$"../../Mario/Mini_Mario".score += 100
 		anim.play("Die")
+		await $Dead_sound.finished
 		queue_free()
 
 func death_mushroom_under():

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://duwhr30migywe" path="res://turtle_underground.gd" id="1_3vn2y"]
 [ext_resource type="Texture2D" uid="uid://d2yc8835esilv" path="res://mario_texsture/enemies.png" id="1_jc7ie"]
+[ext_resource type="AudioStream" uid="uid://c4cj4wtat7jb0" path="res://sounds/Mario_shot (mp3cut.net).mp3" id="3_4dvvd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3vn2y"]
 radius = 6.0
@@ -96,6 +97,12 @@ shape = SubResource("RectangleShape2D_3vn2y")
 [node name="RB_colision" type="CollisionShape2D" parent="Right_bounce" unique_id=1542385472]
 position = Vector2(7, 0)
 shape = SubResource("RectangleShape2D_4dvvd")
+
+[node name="Dead_sound" type="AudioStreamPlayer2D" parent="." unique_id=2027217508]
+stream = ExtResource("3_4dvvd")
+
+[node name="Timer" type="Timer" parent="Dead_sound" unique_id=429108271]
+wait_time = 0.1
 
 [connection signal="body_entered" from="Turtle_head" to="." method="_on_turtle_head_body_entered"]
 [connection signal="body_entered" from="Turle_body" to="." method="_on_turle_body_body_entered"]

@@ -18,6 +18,8 @@ func _physics_process(delta: float) -> void: #обновление 60 раз в 
 		if alive == true: 
 			anim.play("Walk")
 		if alive == false: 
+			if !$Dead_mush_sound.playing:
+				$Dead_mush_sound.play()
 			velocity.x = 0
 			death_mashroom()
 	elif trigger == false: 
