@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dd24nbggxj0r5" path="res://Background/3_level_soon (1).png" id="1_16pka"]
 [ext_resource type="Script" uid="uid://c3jpx6sbk5o4i" path="res://canvas_layer.gd" id="2_16pka"]
 [ext_resource type="FontFile" uid="uid://r16tnnr8sddv" path="res://font/vertopal.com_Bm437_Master_512.ttf" id="3_j8bo8"]
+[ext_resource type="AudioStream" uid="uid://cxtsr6fkvbut7" path="res://sounds/TheFatRat — Time Lapse (www.lightaudio.ru).mp3" id="4_j8bo8"]
 
 [node name="level_3" type="Node2D" unique_id=1129231773]
 
@@ -22,5 +23,10 @@ offset_bottom = 482.0
 theme_override_fonts/font = ExtResource("3_j8bo8")
 theme_override_font_sizes/font_size = 27
 text = "Exit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1641488961]
+stream = ExtResource("4_j8bo8")
+autoplay = true
+bus = &"Main_level"
 
 [connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer" method="_on_button_pressed"]
