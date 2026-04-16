@@ -1834,6 +1834,26 @@ position = Vector2(905.00006, 376)
 scale = Vector2(0.096629664, 0.09662964)
 texture = ExtResource("3_833wy")
 
+[node name="DoubleCloud4" type="Sprite2D" parent="Background" unique_id=634351488]
+position = Vector2(1135.0001, 360)
+scale = Vector2(0.096629664, 0.09662964)
+texture = ExtResource("3_833wy")
+
+[node name="DoubleCloud5" type="Sprite2D" parent="Background" unique_id=682808155]
+position = Vector2(1715.0001, 378.99997)
+scale = Vector2(0.096629664, 0.09662964)
+texture = ExtResource("3_833wy")
+
+[node name="DoubleCloud6" type="Sprite2D" parent="Background" unique_id=1197895685]
+position = Vector2(1955.0001, 357.99997)
+scale = Vector2(0.096629664, 0.09662964)
+texture = ExtResource("3_833wy")
+
+[node name="DoubleCloud7" type="Sprite2D" parent="Background" unique_id=1162010978]
+position = Vector2(2499, 373)
+scale = Vector2(0.096629664, 0.09662964)
+texture = ExtResource("3_833wy")
+
 [node name="OneCloud" type="Sprite2D" parent="Background" unique_id=65850368]
 position = Vector2(199, 444.99994)
 scale = Vector2(0.096473, 0.096472986)
@@ -1856,6 +1876,46 @@ texture = ExtResource("4_ghrvs")
 
 [node name="OneCloud5" type="Sprite2D" parent="Background" unique_id=588984104]
 position = Vector2(985.00006, 441.99997)
+scale = Vector2(0.096473, 0.096472986)
+texture = ExtResource("4_ghrvs")
+
+[node name="OneCloud6" type="Sprite2D" parent="Background" unique_id=651320343]
+position = Vector2(1288, 507.99997)
+scale = Vector2(0.096473, 0.096472986)
+texture = ExtResource("4_ghrvs")
+
+[node name="OneCloud7" type="Sprite2D" parent="Background" unique_id=993742387]
+position = Vector2(1403, 442.99997)
+scale = Vector2(0.096473, 0.096472986)
+texture = ExtResource("4_ghrvs")
+
+[node name="OneCloud8" type="Sprite2D" parent="Background" unique_id=385466362]
+position = Vector2(1453.0001, 426.99997)
+scale = Vector2(0.096473, 0.096472986)
+texture = ExtResource("4_ghrvs")
+
+[node name="OneCloud9" type="Sprite2D" parent="Background" unique_id=398726659]
+position = Vector2(1620.0001, 510)
+scale = Vector2(0.096473, 0.096472986)
+texture = ExtResource("4_ghrvs")
+
+[node name="OneCloud10" type="Sprite2D" parent="Background" unique_id=1961969832]
+position = Vector2(2104, 505.99994)
+scale = Vector2(0.096473, 0.096472986)
+texture = ExtResource("4_ghrvs")
+
+[node name="OneCloud11" type="Sprite2D" parent="Background" unique_id=764553049]
+position = Vector2(2217, 451.99997)
+scale = Vector2(0.096473, 0.096472986)
+texture = ExtResource("4_ghrvs")
+
+[node name="OneCloud12" type="Sprite2D" parent="Background" unique_id=808859653]
+position = Vector2(2265, 435.99997)
+scale = Vector2(0.096473, 0.096472986)
+texture = ExtResource("4_ghrvs")
+
+[node name="OneCloud13" type="Sprite2D" parent="Background" unique_id=1685065513]
+position = Vector2(2600, 441.99997)
 scale = Vector2(0.096473, 0.096472986)
 texture = ExtResource("4_ghrvs")
 
