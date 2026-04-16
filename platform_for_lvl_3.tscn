@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bh328xajfxkar"]
+
+[ext_resource type="Texture2D" uid="uid://eounu223hikn" path="res://Mario_player/Super Mango Platformer Assets by JuhoSprite/Platform.png" id="1_4fxch"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_062r3"]
+size = Vector2(50, 6)
+
+[node name="Platform_for_lvl_3" type="AnimatableBody2D" unique_id=1944343599]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1497842259]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_062r3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=969151409]
+modulate = Color(1, 0.6313726, 0.03137255, 1)
+position = Vector2(0, 8.940697e-08)
+scale = Vector2(1.0416667, 0.49999997)
+texture = ExtResource("1_4fxch")

@@ -2137,6 +2137,7 @@ theme_override_font_sizes/font_size = 20
 text = "SCORE"
 horizontal_alignment = 1
 script = ExtResource("6_s77qv")
+metadata/_edit_use_anchors_ = true
 
 [node name="Coins" type="CanvasLayer" parent="." unique_id=392406137]
 
@@ -2150,6 +2151,7 @@ theme_override_font_sizes/font_size = 20
 text = "COINS"
 horizontal_alignment = 1
 script = ExtResource("7_5hnhx")
+metadata/_edit_use_anchors_ = true
 
 [node name="World" type="CanvasLayer" parent="." unique_id=1482648457]
 
@@ -2163,6 +2165,7 @@ theme_override_font_sizes/font_size = 20
 text = "WORLD"
 horizontal_alignment = 1
 script = ExtResource("8_78pok")
+metadata/_edit_use_anchors_ = true
 
 [node name="Lives" type="CanvasLayer" parent="." unique_id=713202256]
 
@@ -2176,6 +2179,7 @@ theme_override_font_sizes/font_size = 20
 text = "LIVES"
 horizontal_alignment = 1
 script = ExtResource("9_lvfll")
+metadata/_edit_use_anchors_ = true
 
 [node name="Enemies" type="Node2D" parent="." unique_id=978080146]
 script = ExtResource("20_cuxq2")
