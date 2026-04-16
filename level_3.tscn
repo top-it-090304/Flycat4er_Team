@@ -4,9 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://3k02c0soilc5" path="res://Background/Sky_1920.png" id="1_1jdk1"]
 [ext_resource type="Script" uid="uid://c3jpx6sbk5o4i" path="res://canvas_layer.gd" id="2_16pka"]
 [ext_resource type="PackedScene" uid="uid://s75o2j076fhq" path="res://lucky_block_above.tscn" id="2_b60u5"]
+[ext_resource type="Texture2D" uid="uid://bd7rhl0c02mas" path="res://Background/double_cloud.png" id="3_833wy"]
 [ext_resource type="FontFile" uid="uid://r16tnnr8sddv" path="res://font/vertopal.com_Bm437_Master_512.ttf" id="3_j8bo8"]
 [ext_resource type="Texture2D" uid="uid://cw7xrk4kvbrgx" path="res://mario_texsture/blocks.png" id="3_kmy7e"]
 [ext_resource type="Texture2D" uid="uid://bnmlodxk6prxd" path="res://mario_texsture/NES - Super Mario Bros. - Miscellaneous - Tileset (1).png" id="4_6p2dc"]
+[ext_resource type="Texture2D" uid="uid://c0kyhodqrws8r" path="res://Background/one_cloud.png" id="4_ghrvs"]
 [ext_resource type="Texture2D" uid="uid://7fvwsljff6hw" path="res://mario_texsture/NES - Super Mario Bros. - Miscellaneous - Tileset (2).png" id="5_fmu3g"]
 [ext_resource type="Script" uid="uid://bqmuus45vub3y" path="res://platforms_lvl_3.gd" id="7_7ds5r"]
 [ext_resource type="PackedScene" uid="uid://bh328xajfxkar" path="res://platform_for_lvl_3.tscn" id="7_fmu3g"]
@@ -1816,6 +1818,46 @@ texture = ExtResource("1_1jdk1")
 
 [node name="Lucky_block" parent="Background" unique_id=39338436 instance=ExtResource("2_b60u5")]
 position = Vector2(999, 481)
+
+[node name="DoubleCloud" type="Sprite2D" parent="Background" unique_id=95373927]
+position = Vector2(109, 391.15625)
+scale = Vector2(0.096629664, 0.09662964)
+texture = ExtResource("3_833wy")
+
+[node name="DoubleCloud2" type="Sprite2D" parent="Background" unique_id=1144461734]
+position = Vector2(353, 382)
+scale = Vector2(0.096629664, 0.09662964)
+texture = ExtResource("3_833wy")
+
+[node name="DoubleCloud3" type="Sprite2D" parent="Background" unique_id=1554834269]
+position = Vector2(905.00006, 376)
+scale = Vector2(0.096629664, 0.09662964)
+texture = ExtResource("3_833wy")
+
+[node name="OneCloud" type="Sprite2D" parent="Background" unique_id=65850368]
+position = Vector2(199, 444.99994)
+scale = Vector2(0.096473, 0.096472986)
+texture = ExtResource("4_ghrvs")
+
+[node name="OneCloud2" type="Sprite2D" parent="Background" unique_id=1739127397]
+position = Vector2(632, 443.99997)
+scale = Vector2(0.096473, 0.096472986)
+texture = ExtResource("4_ghrvs")
+
+[node name="OneCloud3" type="Sprite2D" parent="Background" unique_id=2047583772]
+position = Vector2(680.00006, 427.99997)
+scale = Vector2(0.096473, 0.096472986)
+texture = ExtResource("4_ghrvs")
+
+[node name="OneCloud4" type="Sprite2D" parent="Background" unique_id=1545381791]
+position = Vector2(808, 506.99997)
+scale = Vector2(0.096473, 0.096472986)
+texture = ExtResource("4_ghrvs")
+
+[node name="OneCloud5" type="Sprite2D" parent="Background" unique_id=588984104]
+position = Vector2(985.00006, 441.99997)
+scale = Vector2(0.096473, 0.096472986)
+texture = ExtResource("4_ghrvs")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1476147156]
 tile_set = SubResource("TileSet_b60u5")
