@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b2vyfil6jcllq" path="res://Mario_player/Mini_Mario.gd" id="1_24eo0"]
 [ext_resource type="Texture2D" uid="uid://bdu1ylvr1s2up" path="res://mario_texsture/mario_and_items.png" id="2_cx3od"]
-[ext_resource type="PackedScene" uid="uid://dy5t7fcbch4nu" path="res://canvas_layer.tscn" id="3_cx3od"]
+[ext_resource type="PackedScene" uid="uid://dy5t7fcbch4nu" path="res://MobileControl.tscn" id="3_cx3od"]
 [ext_resource type="AudioStream" uid="uid://begup5p0f6486" path="res://sounds/maro-jump-sound-effect_1.mp3" id="4_31t6w"]
 [ext_resource type="AudioStream" uid="uid://b5le37dvq4c62" path="res://sounds/mario_death.mp3" id="5_ayhlc"]
 
@@ -166,7 +166,7 @@ shape = SubResource("RectangleShape2D_24eo0")
 offset = Vector2(152, 0)
 zoom = Vector2(2.4, 2.4)
 process_callback = 0
-limit_left = -125
+limit_left = -120
 limit_top = 333
 limit_right = 3494
 limit_bottom = 602
@@ -174,6 +174,7 @@ position_smoothing_enabled = true
 drag_horizontal_enabled = true
 
 [node name="MobileControl" parent="." unique_id=59747483 instance=ExtResource("3_cx3od")]
+visible = false
 
 [node name="MoveSound" type="AudioStreamPlayer2D" parent="." unique_id=336702121]
 stream = ExtResource("4_31t6w")

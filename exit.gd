@@ -1,5 +1,5 @@
 extends CanvasLayer
 
 func _on_button_pressed() -> void:
-	$"../Mario/Mini_Mario".cur_lvl = 1
+	$"../Mini_Mario"
 	get_tree().change_scene_to_file("res://menu.tscn")
