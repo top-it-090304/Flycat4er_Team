@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://1abej4lptldv" path="res://coin_above.gd" id="1_k6yj5"]
 [ext_resource type="Texture2D" uid="uid://cw7xrk4kvbrgx" path="res://mario_texsture/blocks.png" id="1_luajl"]
+[ext_resource type="AudioStream" uid="uid://bikatg7ymeepc" path="res://sounds/coin.mp3" id="3_5hgfk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k6yj5"]
 radius = 5.0
@@ -47,6 +48,10 @@ position = Vector2(-9.62965e-35, 0)
 scale = Vector2(0.90625006, 0.996875)
 sprite_frames = SubResource("SpriteFrames_fjbad")
 autoplay = "default"
-frame_progress = 0.21520782
+frame = 2
+frame_progress = 0.30085564
+
+[node name="Counter_sound" type="AudioStreamPlayer2D" parent="." unique_id=1380828243]
+stream = ExtResource("3_5hgfk")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
