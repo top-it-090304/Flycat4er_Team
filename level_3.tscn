@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bh328xajfxkar" path="res://platform_for_lvl_3.tscn" id="7_fmu3g"]
 [ext_resource type="PackedScene" uid="uid://dulk01e46evdl" path="res://Mushroom.tscn" id="9_joegk"]
 [ext_resource type="Script" uid="uid://cgirhwhearksk" path="res://platforms_2_lvl_3.gd" id="9_liaj6"]
+[ext_resource type="PackedScene" uid="uid://c8oyulajb5hp" path="res://turtle_above_fly.tscn" id="10_wnq0t"]
 [ext_resource type="PackedScene" uid="uid://dvghtpygklvt0" path="res://turtle_above.tscn" id="14_jvy75"]
 [ext_resource type="Script" uid="uid://rk5whtr7dh2b" path="res://dead_for_mario_lvl_3.gd" id="15_g0tlw"]
 [ext_resource type="Script" uid="uid://csa44e28uvuii" path="res://dead_for_turtle_lvl_3.gd" id="16_keufu"]
@@ -1948,6 +1949,9 @@ position = Vector2(745, 377)
 
 [node name="Mushroom2" parent="Enemies" unique_id=1522988731 instance=ExtResource("9_joegk")]
 position = Vector2(770, 377)
+
+[node name="Turtle_above_fly" parent="Enemies" unique_id=1777313360 instance=ExtResource("10_wnq0t")]
+position = Vector2(1240, 474)
 
 [node name="Mario" type="Node2D" parent="." unique_id=1872322227]
 
