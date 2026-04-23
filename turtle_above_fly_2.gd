@@ -10,9 +10,9 @@ var direction = -1
 
 func _physics_process(delta: float) -> void:
 	if alive == true: 
-		if position.y <= 380:
+		if position.y <= 410:
 			direction *= -1
-		elif position.y >= 490:  
+		elif position.y >= 520:  
 			direction *= -1
 		velocity.y = speed * direction
 		anim.play("Fly")

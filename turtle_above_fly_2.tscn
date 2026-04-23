@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://cgwgi2w4emoby"]
+
+[ext_resource type="Script" uid="uid://c45uw3squgjf0" path="res://turtle_above_fly_2.gd" id="1_op3et"]
+[ext_resource type="Texture2D" uid="uid://d2yc8835esilv" path="res://mario_texsture/enemies.png" id="2_8rutl"]
+[ext_resource type="AudioStream" uid="uid://c4cj4wtat7jb0" path="res://sounds/Mario_shot (mp3cut.net).mp3" id="3_i4kph"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oc5ky"]
+radius = 7.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vv1e3"]
+atlas = ExtResource("2_8rutl")
+region = Rect2(126, 0, 18, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trtyu"]
+atlas = ExtResource("2_8rutl")
+region = Rect2(90, 0, 18, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jqaq"]
+atlas = ExtResource("2_8rutl")
+region = Rect2(108, 0, 18, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mh4vn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vv1e3")
+}],
+"loop": true,
+"name": &"Die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trtyu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jqaq")
+}],
+"loop": true,
+"name": &"Fly",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3dkf"]
+size = Vector2(18, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eei23"]
+size = Vector2(17.5, 12)
+
+[node name="Turtle_above_fly_2" type="CharacterBody2D" unique_id=645564864]
+script = ExtResource("1_op3et")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1056602699]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_oc5ky")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1981424684]
+position = Vector2(-0.7500001, -8.5)
+scale = Vector2(0.8055555, 0.8055555)
+sprite_frames = SubResource("SpriteFrames_mh4vn")
+animation = &"Fly"
+autoplay = "Fly"
+
+[node name="Turtle_fly_head" type="Area2D" parent="." unique_id=687272724]
+
+[node name="Head_collision" type="CollisionShape2D" parent="Turtle_fly_head" unique_id=12281267]
+position = Vector2(0, -10.5)
+shape = SubResource("RectangleShape2D_i3dkf")
+
+[node name="Turtle_fly_body" type="Area2D" parent="." unique_id=1636585617]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Turtle_fly_body" unique_id=1307293630]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_eei23")
+
+[node name="Hit_sound" type="AudioStreamPlayer2D" parent="." unique_id=438303240]
+stream = ExtResource("3_i4kph")
+
+[connection signal="body_entered" from="Turtle_fly_head" to="." method="_on_turtle_fly_head_body_entered"]
+[connection signal="body_entered" from="Turtle_fly_body" to="." method="_on_turtle_fly_body_body_entered"]

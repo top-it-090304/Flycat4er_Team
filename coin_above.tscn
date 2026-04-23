@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cormne8hbs0tj"]
+
+[ext_resource type="Script" uid="uid://1abej4lptldv" path="res://coin_above.gd" id="1_k6yj5"]
+[ext_resource type="Texture2D" uid="uid://cw7xrk4kvbrgx" path="res://mario_texsture/blocks.png" id="1_luajl"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k6yj5"]
+radius = 5.0
+height = 14.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hgfk"]
+atlas = ExtResource("1_luajl")
+region = Rect2(144, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4j30"]
+atlas = ExtResource("1_luajl")
+region = Rect2(160, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pytv0"]
+atlas = ExtResource("1_luajl")
+region = Rect2(176, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fjbad"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hgfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4j30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pytv0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="Coin_above" type="Area2D" unique_id=377504814]
+script = ExtResource("1_k6yj5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1926612408]
+shape = SubResource("CapsuleShape2D_k6yj5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=754615977]
+position = Vector2(-9.62965e-35, 0)
+scale = Vector2(0.90625006, 0.996875)
+sprite_frames = SubResource("SpriteFrames_fjbad")
+autoplay = "default"
+frame_progress = 0.21520782
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
