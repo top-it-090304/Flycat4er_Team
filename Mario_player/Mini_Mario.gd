@@ -21,6 +21,7 @@ var coins = 0
 @onready var anim = $AnimatedSprite2D
 
 func _physics_process(delta):
+	print(cur_lvl)
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
@@ -63,6 +64,8 @@ func _physics_process(delta):
 			$"../../Level_1_main_sound".playing = 0
 		if cur_lvl == 2:
 			$"../../Level_2_main_sound".playing = 0
+		if cur_lvl == 3: 
+			pass
 		if !$Death_Sound.playing:
 			$Death_Sound.play()
 		anim.play("Death_mini")

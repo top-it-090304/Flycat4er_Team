@@ -10,9 +10,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
 func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Mini_Mario":
-		$"../Mario/Mini_Mario".cur_lvl = 2
-
-		
+	if body.name == "Turtle_above":
+		queue_free()

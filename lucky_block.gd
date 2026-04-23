@@ -51,3 +51,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			is_moving = true
 			moving_up = true
 			cnt_hits += 1
+
+
+func _on_checkpoint_lvl_3_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

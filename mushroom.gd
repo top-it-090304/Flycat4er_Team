@@ -18,8 +18,8 @@ func _physics_process(delta: float) -> void: #обновление 60 раз в 
 		if alive == true: 
 			anim.play("Walk")
 		if alive == false: 
-			if !$Dead_mush_sound.playing:
-				$Dead_mush_sound.play()
+			if !$Dead_sound.playing:
+				$Dead_sound.play()
 			velocity.x = 0
 			death_mashroom()
 	elif trigger == false: 
@@ -33,6 +33,16 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		body.velocity.y = -125
 		$"../../Mario/Mini_Mario".score += 100
 		alive = false
+	elif body.name == "Turtle_above":
+		alive = false
+		if !$Dead_sound.playing:
+				$Dead_sound.play()
+		$Site/Death.set_deferred("disabled", true)
+		$CollisionShape2D.set_deferred("disabled", true)
+		$"../../Mario/Mini_Mario".score += 100
+		anim.play("Die")
+		await $Dead_sound.finished
+		queue_free()
 
 func _on_site_body_entered(body: Node2D) -> void:
 	if body.name == "Mini_Mario": 
@@ -42,6 +52,16 @@ func _on_site_body_entered(body: Node2D) -> void:
 			$"../../Mario/Mini_Mario".score -= 100
 	elif body.name == "TileMap" or body.is_in_group("mushroom_above"): 
 		direction *= -1
+	elif body.name == "Turtle_above":
+		alive = false
+		if !$Dead_sound.playing:
+				$Dead_sound.play()
+		$Site/Death.set_deferred("disabled", true)
+		$CollisionShape2D.set_deferred("disabled", true)
+		$"../../Mario/Mini_Mario".score += 100
+		anim.play("Die")
+		await $Dead_sound.finished
+		queue_free()
 
 func _on_trigger_body_entered(body: Node2D) -> void:
 	if body.name == "Mini_Mario":

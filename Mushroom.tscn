@@ -81,7 +81,7 @@ visible = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1271143923]
 shape = SubResource("CircleShape2D_rs2b5")
 
-[node name="Dead_mush_sound" type="AudioStreamPlayer2D" parent="." unique_id=1538110552]
+[node name="Dead_sound" type="AudioStreamPlayer2D" parent="." unique_id=1538110552]
 stream = ExtResource("3_lnt1q")
 
 [connection signal="body_entered" from="Head" to="." method="_on_area_2d_body_entered"]
