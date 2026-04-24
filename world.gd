@@ -8,4 +8,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	text = "WORLD" + '\n' + "1-1"
+	text = "WORLD" + '\n' + "1-" +str($"../../Mario/Mini_Mario".cur_lvl)
