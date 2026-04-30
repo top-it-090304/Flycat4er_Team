@@ -2090,8 +2090,8 @@ size = Vector2(2952.5, 7)
 
 [node name="Background" type="Node2D" parent="." unique_id=803978577]
 
-[node name="BlackScreen" type="Sprite2D" parent="." unique_id=1087546385]
-position = Vector2(1481, 326)
+[node name="BlackScreen" type="Sprite2D" parent="Background" unique_id=1087546385]
+position = Vector2(1474, 324)
 scale = Vector2(1.5372783, 0.6005561)
 texture = ExtResource("1_ehv2h")
 

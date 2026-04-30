@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://da43a11mlq46a"]
 
+[ext_resource type="Texture2D" uid="uid://btrpubtwumhly" path="res://Background/Black_screen.png" id="1_5pu08"]
+
 [node name="Level_4" type="Node2D" unique_id=1759702770]
 
-[node name="Label" type="Label" parent="." unique_id=1942671728]
-offset_left = 407.0
-offset_top = 259.0
-offset_right = 761.0
-offset_bottom = 397.0
-theme_override_font_sizes/font_size = 101
-text = "Level_4"
+[node name="Background" type="Node2D" parent="." unique_id=904346224]
+
+[node name="BlackScreen" type="Sprite2D" parent="Background" unique_id=548048494]
+position = Vector2(1474, 324)
+scale = Vector2(1.5372783, 0.6005561)
+texture = ExtResource("1_5pu08")
