@@ -13,6 +13,9 @@
 [ext_resource type="Script" uid="uid://dhw1blpaahiwk" path="res://lives.gd" id="7_2vyst"]
 [ext_resource type="Texture2D" uid="uid://bev6fardb5t76" path="res://mario_texsture/Tiles11.png" id="9_lj1an"]
 [ext_resource type="Texture2D" uid="uid://21fejpdyd605" path="res://mario_texsture/Снимок экрана 2026-05-07 231304.png" id="10_rrs1j"]
+[ext_resource type="PackedScene" uid="uid://beg531xlvd12r" path="res://clear_block.tscn" id="14_45t7y"]
+[ext_resource type="Script" uid="uid://bgfel4y446nvp" path="res://death_for_mario_lvl_4.gd" id="14_xxbfp"]
+[ext_resource type="Script" uid="uid://c6qsik0gnkqfp" path="res://checkpoint_lvl_4.gd" id="15_0yqnl"]
 
 [sub_resource type="FontVariation" id="FontVariation_i4yqx"]
 base_font = ExtResource("1_lj1an")
@@ -820,6 +823,12 @@ sources/6 = SubResource("TileSetAtlasSource_c8stx")
 sources/1 = SubResource("TileSetAtlasSource_rrs1j")
 sources/3 = SubResource("TileSetAtlasSource_xxbfp")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrs1j"]
+size = Vector2(218.5, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45t7y"]
+size = Vector2(3, 35.5)
+
 [node name="Level_4" type="Node2D" unique_id=1759702770]
 
 [node name="Time" type="CanvasLayer" parent="." unique_id=891270544]
@@ -900,9 +909,14 @@ metadata/_edit_use_anchors_ = true
 [node name="Background" type="Node2D" parent="." unique_id=904346224]
 
 [node name="BlackScreen" type="Sprite2D" parent="Background" unique_id=548048494]
-position = Vector2(1304.3751, 324)
-scale = Vector2(1.3604014, 0.6005561)
+position = Vector2(1307.6876, 324)
+scale = Vector2(1.3642465, 0.6005561)
 texture = ExtResource("1_5pu08")
+
+[node name="Mario" type="Node2D" parent="." unique_id=1766444839]
+
+[node name="Mini_Mario" parent="Mario" unique_id=779611243 instance=ExtResource("5_c8stx")]
+position = Vector2(1628, 483)
 
 [node name="TileMap" type="TileMap" parent="." unique_id=2104094045]
 tile_set = SubResource("TileSet_aqy51")
@@ -944,9 +958,45 @@ position = Vector2(1496, 504)
 [node name="Empty_block_castle10" parent="Collectibles" unique_id=684008407 instance=ExtResource("4_l45re")]
 position = Vector2(1368, 504)
 
-[node name="Mario" type="Node2D" parent="." unique_id=1766444839]
+[node name="Clear_block" parent="Collectibles" unique_id=199279598 instance=ExtResource("14_45t7y")]
+position = Vector2(1733, 440)
 
-[node name="Mini_Mario" parent="Mario" unique_id=779611243 instance=ExtResource("5_c8stx")]
-position = Vector2(45, 455)
+[node name="Clear_block3" parent="Collectibles" unique_id=1172384932 instance=ExtResource("14_45t7y")]
+position = Vector2(1823, 440)
+
+[node name="Clear_block5" parent="Collectibles" unique_id=326079497 instance=ExtResource("14_45t7y")]
+position = Vector2(1778, 504)
+
+[node name="Death_for_Mario_lvl4" type="Area2D" parent="." unique_id=1852620157]
+script = ExtResource("14_xxbfp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Death_for_Mario_lvl4" unique_id=675752143]
+position = Vector2(500.5, 590)
+shape = SubResource("RectangleShape2D_rrs1j")
+
+[node name="Death_for_Mario_lvl6" type="Area2D" parent="." unique_id=1740829670]
+script = ExtResource("14_xxbfp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Death_for_Mario_lvl6" unique_id=685168644]
+position = Vector2(2168, 575)
+shape = SubResource("RectangleShape2D_rrs1j")
+
+[node name="Death_for_Mario_lvl5" type="Area2D" parent="." unique_id=712830882]
+script = ExtResource("14_xxbfp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Death_for_Mario_lvl5" unique_id=2022260074]
+position = Vector2(240, 559)
+shape = SubResource("RectangleShape2D_rrs1j")
+
+[node name="Checkpoint_lvl4" type="Area2D" parent="." unique_id=1566503466]
+script = ExtResource("15_0yqnl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint_lvl4" unique_id=98119804]
+position = Vector2(44, 447)
+shape = SubResource("RectangleShape2D_45t7y")
 
 [connection signal="timeout" from="Time/Timer" to="Time/Timer" method="_on_timeout"]
+[connection signal="body_entered" from="Death_for_Mario_lvl4" to="Death_for_Mario_lvl4" method="_on_body_entered"]
+[connection signal="body_entered" from="Death_for_Mario_lvl6" to="Death_for_Mario_lvl6" method="_on_body_entered"]
+[connection signal="body_entered" from="Death_for_Mario_lvl5" to="Death_for_Mario_lvl5" method="_on_body_entered"]
+[connection signal="body_entered" from="Checkpoint_lvl4" to="Checkpoint_lvl4" method="_on_body_entered"]

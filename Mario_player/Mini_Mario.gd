@@ -60,11 +60,13 @@ func _physics_process(delta):
 		anim.play("Fall_mini")
 	elif health <= 0 and Mario_heat == true: 
 		$CollisionShape2D.disabled = true
-		if cur_lvl == 1:
+		if cur_lvl == 1: # выключение основной музыки после смерти
 			$"../../Level_1_main_sound".playing = 0
 		if cur_lvl == 2:
 			$"../../Level_2_main_sound".playing = 0
 		if cur_lvl == 3: 
+			pass
+		if cur_lvl == 4:
 			pass
 		if !$Death_Sound.playing:
 			$Death_Sound.play()
@@ -74,12 +76,14 @@ func _physics_process(delta):
 		move_and_slide()
 		await anim.animation_finished
 		await $Death_Sound.finished
-		if cur_lvl == 1:
+		if cur_lvl == 1: #смена сцен после смерти от моба
 			get_tree().change_scene_to_file.call_deferred("res://level.tscn")
 		elif cur_lvl == 2:
 			get_tree().change_scene_to_file.call_deferred("res://level_2.tscn")
 		elif cur_lvl == 3:
 			get_tree().change_scene_to_file.call_deferred("res://level_3.tscn")
+		elif cur_lvl == 4:
+			get_tree().change_scene_to_file.call_deferred("res://level_4.tscn")
 		queue_free()
 	elif health > 0 and Mario_heat == true:
 		Mario_heat = false	
