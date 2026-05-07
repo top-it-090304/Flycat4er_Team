@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cel6rs6gwha6l"]
+
+[ext_resource type="Texture2D" uid="uid://h413cuiijvlx" path="res://mario_texsture/EmptyBlockCastle.png" id="1_idvax"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6j33k"]
+size = Vector2(16, 16)
+
+[node name="Empty_block_castle" type="CharacterBody2D" unique_id=1597222059]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=472239164]
+shape = SubResource("RectangleShape2D_6j33k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1975709369]
+
+[node name="EmptyBlockCastle" type="Sprite2D" parent="." unique_id=784781051]
+texture = ExtResource("1_idvax")
