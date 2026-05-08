@@ -1,33 +1,33 @@
 [gd_scene format=3 uid="uid://s75o2j076fhq"]
 
 [ext_resource type="Script" uid="uid://ca8tlj6sc0s0j" path="res://lucky_block.gd" id="1_57uct"]
-[ext_resource type="Texture2D" uid="uid://cw7xrk4kvbrgx" path="res://mario_texsture/blocks.png" id="1_nfc46"]
 [ext_resource type="AudioStream" uid="uid://bikatg7ymeepc" path="res://sounds/coin.mp3" id="3_fqtgm"]
+[ext_resource type="Texture2D" uid="uid://bjgrlek6gh88j" path="res://mario_texsture/output-onlinetools (1).png" id="3_r1oqe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48m37"]
 size = Vector2(14, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_eadpw"]
-atlas = ExtResource("1_nfc46")
-region = Rect2(96, 16, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fqtgm"]
+atlas = ExtResource("3_r1oqe")
+region = Rect2(57, 17, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_57uct"]
-atlas = ExtResource("1_nfc46")
-region = Rect2(96, 16, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxfk7"]
+atlas = ExtResource("3_r1oqe")
+region = Rect2(6, 17, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u3npn"]
-atlas = ExtResource("1_nfc46")
-region = Rect2(112, 16, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0te1"]
+atlas = ExtResource("3_r1oqe")
+region = Rect2(23, 17, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ag7bo"]
-atlas = ExtResource("1_nfc46")
-region = Rect2(128, 16, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ni7m2"]
+atlas = ExtResource("3_r1oqe")
+region = Rect2(40, 17, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eadpw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_eadpw")
+"texture": SubResource("AtlasTexture_fqtgm")
 }],
 "loop": true,
 "name": &"empty",
@@ -35,17 +35,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_57uct")
+"texture": SubResource("AtlasTexture_oxfk7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u3npn")
+"texture": SubResource("AtlasTexture_b0te1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ag7bo")
+"texture": SubResource("AtlasTexture_ni7m2")
 }],
 "loop": true,
 "name": &"full",
-"speed": 3.0
+"speed": 2.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gdcyi"]
@@ -61,7 +61,7 @@ shape = SubResource("RectangleShape2D_48m37")
 sprite_frames = SubResource("SpriteFrames_eadpw")
 animation = &"full"
 autoplay = "full"
-frame_progress = 0.67548484
+frame_progress = 0.62333184
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1422217077]
 

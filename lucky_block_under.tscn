@@ -1,30 +1,41 @@
 [gd_scene format=3 uid="uid://h157jigtdvk7"]
 
-[ext_resource type="Texture2D" uid="uid://cw7xrk4kvbrgx" path="res://mario_texsture/blocks.png" id="1_0qpaw"]
 [ext_resource type="Script" uid="uid://bpjpw44mrli" path="res://lucky_block_under.gd" id="1_dmxmf"]
+[ext_resource type="Texture2D" uid="uid://bjgrlek6gh88j" path="res://mario_texsture/output-onlinetools (1).png" id="3_fcmqb"]
 [ext_resource type="AudioStream" uid="uid://bikatg7ymeepc" path="res://sounds/coin.mp3" id="3_o0sol"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dmxmf"]
-atlas = ExtResource("1_0qpaw")
-region = Rect2(96, 48, 16, 16)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dmxmf"]
+size = Vector2(14, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o0sol"]
-atlas = ExtResource("1_0qpaw")
-region = Rect2(96, 48, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fcmqb"]
-atlas = ExtResource("1_0qpaw")
-region = Rect2(112, 48, 16, 16)
+atlas = ExtResource("3_fcmqb")
+region = Rect2(153, 17, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xc4vg"]
-atlas = ExtResource("1_0qpaw")
-region = Rect2(128, 48, 16, 16)
+atlas = ExtResource("3_fcmqb")
+region = Rect2(102, 17, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyymi"]
+atlas = ExtResource("3_fcmqb")
+region = Rect2(119, 17, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnawx"]
+atlas = ExtResource("3_fcmqb")
+region = Rect2(136, 17, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fcmqb"]
+atlas = ExtResource("3_fcmqb")
+region = Rect2(119, 17, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lg0u7"]
+atlas = ExtResource("3_fcmqb")
+region = Rect2(102, 17, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uyymi"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dmxmf")
+"texture": SubResource("AtlasTexture_o0sol")
 }],
 "loop": true,
 "name": &"empty",
@@ -32,21 +43,24 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o0sol")
+"texture": SubResource("AtlasTexture_xc4vg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uyymi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnawx")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fcmqb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xc4vg")
+"texture": SubResource("AtlasTexture_lg0u7")
 }],
 "loop": true,
 "name": &"full",
-"speed": 3.0
+"speed": 6.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dmxmf"]
-size = Vector2(14, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnawx"]
 size = Vector2(4, 1)
@@ -54,15 +68,14 @@ size = Vector2(4, 1)
 [node name="Lucky_block_under" type="CharacterBody2D" unique_id=1854858529]
 script = ExtResource("1_dmxmf")
 
-[node name="Lucky_block" type="AnimatedSprite2D" parent="." unique_id=1647608292]
-modulate = Color(0.7764706, 0.8745098, 0.96862745, 1)
-sprite_frames = SubResource("SpriteFrames_uyymi")
-animation = &"full"
-autoplay = "full"
-frame_progress = 0.6063194
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=28183455]
 shape = SubResource("RectangleShape2D_dmxmf")
+
+[node name="Lucky_block" type="AnimatedSprite2D" parent="." unique_id=1647608292]
+sprite_frames = SubResource("SpriteFrames_uyymi")
+animation = &"empty"
+autoplay = "full"
+frame_progress = 0.24620886
 
 [node name="Area2D" type="Area2D" parent="." unique_id=510892102]
 

@@ -9,3 +9,5 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	text = "LIVES" + '\n' + str($"../../Mario/Mini_Mario".health)
+	if $"../../Mario/Mini_Mario".health == 0: 
+		text = "LIVES" + '\n' + str(0)

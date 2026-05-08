@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://b4k5j37jt22hr"]
+
+[ext_resource type="Script" uid="uid://dw3ra0xylw1w0" path="res://fireball_6_down_right.gd" id="1_6q7fx"]
+[ext_resource type="Texture2D" uid="uid://dy6y1xlcfhj7t" path="res://mario_texsture/smb1_misc_sprites (1).png" id="2_416wf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdani"]
+atlas = ExtResource("2_416wf")
+region = Rect2(348, 945, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nix7o"]
+atlas = ExtResource("2_416wf")
+region = Rect2(313, 945, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4vqi"]
+atlas = ExtResource("2_416wf")
+region = Rect2(324, 945, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lk87q"]
+atlas = ExtResource("2_416wf")
+region = Rect2(336, 945, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vsw6w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdani")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nix7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4vqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lk87q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5df3x"]
+radius = 4.0
+
+[node name="Fireball_7_down_right" type="Node2D" unique_id=1744675597]
+script = ExtResource("1_6q7fx")
+
+[node name="Fireball_1" type="Area2D" parent="." unique_id=1452467392]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fireball_1" unique_id=1611723415]
+sprite_frames = SubResource("SpriteFrames_vsw6w")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fireball_1" unique_id=1319787225]
+shape = SubResource("CircleShape2D_5df3x")
+
+[node name="Fireball_2" type="Area2D" parent="." unique_id=2143482534]
+position = Vector2(0, 18)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fireball_2" unique_id=677892355]
+sprite_frames = SubResource("SpriteFrames_vsw6w")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fireball_2" unique_id=1444440378]
+shape = SubResource("CircleShape2D_5df3x")
+
+[node name="Fireball_7" type="Area2D" parent="." unique_id=1479647939]
+position = Vector2(0, 9)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fireball_7" unique_id=409598174]
+sprite_frames = SubResource("SpriteFrames_vsw6w")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fireball_7" unique_id=1221291849]
+shape = SubResource("CircleShape2D_5df3x")
+
+[node name="Fireball_3" type="Area2D" parent="." unique_id=1055196139]
+position = Vector2(0, 27)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fireball_3" unique_id=615629972]
+sprite_frames = SubResource("SpriteFrames_vsw6w")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fireball_3" unique_id=1506074375]
+shape = SubResource("CircleShape2D_5df3x")
+
+[node name="Fireball_4" type="Area2D" parent="." unique_id=1399800388]
+position = Vector2(0, 36)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fireball_4" unique_id=1064799640]
+sprite_frames = SubResource("SpriteFrames_vsw6w")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fireball_4" unique_id=1863769125]
+shape = SubResource("CircleShape2D_5df3x")
+
+[node name="Fireball_5" type="Area2D" parent="." unique_id=1814800164]
+position = Vector2(0, 45)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fireball_5" unique_id=2092689345]
+sprite_frames = SubResource("SpriteFrames_vsw6w")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fireball_5" unique_id=1667488567]
+shape = SubResource("CircleShape2D_5df3x")
+
+[node name="Fireball_6" type="Area2D" parent="." unique_id=1425932879]
+position = Vector2(0, 54)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fireball_6" unique_id=1355599089]
+sprite_frames = SubResource("SpriteFrames_vsw6w")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fireball_6" unique_id=1103347129]
+shape = SubResource("CircleShape2D_5df3x")
+
+[connection signal="body_entered" from="Fireball_1" to="." method="_on_fireball_1_body_entered"]
+[connection signal="body_entered" from="Fireball_2" to="." method="_on_fireball_2_body_entered"]
+[connection signal="body_entered" from="Fireball_7" to="." method="_on_fireball_7_body_entered"]
+[connection signal="body_entered" from="Fireball_3" to="." method="_on_fireball_3_body_entered"]
+[connection signal="body_entered" from="Fireball_4" to="." method="_on_fireball_4_body_entered"]
+[connection signal="body_entered" from="Fireball_5" to="." method="_on_fireball_5_body_entered"]
+[connection signal="body_entered" from="Fireball_6" to="." method="_on_fireball_6_body_entered"]
