@@ -1565,7 +1565,7 @@ sources/9 = SubResource("TileSetAtlasSource_nogox")
 size = Vector2(218.5, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_45t7y"]
-size = Vector2(3, 35.5)
+size = Vector2(3, 34.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6d0cq"]
 size = Vector2(16, 16)
@@ -1653,14 +1653,14 @@ metadata/_edit_use_anchors_ = true
 [node name="Background" type="Node2D" parent="." unique_id=904346224]
 
 [node name="BlackScreen" type="Sprite2D" parent="Background" unique_id=548048494]
-position = Vector2(1586, 324.00003)
+position = Vector2(1587, 324)
 scale = Vector2(1.6541319, 0.6005561)
 texture = ExtResource("1_5pu08")
 
 [node name="Mario" type="Node2D" parent="." unique_id=1766444839]
 
 [node name="Mini_Mario" parent="Mario" unique_id=779611243 instance=ExtResource("5_c8stx")]
-position = Vector2(2303, 484)
+position = Vector2(2309, 487)
 
 [node name="TileMap" type="TileMap" parent="." unique_id=2104094045]
 tile_set = SubResource("TileSet_aqy51")
@@ -1806,7 +1806,7 @@ shape = SubResource("RectangleShape2D_rrs1j")
 script = ExtResource("15_0yqnl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint_lvl4" unique_id=98119804]
-position = Vector2(2303, 476)
+position = Vector2(2309, 478.625)
 shape = SubResource("RectangleShape2D_45t7y")
 
 [node name="Break_Bridge" type="Area2D" parent="." unique_id=1376384037]
@@ -1820,7 +1820,7 @@ shape = SubResource("RectangleShape2D_6d0cq")
 script = ExtResource("28_hu802")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Telepotr_to_end" unique_id=1798148216]
-position = Vector2(2368, 479.25)
+position = Vector2(2413, 479.25)
 shape = SubResource("RectangleShape2D_vmpu5")
 
 [connection signal="timeout" from="Time/Timer" to="Time/Timer" method="_on_timeout"]

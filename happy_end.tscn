@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dx0jy54vdd5dv"]
+
+[ext_resource type="Texture2D" uid="uid://cjxymfwkqciji" path="res://Background/Happy_end.png" id="1_yh5o7"]
+
+[node name="Happy_end" type="Node2D" unique_id=452553880]
+
+[node name="HappyEnd" type="Sprite2D" parent="." unique_id=951887231]
+position = Vector2(576, 324.00003)
+scale = Vector2(0.6, 0.6000001)
+texture = ExtResource("1_yh5o7")
