@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://urxvvuiec7jp"]
+
+[ext_resource type="Texture2D" uid="uid://dyekdbgri2wlj" path="res://mario_texsture/Bridge.png" id="1_an2wo"]
+[ext_resource type="Script" uid="uid://3op8je2b6om5" path="res://bridge.gd" id="1_jvmcf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvmcf"]
+size = Vector2(16, 16)
+
+[node name="Bridge" type="CharacterBody2D" unique_id=24322721]
+script = ExtResource("1_jvmcf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=261644892]
+shape = SubResource("RectangleShape2D_jvmcf")
+
+[node name="Bridge" type="Sprite2D" parent="." unique_id=1824656037]
+texture = ExtResource("1_an2wo")

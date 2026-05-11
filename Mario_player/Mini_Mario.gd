@@ -18,6 +18,8 @@ var time = 350
 
 var coins = 0
 
+var break_bridge = false
+
 @onready var anim = $AnimatedSprite2D
 
 func _physics_process(delta):

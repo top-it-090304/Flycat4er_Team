@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://carf0l2miblwi"]
+
+[ext_resource type="Script" uid="uid://bds3f8suxfvst" path="res://character_body_2d.gd" id="1_hkmv0"]
+[ext_resource type="Texture2D" uid="uid://d2yc8835esilv" path="res://mario_texsture/enemies.png" id="2_bc5fw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6uij"]
+atlas = ExtResource("2_bc5fw")
+region = Rect2(630, 72, 35, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce0i5"]
+atlas = ExtResource("2_bc5fw")
+region = Rect2(665, 72, 35, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fukyl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6uij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ce0i5")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 2.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_58uvn"]
+radius = 15.0
+height = 36.97697
+
+[node name="Bowser" type="CharacterBody2D" unique_id=603352479]
+script = ExtResource("1_hkmv0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=13629462]
+sprite_frames = SubResource("SpriteFrames_fukyl")
+animation = &"Walk"
+autoplay = "Walk"
+frame_progress = 0.7902875
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1842430787]
+position = Vector2(3, 0)
+shape = SubResource("CapsuleShape2D_58uvn")

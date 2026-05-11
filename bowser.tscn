@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://carf0l2miblwi"]
+
+[ext_resource type="Script" uid="uid://bds3f8suxfvst" path="res://character_body_2d.gd" id="1_hkmv0"]
+[ext_resource type="Texture2D" uid="uid://d2yc8835esilv" path="res://mario_texsture/enemies.png" id="2_bc5fw"]
+[ext_resource type="PackedScene" uid="uid://f66jv08japtk" path="res://firebullet.tscn" id="2_f6uij"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6uij"]
+atlas = ExtResource("2_bc5fw")
+region = Rect2(630, 72, 35, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce0i5"]
+atlas = ExtResource("2_bc5fw")
+region = Rect2(665, 72, 35, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fukyl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6uij")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ce0i5")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 2.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_58uvn"]
+radius = 10.684701
+height = 37.747047
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bc5fw"]
+radius = 672.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bc5fw"]
+radius = 13.684701
+height = 37.747047
+
+[node name="Bowser" type="CharacterBody2D" unique_id=603352479]
+script = ExtResource("1_hkmv0")
+move_range_start = 2100.0
+move_range_end = 2200.0
+jump_chance = 0.013
+change_dir_chance = 0.004
+firebullet_scene = ExtResource("2_f6uij")
+shoot_interval = 1.7
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=13629462]
+sprite_frames = SubResource("SpriteFrames_fukyl")
+animation = &"Walk"
+autoplay = "Walk"
+frame_progress = 0.7902875
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1842430787]
+skew = -0.30543262
+shape = SubResource("CapsuleShape2D_58uvn")
+
+[node name="Trigger" type="Area2D" parent="." unique_id=273363214]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger" unique_id=1767169902]
+visible = false
+shape = SubResource("CircleShape2D_bc5fw")
+
+[node name="Death" type="Area2D" parent="." unique_id=678692290]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Death" unique_id=811309432]
+skew = -0.30543262
+shape = SubResource("CapsuleShape2D_bc5fw")
+
+[connection signal="body_entered" from="Trigger" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Death" to="." method="_on_death_body_entered"]

@@ -17,3 +17,7 @@ func _on_checkpoint_lvl_2_body_entered(body: Node2D) -> void:
 
 func _on_exit_lvl_4_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.
+
+
+func _on_break_bridge_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

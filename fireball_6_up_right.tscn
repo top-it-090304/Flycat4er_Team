@@ -64,49 +64,5 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fireball_2" unique_id=1334469918]
 shape = SubResource("CircleShape2D_ggvmj")
 
-[node name="Fireball_3" type="Area2D" parent="." unique_id=834739520]
-position = Vector2(0, -18)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fireball_3" unique_id=344447434]
-sprite_frames = SubResource("SpriteFrames_vagcb")
-autoplay = "default"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fireball_3" unique_id=1982747218]
-shape = SubResource("CircleShape2D_ggvmj")
-
-[node name="Fireball_4" type="Area2D" parent="." unique_id=67915158]
-position = Vector2(0, -27)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fireball_4" unique_id=1292822321]
-sprite_frames = SubResource("SpriteFrames_vagcb")
-autoplay = "default"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fireball_4" unique_id=664195832]
-shape = SubResource("CircleShape2D_ggvmj")
-
-[node name="Fireball_5" type="Area2D" parent="." unique_id=1631153035]
-position = Vector2(0, -36)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fireball_5" unique_id=495565910]
-sprite_frames = SubResource("SpriteFrames_vagcb")
-autoplay = "default"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fireball_5" unique_id=1101732420]
-shape = SubResource("CircleShape2D_ggvmj")
-
-[node name="Fireball_6" type="Area2D" parent="." unique_id=1839987887]
-position = Vector2(0, -45)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fireball_6" unique_id=601015576]
-sprite_frames = SubResource("SpriteFrames_vagcb")
-autoplay = "default"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fireball_6" unique_id=122132445]
-shape = SubResource("CircleShape2D_ggvmj")
-
 [connection signal="body_entered" from="Fireball_1" to="." method="_on_fireball_1_body_entered"]
 [connection signal="body_entered" from="Fireball_2" to="." method="_on_fireball_2_body_entered"]
-[connection signal="body_entered" from="Fireball_3" to="." method="_on_fireball_3_body_entered"]
-[connection signal="body_entered" from="Fireball_4" to="." method="_on_fireball_4_body_entered"]
-[connection signal="body_entered" from="Fireball_5" to="." method="_on_fireball_5_body_entered"]
-[connection signal="body_entered" from="Fireball_6" to="." method="_on_fireball_6_body_entered"]

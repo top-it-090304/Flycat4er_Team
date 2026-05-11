@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ctoveqnjo5c74"]
+
+[ext_resource type="Script" uid="uid://boe10ig4r68il" path="res://chain.gd" id="1_1bqh1"]
+[ext_resource type="Texture2D" uid="uid://cpptg131xipwc" path="res://mario_texsture/Сhain.png" id="1_wly6q"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_wly6q"]
+b = Vector2(16, -16)
+
+[node name="Chain" type="CharacterBody2D" unique_id=2068801204]
+script = ExtResource("1_1bqh1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=218594793]
+position = Vector2(-8, 8)
+shape = SubResource("SegmentShape2D_wly6q")
+
+[node name="Сhain" type="Sprite2D" parent="." unique_id=2034285576]
+texture = ExtResource("1_wly6q")
