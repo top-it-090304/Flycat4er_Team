@@ -23,6 +23,14 @@ region = Rect2(23, 17, 16, 16)
 atlas = ExtResource("3_r1oqe")
 region = Rect2(40, 17, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1oqe"]
+atlas = ExtResource("3_r1oqe")
+region = Rect2(23, 17, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynoys"]
+atlas = ExtResource("3_r1oqe")
+region = Rect2(6, 17, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_eadpw"]
 animations = [{
 "frames": [{
@@ -42,10 +50,16 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ni7m2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1oqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynoys")
 }],
 "loop": true,
 "name": &"full",
-"speed": 2.0
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gdcyi"]
@@ -61,7 +75,7 @@ shape = SubResource("RectangleShape2D_48m37")
 sprite_frames = SubResource("SpriteFrames_eadpw")
 animation = &"full"
 autoplay = "full"
-frame_progress = 0.62333184
+frame_progress = 0.2709483
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1422217077]
 

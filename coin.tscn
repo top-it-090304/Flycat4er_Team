@@ -50,7 +50,7 @@ sprite_frames = SubResource("SpriteFrames_h4etq")
 autoplay = "default"
 frame_progress = 0.55340683
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1203795207]
+[node name="Counter_sound" type="AudioStreamPlayer2D" parent="." unique_id=1579116465]
 stream = ExtResource("3_v7riw")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://2wxgert8xvx8" path="res://Mario_player/Mini_Mario.tscn" id="1_1fhj5"]
 [ext_resource type="Texture2D" uid="uid://3k02c0soilc5" path="res://Background/Sky_1920.png" id="1_1jdk1"]
-[ext_resource type="Script" uid="uid://c3jpx6sbk5o4i" path="res://canvas_layer.gd" id="2_16pka"]
 [ext_resource type="PackedScene" uid="uid://s75o2j076fhq" path="res://lucky_block_above.tscn" id="2_b60u5"]
 [ext_resource type="Script" uid="uid://csixbo7yfyufl" path="res://time.gd" id="2_tndmk"]
 [ext_resource type="Texture2D" uid="uid://bd7rhl0c02mas" path="res://Background/double_cloud.png" id="3_833wy"]
@@ -28,6 +27,7 @@
 [ext_resource type="Script" uid="uid://csa44e28uvuii" path="res://dead_for_turtle_lvl_3.gd" id="16_keufu"]
 [ext_resource type="Script" uid="uid://bi577yy4xes13" path="res://checkpoint_lvl_3.gd" id="18_m8gss"]
 [ext_resource type="PackedScene" uid="uid://dsitcl2ropmj6" path="res://turtle_above_2.tscn" id="20_ra6nl"]
+[ext_resource type="Script" uid="uid://c2og5ud70vej8" path="res://quit_button.gd" id="29_kenis"]
 [ext_resource type="Script" uid="uid://4al4ja45q0ub" path="res://exit_lvl_4.gd" id="29_tndmk"]
 
 [sub_resource type="FontVariation" id="FontVariation_x8t0u"]
@@ -2064,9 +2064,6 @@ texture = ExtResource("3_kmy7e")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_tndmk")
 
-[sub_resource type="FontVariation" id="FontVariation_6p2dc"]
-base_font = ExtResource("3_j8bo8")
-
 [sub_resource type="Animation" id="Animation_fmu3g"]
 length = 0.001
 tracks/0/type = "value"
@@ -2507,18 +2504,6 @@ tile_set = SubResource("TileSet_kenis")
 format = 2
 layer_0/tile_data = PackedInt32Array(2031773, 786432, 6, 2097309, 786432, 7, 2031774, 851968, 6, 2097310, 851968, 7, 2031775, 917504, 6, 2097311, 917504, 7, 2031776, 1114112, 7, 2097312, 1114112, 7, 1900703, 1048576, 6, 1966239, 1048576, 7, 1900704, 1114112, 6, 1966240, 1114112, 7)
 
-[node name="Exit_lvl_3" type="CanvasLayer" parent="." unique_id=1252253301]
-script = ExtResource("2_16pka")
-
-[node name="Button" type="Button" parent="Exit_lvl_3" unique_id=1819582463]
-offset_left = 540.0
-offset_top = 571.0
-offset_right = 651.0
-offset_bottom = 614.0
-theme_override_fonts/font = SubResource("FontVariation_6p2dc")
-theme_override_font_sizes/font_size = 22
-text = "Exit"
-
 [node name="Platforms1_lvl_3" type="Node2D" parent="." unique_id=987759207]
 script = ExtResource("7_7ds5r")
 
@@ -2580,9 +2565,21 @@ shape = SubResource("RectangleShape2D_kenis")
 position = Vector2(2611, 430.25)
 shape = SubResource("RectangleShape2D_tndmk")
 
+[node name="Quit_button" type="CanvasLayer" parent="." unique_id=342746798]
+script = ExtResource("29_kenis")
+
+[node name="Button" type="Button" parent="Quit_button" unique_id=282035901]
+offset_left = 540.0
+offset_top = 571.0
+offset_right = 651.0
+offset_bottom = 614.0
+theme_override_fonts/font = ExtResource("3_j8bo8")
+theme_override_font_sizes/font_size = 22
+text = "Exit"
+
 [connection signal="timeout" from="Time/Timer" to="Time/Timer" method="_on_timeout"]
-[connection signal="pressed" from="Exit_lvl_3/Button" to="Exit_lvl_3" method="_on_button_pressed"]
 [connection signal="body_entered" from="Dead_for_mario_lvl_3" to="Dead_for_mario_lvl_3" method="_on_body_entered"]
 [connection signal="body_entered" from="Dead_for_turtle_lvl_3" to="Dead_for_turtle_lvl_3" method="_on_body_entered"]
 [connection signal="body_entered" from="Checkpoint_lvl_3" to="Checkpoint_lvl_3" method="_on_body_entered"]
 [connection signal="body_entered" from="Exit_lvl_4" to="Exit_lvl_4" method="_on_body_entered"]
+[connection signal="pressed" from="Quit_button/Button" to="Quit_button" method="_on_button_pressed"]

@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://2wxgert8xvx8" path="res://Mario_player/Mini_Mario.tscn" id="5_c8stx"]
 [ext_resource type="Script" uid="uid://bptx48h5e7uc" path="res://world.gd" id="6_lv3ay"]
 [ext_resource type="Script" uid="uid://dhw1blpaahiwk" path="res://lives.gd" id="7_2vyst"]
+[ext_resource type="PackedScene" uid="uid://s75o2j076fhq" path="res://lucky_block_above.tscn" id="9_d4r1o"]
 [ext_resource type="Texture2D" uid="uid://bev6fardb5t76" path="res://mario_texsture/Tiles11.png" id="9_lj1an"]
 [ext_resource type="PackedScene" uid="uid://carf0l2miblwi" path="res://bowser.tscn" id="10_1umnx"]
 [ext_resource type="Texture2D" uid="uid://bbn44oa2ps0rs" path="res://mario_texsture/52571.png" id="10_2vyst"]
@@ -26,8 +27,10 @@
 [ext_resource type="PackedScene" uid="uid://b4k5j37jt22hr" path="res://fireball_6_down_right.tscn" id="20_s4mws"]
 [ext_resource type="PackedScene" uid="uid://urxvvuiec7jp" path="res://bridge.tscn" id="24_1umnx"]
 [ext_resource type="Script" uid="uid://dw4yl8id1drid" path="res://break_bridge.gd" id="25_3o8go"]
+[ext_resource type="PackedScene" uid="uid://ce3pf0p8fyg7m" path="res://fireball_6_up_left.tscn" id="25_vmpu5"]
 [ext_resource type="PackedScene" uid="uid://ctoveqnjo5c74" path="res://chain.tscn" id="26_6d0cq"]
 [ext_resource type="Script" uid="uid://b2vpm7vgv0lw7" path="res://telepotr_to_end.gd" id="28_hu802"]
+[ext_resource type="Script" uid="uid://c2og5ud70vej8" path="res://quit_button.gd" id="29_nogox"]
 
 [sub_resource type="FontVariation" id="FontVariation_i4yqx"]
 base_font = ExtResource("1_lj1an")
@@ -1571,7 +1574,7 @@ size = Vector2(3, 34.75)
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vmpu5"]
-size = Vector2(6.5, 160.5)
+size = Vector2(6.5, 64)
 
 [node name="Level_4" type="Node2D" unique_id=1759702770]
 
@@ -1660,7 +1663,7 @@ texture = ExtResource("1_5pu08")
 [node name="Mario" type="Node2D" parent="." unique_id=1766444839]
 
 [node name="Mini_Mario" parent="Mario" unique_id=779611243 instance=ExtResource("5_c8stx")]
-position = Vector2(2309, 487)
+position = Vector2(2303, 486.375)
 
 [node name="TileMap" type="TileMap" parent="." unique_id=2104094045]
 tile_set = SubResource("TileSet_aqy51")
@@ -1781,6 +1784,12 @@ position = Vector2(2264, 520)
 [node name="Chain" parent="Collectibles" unique_id=2068801204 instance=ExtResource("26_6d0cq")]
 position = Vector2(2264, 504)
 
+[node name="Fireball_6_up_left" parent="Collectibles" unique_id=1318262518 instance=ExtResource("25_vmpu5")]
+position = Vector2(1432, 423)
+
+[node name="Lucky_block" parent="Collectibles" unique_id=39338436 instance=ExtResource("9_d4r1o")]
+position = Vector2(504, 463)
+
 [node name="Death_for_Mario_lvl4" type="Area2D" parent="." unique_id=1852620157]
 script = ExtResource("14_xxbfp")
 
@@ -1806,7 +1815,7 @@ shape = SubResource("RectangleShape2D_rrs1j")
 script = ExtResource("15_0yqnl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint_lvl4" unique_id=98119804]
-position = Vector2(2309, 478.625)
+position = Vector2(2303, 478)
 shape = SubResource("RectangleShape2D_45t7y")
 
 [node name="Break_Bridge" type="Area2D" parent="." unique_id=1376384037]
@@ -1820,8 +1829,20 @@ shape = SubResource("RectangleShape2D_6d0cq")
 script = ExtResource("28_hu802")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Telepotr_to_end" unique_id=1798148216]
-position = Vector2(2413, 479.25)
+position = Vector2(2323, 471)
 shape = SubResource("RectangleShape2D_vmpu5")
+
+[node name="Quit_button" type="CanvasLayer" parent="." unique_id=1678244446]
+script = ExtResource("29_nogox")
+
+[node name="Button" type="Button" parent="Quit_button" unique_id=1443894474]
+offset_left = 540.0
+offset_top = 571.0
+offset_right = 651.0
+offset_bottom = 614.0
+theme_override_fonts/font = ExtResource("1_lj1an")
+theme_override_font_sizes/font_size = 22
+text = "Exit"
 
 [connection signal="timeout" from="Time/Timer" to="Time/Timer" method="_on_timeout"]
 [connection signal="body_entered" from="Death_for_Mario_lvl4" to="Death_for_Mario_lvl4" method="_on_body_entered"]
@@ -1830,3 +1851,4 @@ shape = SubResource("RectangleShape2D_vmpu5")
 [connection signal="body_entered" from="Checkpoint_lvl4" to="Checkpoint_lvl4" method="_on_body_entered"]
 [connection signal="body_entered" from="Break_Bridge" to="Break_Bridge" method="_on_body_entered"]
 [connection signal="body_entered" from="Telepotr_to_end" to="Telepotr_to_end" method="_on_body_entered"]
+[connection signal="pressed" from="Quit_button/Button" to="Quit_button" method="_on_button_pressed"]

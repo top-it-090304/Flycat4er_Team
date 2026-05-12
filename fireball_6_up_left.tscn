@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://ce3pf0p8fyg7m"]
+
+[ext_resource type="Script" uid="uid://b8vf27batcbpi" path="res://fireball_6_up_left.gd" id="1_db7fc"]
+[ext_resource type="Texture2D" uid="uid://dy6y1xlcfhj7t" path="res://mario_texsture/smb1_misc_sprites (1).png" id="1_pn0fl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdani"]
+atlas = ExtResource("1_pn0fl")
+region = Rect2(348, 945, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nix7o"]
+atlas = ExtResource("1_pn0fl")
+region = Rect2(313, 945, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4vqi"]
+atlas = ExtResource("1_pn0fl")
+region = Rect2(324, 945, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lk87q"]
+atlas = ExtResource("1_pn0fl")
+region = Rect2(336, 945, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_db7fc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdani")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nix7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4vqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lk87q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rg5cq"]
+radius = 4.0
+
+[node name="Fireball_6_up_left" type="Node2D" unique_id=1318262518]
+script = ExtResource("1_db7fc")
+
+[node name="Fireball_1" type="Area2D" parent="." unique_id=1066741778]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fireball_1" unique_id=884779929]
+sprite_frames = SubResource("SpriteFrames_db7fc")
+autoplay = "default"
+frame = 2
+frame_progress = 0.8616531
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fireball_1" unique_id=547618052]
+shape = SubResource("CircleShape2D_rg5cq")
+
+[node name="Fireball_2" type="Area2D" parent="." unique_id=1172854837]
+position = Vector2(0, -9)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fireball_2" unique_id=2068615419]
+sprite_frames = SubResource("SpriteFrames_db7fc")
+autoplay = "default"
+frame = 2
+frame_progress = 0.8616531
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fireball_2" unique_id=932346469]
+shape = SubResource("CircleShape2D_rg5cq")
+
+[node name="Fireball_3" type="Area2D" parent="." unique_id=1640829338]
+position = Vector2(0, -18)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fireball_3" unique_id=2086343981]
+sprite_frames = SubResource("SpriteFrames_db7fc")
+autoplay = "default"
+frame = 2
+frame_progress = 0.8616531
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fireball_3" unique_id=312736950]
+shape = SubResource("CircleShape2D_rg5cq")
+
+[node name="Fireball_4" type="Area2D" parent="." unique_id=326272513]
+position = Vector2(0, -27)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fireball_4" unique_id=869712639]
+sprite_frames = SubResource("SpriteFrames_db7fc")
+autoplay = "default"
+frame = 2
+frame_progress = 0.8616531
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fireball_4" unique_id=605498167]
+shape = SubResource("CircleShape2D_rg5cq")
+
+[node name="Fireball_5" type="Area2D" parent="." unique_id=1494362069]
+position = Vector2(0, -36)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fireball_5" unique_id=1000858540]
+sprite_frames = SubResource("SpriteFrames_db7fc")
+autoplay = "default"
+frame = 2
+frame_progress = 0.8616531
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fireball_5" unique_id=480547108]
+shape = SubResource("CircleShape2D_rg5cq")
+
+[node name="Fireball_6" type="Area2D" parent="." unique_id=1268195565]
+position = Vector2(0, -45)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Fireball_6" unique_id=2087115059]
+sprite_frames = SubResource("SpriteFrames_db7fc")
+autoplay = "default"
+frame = 2
+frame_progress = 0.8616531
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fireball_6" unique_id=1697950579]
+shape = SubResource("CircleShape2D_rg5cq")
+
+[connection signal="body_entered" from="Fireball_1" to="." method="_on_fireball_1_body_entered"]
+[connection signal="body_entered" from="Fireball_2" to="." method="_on_fireball_2_body_entered"]
+[connection signal="body_entered" from="Fireball_3" to="." method="_on_fireball_3_body_entered"]
+[connection signal="body_entered" from="Fireball_4" to="." method="_on_fireball_4_body_entered"]
+[connection signal="body_entered" from="Fireball_5" to="." method="_on_fireball_5_body_entered"]
+[connection signal="body_entered" from="Fireball_6" to="." method="_on_fireball_6_body_entered"]

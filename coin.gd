@@ -13,5 +13,9 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Mini_Mario" or body.is_in_group("block_under"):
+		$Counter_sound.play()
 		$"../../Mario/Mini_Mario".coins += 1
+		visible = false
+		$CollisionShape2D.set_deferred("disabled", true) 
+		await $Counter_sound.finished
 		queue_free()

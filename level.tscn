@@ -1689,8 +1689,8 @@ texture = SubResource("CompressedTexture2D_8b0r0")
 [node name="Backround" type="Node2D" parent="." unique_id=11449093]
 
 [node name="Sky1920" type="Sprite2D" parent="Backround" unique_id=143744228]
-position = Vector2(1840.5, 345)
-scale = Vector2(2.621354, 1.0111111)
+position = Vector2(1823.9999, 330.5)
+scale = Vector2(1.915625, 0.61018515)
 texture = ExtResource("7_aoqsc")
 
 [node name="OneCloud" type="Sprite2D" parent="Backround" unique_id=126241151]

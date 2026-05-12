@@ -1,10 +1,31 @@
 [gd_scene format=3 uid="uid://dx0jy54vdd5dv"]
 
+[ext_resource type="Script" uid="uid://bh162t6tkmj5u" path="res://happy_end.gd" id="1_brnvi"]
 [ext_resource type="Texture2D" uid="uid://cjxymfwkqciji" path="res://Background/Happy_end.png" id="1_yh5o7"]
+[ext_resource type="FontFile" uid="uid://r16tnnr8sddv" path="res://font/vertopal.com_Bm437_Master_512.ttf" id="2_j2p22"]
 
 [node name="Happy_end" type="Node2D" unique_id=452553880]
+script = ExtResource("1_brnvi")
 
 [node name="HappyEnd" type="Sprite2D" parent="." unique_id=951887231]
 position = Vector2(576, 324.00003)
 scale = Vector2(0.6, 0.6000001)
 texture = ExtResource("1_yh5o7")
+
+[node name="Timer" type="Timer" parent="." unique_id=397099100]
+wait_time = 5.0
+autostart = true
+
+[node name="Quit_game" type="CanvasLayer" parent="." unique_id=214031924]
+
+[node name="Quit" type="Button" parent="Quit_game" unique_id=442617288]
+offset_left = 893.0
+offset_top = 551.0
+offset_right = 1116.0
+offset_bottom = 619.0
+theme_override_fonts/font = ExtResource("2_j2p22")
+theme_override_font_sizes/font_size = 34
+text = "Menu"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Quit_game/Quit" to="." method="_on_quit_pressed"]

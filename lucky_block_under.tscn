@@ -73,9 +73,8 @@ shape = SubResource("RectangleShape2D_dmxmf")
 
 [node name="Lucky_block" type="AnimatedSprite2D" parent="." unique_id=1647608292]
 sprite_frames = SubResource("SpriteFrames_uyymi")
-animation = &"empty"
+animation = &"full"
 autoplay = "full"
-frame_progress = 0.24620886
 
 [node name="Area2D" type="Area2D" parent="." unique_id=510892102]
 

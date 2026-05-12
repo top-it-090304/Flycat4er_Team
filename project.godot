@@ -19,11 +19,19 @@ config/icon="res://icon.svg"
 
 buses/default_bus_layout="uid://c43p8c0d1eobu"
 
+[autoload]
+
+TransitionScene="*uid://d25pwk4nuujny"
+
 [display]
 
 window/size/mode=1
 window/size/initial_position_type=3
 window/stretch/mode="viewport"
+
+[editor]
+
+version_control/autoload_on_startup=true
 
 [input]
 

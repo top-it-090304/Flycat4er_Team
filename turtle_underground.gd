@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var anim = $AnimatedSprite2D
 
-var speed = -20
+var speed = -25
 
 var direction = 1
 
