@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://s75o2j076fhq" path="res://lucky_block_above.tscn" id="27_yjxuc"]
 [ext_resource type="Script" uid="uid://cjj34lg7w785t" path="res://bottom_lvl_1.gd" id="28_hvubb"]
 [ext_resource type="AudioStream" uid="uid://8gkp3q662ex6" path="res://sounds/OST — Super Mario Bros - Level_1.mp3" id="29_aoqsc"]
+[ext_resource type="PackedScene" uid="uid://dy5t7fcbch4nu" path="res://MobileControl.tscn" id="29_mleqk"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8b0r0"]
 
@@ -2080,6 +2081,8 @@ script = ExtResource("28_hvubb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom_lvl_1" unique_id=1577772088]
 position = Vector2(1832, 659)
 shape = SubResource("RectangleShape2D_aoqsc")
+
+[node name="MobileControl" parent="." unique_id=59747483 instance=ExtResource("29_mleqk")]
 
 [node name="Level_1_main_sound" type="AudioStreamPlayer" parent="." unique_id=401313637]
 stream = ExtResource("29_aoqsc")

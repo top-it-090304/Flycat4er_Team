@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c7h7834cci5rx"]
+
+[ext_resource type="Texture2D" uid="uid://d35n2qe0hp6jl" path="res://mario_texsture/MovingPlatformVerySmall.png" id="1_xe6od"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8q4hx"]
+size = Vector2(24, 1)
+
+[node name="VerySmallPlatform" type="AnimatableBody2D" unique_id=1970354893]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1028093263]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_8q4hx")
+
+[node name="MovingPlatformVerySmall" type="Sprite2D" parent="." unique_id=1071475721]
+position = Vector2(0, -0.5)
+scale = Vector2(1, 0.875)
+texture = ExtResource("1_xe6od")

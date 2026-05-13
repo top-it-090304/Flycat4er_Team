@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var cur_lvl = 1
 
-const SPEED = 100.0
+const SPEED = 85.0
 
 const JUMP_VELOCITY = -310.0
 
@@ -23,7 +23,7 @@ var break_bridge = false
 @onready var anim = $AnimatedSprite2D
 
 func _physics_process(delta):
-	print(cur_lvl)
+	#print(cur_lvl)
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
@@ -67,9 +67,9 @@ func _physics_process(delta):
 		if cur_lvl == 2:
 			$"../../Level_2_main_sound".playing = 0
 		if cur_lvl == 3: 
-			pass
+			$"../../Level_3_main_sound".playing = 0
 		if cur_lvl == 4:
-			pass
+			$"../../Level_4_main_sound".playing = 0
 		if !$Death_Sound.playing:
 			$Death_Sound.play()
 		anim.play("Death_mini")

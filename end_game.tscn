@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bdu1ylvr1s2up" path="res://mario_texsture/mario_and_items.png" id="4_8aegd"]
 [ext_resource type="Texture2D" uid="uid://bqe6g06d6bqiu" path="res://font/THANK YOU MARIO!.png" id="6_jppxx"]
 [ext_resource type="Texture2D" uid="uid://dqlt23iw18558" path="res://font/YOU SAVED OUR PRINCESS!.png" id="7_2goxq"]
+[ext_resource type="AudioStream" uid="uid://csc8sloujvwlf" path="res://sounds/Звук победы в игре Марио Прохождение уровня с фанфарами (mp3cut.net).mp3" id="8_jppxx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8aegd"]
 texture = ExtResource("2_5q2h6")
@@ -412,8 +413,12 @@ wait_time = 2.0
 autostart = true
 
 [node name="Timer_end" type="Timer" parent="." unique_id=1006123191]
-wait_time = 6.0
+wait_time = 8.0
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=673226946]
+stream = ExtResource("8_jppxx")
+autoplay = true
 
 [connection signal="timeout" from="Timer_text" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer_end" to="." method="_on_timer_2_timeout"]

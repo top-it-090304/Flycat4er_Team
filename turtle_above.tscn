@@ -63,11 +63,13 @@ script = ExtResource("1_8tveb")
 shape = SubResource("CircleShape2D_8tveb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1090734165]
-position = Vector2(3.3881318e-21, -7)
-scale = Vector2(0.72222227, 0.72222227)
+position = Vector2(0, -3)
+scale = Vector2(0.7361111, 0.7361111)
 sprite_frames = SubResource("SpriteFrames_8ux6w")
 animation = &"Walk"
 autoplay = "Walk"
+frame = 1
+frame_progress = 0.7697601
 
 [node name="Turtle_head" type="Area2D" parent="." unique_id=1808746843]
 

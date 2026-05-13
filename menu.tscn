@@ -77,5 +77,16 @@ position = Vector2(374.99997, 218)
 scale = Vector2(3.596591, 3.596591)
 texture = ExtResource("7_ecwwl")
 
+[node name="Jump_to_lvl_4" type="CanvasLayer" parent="." unique_id=1429060203]
+
+[node name="TextureButton" type="TextureButton" parent="Jump_to_lvl_4" unique_id=842489861]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 949.0
+offset_top = 58.0
+offset_right = 1045.0
+offset_bottom = 123.0
+
 [connection signal="pressed" from="Go_To_Play/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Quit_game/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Jump_to_lvl_4/TextureButton" to="." method="_on_texture_button_pressed"]

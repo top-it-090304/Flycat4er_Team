@@ -30,7 +30,12 @@
 [ext_resource type="PackedScene" uid="uid://ce3pf0p8fyg7m" path="res://fireball_6_up_left.tscn" id="25_vmpu5"]
 [ext_resource type="PackedScene" uid="uid://ctoveqnjo5c74" path="res://chain.tscn" id="26_6d0cq"]
 [ext_resource type="Script" uid="uid://b2vpm7vgv0lw7" path="res://telepotr_to_end.gd" id="28_hu802"]
-[ext_resource type="Script" uid="uid://c2og5ud70vej8" path="res://quit_button.gd" id="29_nogox"]
+[ext_resource type="AudioStream" uid="uid://ci71l7tnphm8r" path="res://sounds/lezvie-po-kamnyu--iskryi (mp3cut.net).mp3" id="30_p7cwt"]
+[ext_resource type="AudioStream" uid="uid://f8m32ryw2odk" path="res://sounds/Подземный замок с драконом игра Марио (mp3cut.net).mp3" id="32_lypob"]
+[ext_resource type="Script" uid="uid://cvoor26jm7nt4" path="res://quit_button_4.gd" id="33_p7cwt"]
+[ext_resource type="PackedScene" uid="uid://c7h7834cci5rx" path="res://very_small_platform.tscn" id="34_p7cwt"]
+[ext_resource type="Script" uid="uid://ciyb2ep32316g" path="res://mobile_control.gd" id="35_beulo"]
+[ext_resource type="PackedScene" uid="uid://dy5t7fcbch4nu" path="res://MobileControl.tscn" id="35_rprjf"]
 
 [sub_resource type="FontVariation" id="FontVariation_i4yqx"]
 base_font = ExtResource("1_lj1an")
@@ -1574,7 +1579,45 @@ size = Vector2(3, 34.75)
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vmpu5"]
-size = Vector2(6.5, 64)
+size = Vector2(6.25, 159)
+
+[sub_resource type="Animation" id="Animation_rprjf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VerySmallPlatform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2243, 465)]
+}
+
+[sub_resource type="Animation" id="Animation_beulo"]
+resource_name = "platform_lvl4"
+length = 4.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VerySmallPlatform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2243, 459), Vector2(2120, 459)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v6tvd"]
+_data = {
+&"RESET": SubResource("Animation_rprjf"),
+&"platform_lvl4": SubResource("Animation_beulo")
+}
 
 [node name="Level_4" type="Node2D" unique_id=1759702770]
 
@@ -1656,14 +1699,14 @@ metadata/_edit_use_anchors_ = true
 [node name="Background" type="Node2D" parent="." unique_id=904346224]
 
 [node name="BlackScreen" type="Sprite2D" parent="Background" unique_id=548048494]
-position = Vector2(1587, 324)
+position = Vector2(1588, 326)
 scale = Vector2(1.6541319, 0.6005561)
 texture = ExtResource("1_5pu08")
 
 [node name="Mario" type="Node2D" parent="." unique_id=1766444839]
 
 [node name="Mini_Mario" parent="Mario" unique_id=779611243 instance=ExtResource("5_c8stx")]
-position = Vector2(2303, 486.375)
+position = Vector2(45, 455.375)
 
 [node name="TileMap" type="TileMap" parent="." unique_id=2104094045]
 tile_set = SubResource("TileSet_aqy51")
@@ -1815,7 +1858,7 @@ shape = SubResource("RectangleShape2D_rrs1j")
 script = ExtResource("15_0yqnl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint_lvl4" unique_id=98119804]
-position = Vector2(2303, 478)
+position = Vector2(45, 447)
 shape = SubResource("RectangleShape2D_45t7y")
 
 [node name="Break_Bridge" type="Area2D" parent="." unique_id=1376384037]
@@ -1825,17 +1868,30 @@ script = ExtResource("25_3o8go")
 position = Vector2(2280, 488)
 shape = SubResource("RectangleShape2D_6d0cq")
 
+[node name="Bridge_break" type="AudioStreamPlayer" parent="Break_Bridge" unique_id=1081088744]
+stream = ExtResource("30_p7cwt")
+volume_db = -8.0
+
 [node name="Telepotr_to_end" type="Area2D" parent="." unique_id=461921791]
 script = ExtResource("28_hu802")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Telepotr_to_end" unique_id=1798148216]
-position = Vector2(2323, 471)
+position = Vector2(2336.875, 479.5)
 shape = SubResource("RectangleShape2D_vmpu5")
 
-[node name="Quit_button" type="CanvasLayer" parent="." unique_id=1678244446]
-script = ExtResource("29_nogox")
+[node name="Platform" type="Node2D" parent="." unique_id=809393377]
 
-[node name="Button" type="Button" parent="Quit_button" unique_id=1443894474]
+[node name="VerySmallPlatform" parent="Platform" unique_id=1970354893 instance=ExtResource("34_p7cwt")]
+position = Vector2(2243, 465)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform" unique_id=421094838]
+libraries/ = SubResource("AnimationLibrary_v6tvd")
+autoplay = &"platform_lvl4"
+
+[node name="Quit_button_4" type="CanvasLayer" parent="." unique_id=1678244446]
+script = ExtResource("33_p7cwt")
+
+[node name="Button" type="Button" parent="Quit_button_4" unique_id=1443894474]
 offset_left = 540.0
 offset_top = 571.0
 offset_right = 651.0
@@ -1844,6 +1900,14 @@ theme_override_fonts/font = ExtResource("1_lj1an")
 theme_override_font_sizes/font_size = 22
 text = "Exit"
 
+[node name="MobileControl" parent="." unique_id=59747483 instance=ExtResource("35_rprjf")]
+script = ExtResource("35_beulo")
+
+[node name="Level_4_main_sound" type="AudioStreamPlayer" parent="." unique_id=878759313]
+stream = ExtResource("32_lypob")
+autoplay = true
+bus = &"Main_level"
+
 [connection signal="timeout" from="Time/Timer" to="Time/Timer" method="_on_timeout"]
 [connection signal="body_entered" from="Death_for_Mario_lvl4" to="Death_for_Mario_lvl4" method="_on_body_entered"]
 [connection signal="body_entered" from="Death_for_Mario_lvl6" to="Death_for_Mario_lvl6" method="_on_body_entered"]
@@ -1851,4 +1915,4 @@ text = "Exit"
 [connection signal="body_entered" from="Checkpoint_lvl4" to="Checkpoint_lvl4" method="_on_body_entered"]
 [connection signal="body_entered" from="Break_Bridge" to="Break_Bridge" method="_on_body_entered"]
 [connection signal="body_entered" from="Telepotr_to_end" to="Telepotr_to_end" method="_on_body_entered"]
-[connection signal="pressed" from="Quit_button/Button" to="Quit_button" method="_on_button_pressed"]
+[connection signal="pressed" from="Quit_button_4/Button" to="Quit_button_4" method="_on_button_pressed"]

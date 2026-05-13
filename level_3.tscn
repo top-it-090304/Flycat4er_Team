@@ -29,6 +29,8 @@
 [ext_resource type="PackedScene" uid="uid://dsitcl2ropmj6" path="res://turtle_above_2.tscn" id="20_ra6nl"]
 [ext_resource type="Script" uid="uid://c2og5ud70vej8" path="res://quit_button.gd" id="29_kenis"]
 [ext_resource type="Script" uid="uid://4al4ja45q0ub" path="res://exit_lvl_4.gd" id="29_tndmk"]
+[ext_resource type="PackedScene" uid="uid://dy5t7fcbch4nu" path="res://MobileControl.tscn" id="30_gkqsa"]
+[ext_resource type="AudioStream" uid="uid://8gkp3q662ex6" path="res://sounds/OST — Super Mario Bros - Level_1.mp3" id="30_kenis"]
 
 [sub_resource type="FontVariation" id="FontVariation_x8t0u"]
 base_font = ExtResource("3_j8bo8")
@@ -2576,6 +2578,13 @@ offset_bottom = 614.0
 theme_override_fonts/font = ExtResource("3_j8bo8")
 theme_override_font_sizes/font_size = 22
 text = "Exit"
+
+[node name="MobileControl" parent="." unique_id=59747483 instance=ExtResource("30_gkqsa")]
+
+[node name="Level_3_main_sound" type="AudioStreamPlayer" parent="." unique_id=1504564782]
+stream = ExtResource("30_kenis")
+autoplay = true
+bus = &"Main_level"
 
 [connection signal="timeout" from="Time/Timer" to="Time/Timer" method="_on_timeout"]
 [connection signal="body_entered" from="Dead_for_mario_lvl_3" to="Dead_for_mario_lvl_3" method="_on_body_entered"]

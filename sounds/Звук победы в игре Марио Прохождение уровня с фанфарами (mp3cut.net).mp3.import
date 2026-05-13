@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://csc8sloujvwlf"
+path="res://.godot/imported/Звук победы в игре Марио Прохождение уровня с фанфарами (mp3cut.net).mp3-9cf10ca44a3164cdbc5d205734992005.mp3str"
+
+[deps]
+
+source_file="res://sounds/Звук победы в игре Марио Прохождение уровня с фанфарами (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/Звук победы в игре Марио Прохождение уровня с фанфарами (mp3cut.net).mp3-9cf10ca44a3164cdbc5d205734992005.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

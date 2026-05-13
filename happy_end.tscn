@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bh162t6tkmj5u" path="res://happy_end.gd" id="1_brnvi"]
 [ext_resource type="Texture2D" uid="uid://cjxymfwkqciji" path="res://Background/Happy_end.png" id="1_yh5o7"]
 [ext_resource type="FontFile" uid="uid://r16tnnr8sddv" path="res://font/vertopal.com_Bm437_Master_512.ttf" id="2_j2p22"]
+[ext_resource type="AudioStream" uid="uid://brfqhuu74v36u" path="res://sounds/The_Super_Mario_Bros_Movie_OST_-_Bowser_-_Peaches_75888620.mp3" id="4_dslq4"]
 
 [node name="Happy_end" type="Node2D" unique_id=452553880]
 script = ExtResource("1_brnvi")
@@ -13,7 +14,7 @@ scale = Vector2(0.6, 0.6000001)
 texture = ExtResource("1_yh5o7")
 
 [node name="Timer" type="Timer" parent="." unique_id=397099100]
-wait_time = 5.0
+wait_time = 10.0
 autostart = true
 
 [node name="Quit_game" type="CanvasLayer" parent="." unique_id=214031924]
@@ -26,6 +27,10 @@ offset_bottom = 619.0
 theme_override_fonts/font = ExtResource("2_j2p22")
 theme_override_font_sizes/font_size = 34
 text = "Menu"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=70750829]
+stream = ExtResource("4_dslq4")
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Quit_game/Quit" to="." method="_on_quit_pressed"]

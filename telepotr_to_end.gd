@@ -1,5 +1,6 @@
 extends Area2D
 
+var but = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,3 +15,4 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Mini_Mario":
 		TransitionScene.change_scene("res://end_game.tscn")
+		but = true

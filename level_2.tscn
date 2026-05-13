@@ -29,6 +29,7 @@
 [ext_resource type="Script" uid="uid://cyqe827l7yttq" path="res://checkpoint_lvl_2.gd" id="27_ikghu"]
 [ext_resource type="Script" uid="uid://6g7u5cpd0kr1" path="res://upper_lvl_2.gd" id="28_i6smf"]
 [ext_resource type="AudioStream" uid="uid://cg8jpifeomix0" path="res://sounds/OST — Super Mario Bros - Level_2.mp3" id="29_d4rhq"]
+[ext_resource type="PackedScene" uid="uid://dy5t7fcbch4nu" path="res://MobileControl.tscn" id="29_ldfcd"]
 
 [sub_resource type="FontVariation" id="FontVariation_jcnlr"]
 base_font = ExtResource("2_15wb7")
@@ -2437,6 +2438,8 @@ script = ExtResource("28_i6smf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Upper_lvl_2" unique_id=1675619324]
 position = Vector2(1478.75, 333.5)
 shape = SubResource("RectangleShape2D_i6smf")
+
+[node name="MobileControl" parent="." unique_id=59747483 instance=ExtResource("29_ldfcd")]
 
 [node name="Level_2_main_sound" type="AudioStreamPlayer" parent="." unique_id=526410317]
 stream = ExtResource("29_d4rhq")

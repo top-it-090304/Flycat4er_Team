@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 	elif hide_text == false and the_end == false: 
 		$"YouSavedOurPrincess!".visible = true
 	elif the_end == true: 
-		get_tree().change_scene_to_file("res://happy_end.tscn")
+		TransitionScene.change_scene("res://happy_end.tscn")
 	
 func _on_timer_timeout() -> void:
 	hide_text = false
