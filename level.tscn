@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://cw7xrk4kvbrgx" path="res://mario_texsture/blocks.png" id="14_5pxul"]
 [ext_resource type="Texture2D" uid="uid://7fvwsljff6hw" path="res://mario_texsture/NES - Super Mario Bros. - Miscellaneous - Tileset (2).png" id="14_ait7k"]
 [ext_resource type="Texture2D" uid="uid://bk5cnoswyryk5" path="res://mario_texsture/Bright-.png" id="14_fj6e6"]
-[ext_resource type="Texture2D" uid="uid://dqjwv4n020u7j" path="res://Super Mango Platformer Assets by JuhoSprite/Grass_Oneway.png" id="14_v5j5c"]
 [ext_resource type="Texture2D" uid="uid://d1wj8r3ab27q5" path="res://mario_texsture/NES - Super Mario Bros. - Miscellaneous - Tileset.png" id="15_fedht"]
 [ext_resource type="Texture2D" uid="uid://bnmlodxk6prxd" path="res://mario_texsture/NES - Super Mario Bros. - Miscellaneous - Tileset (1).png" id="16_4c15r"]
 [ext_resource type="FontFile" uid="uid://r16tnnr8sddv" path="res://font/vertopal.com_Bm437_Master_512.ttf" id="16_ait7k"]
@@ -32,25 +31,6 @@
 [ext_resource type="PackedScene" uid="uid://dy5t7fcbch4nu" path="res://MobileControl.tscn" id="29_mleqk"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8b0r0"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5pxul"]
-texture = ExtResource("14_v5j5c")
-margins = Vector2i(5, 0)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-2:1/0 = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fedht"]
 texture = ExtResource("15_fedht")
@@ -1647,7 +1627,6 @@ margins = Vector2i(0, 1)
 
 [sub_resource type="TileSet" id="TileSet_fedht"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_5pxul")
 sources/1 = SubResource("TileSetAtlasSource_fedht")
 sources/2 = SubResource("TileSetAtlasSource_4c15r")
 sources/3 = SubResource("TileSetAtlasSource_ait7k")
