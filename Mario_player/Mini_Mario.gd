@@ -14,7 +14,7 @@ var health = 1
 
 var Mario_heat = false # создано для подсчета смертей
 
-var time = 350 
+var time = 300 
 
 var coins = 0
 
@@ -76,8 +76,7 @@ func _physics_process(delta):
 		velocity.x = 0
 		velocity.y = -5
 		move_and_slide()
-		await anim.animation_finished
-		await $Death_Sound.finished
+		await get_tree().create_timer(2.7).timeout
 		if cur_lvl == 1: #смена сцен после смерти от моба
 			get_tree().change_scene_to_file.call_deferred("res://level.tscn")
 		elif cur_lvl == 2:

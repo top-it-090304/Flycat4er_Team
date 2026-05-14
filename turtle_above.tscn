@@ -63,7 +63,7 @@ script = ExtResource("1_8tveb")
 shape = SubResource("CircleShape2D_8tveb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1090734165]
-position = Vector2(0, -3)
+position = Vector2(0, -7)
 scale = Vector2(0.7361111, 0.7361111)
 sprite_frames = SubResource("SpriteFrames_8ux6w")
 animation = &"Walk"

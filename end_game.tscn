@@ -385,8 +385,8 @@ sources/5 = SubResource("TileSetAtlasSource_semjh")
 script = ExtResource("1_h3nuw")
 
 [node name="BlackScreen" type="Sprite2D" parent="." unique_id=794840931]
-position = Vector2(192.34375, 515.5)
-scale = Vector2(0.19985011, 0.24559776)
+position = Vector2(192, 515.5)
+scale = Vector2(0.20020854, 0.24559776)
 texture = ExtResource("1_weimh")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1573427233]

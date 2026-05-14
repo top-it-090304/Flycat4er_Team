@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bd47ced4m3fc8"]
+
+[ext_resource type="Texture2D" uid="uid://dio3uc1djteqy" path="res://move/keyboard_72.png" id="1_waj2g"]
+[ext_resource type="Texture2D" uid="uid://crgauaxyydquq" path="res://move/keyboard_173.png" id="2_fsn2l"]
+[ext_resource type="Texture2D" uid="uid://duiqla5xfe2lv" path="res://move/keyboard_73.png" id="3_xhwko"]
+[ext_resource type="Texture2D" uid="uid://cqx5chjs74aid" path="res://move/keyboard_174.png" id="4_dvb7b"]
+[ext_resource type="Texture2D" uid="uid://ck7slxpxbsr8e" path="res://move/keyboard_70.png" id="5_aovxm"]
+[ext_resource type="Texture2D" uid="uid://mqbuso4wtqcf" path="res://move/keyboard_171.png" id="6_1qyyn"]
+
+[node name="MobileControl_Black" type="CanvasLayer" unique_id=59747483]
+
+[node name="Left" type="TouchScreenButton" parent="." unique_id=1323475155]
+position = Vector2(232, 489)
+scale = Vector2(4.1874995, 4.1874995)
+texture_normal = ExtResource("1_waj2g")
+texture_pressed = ExtResource("2_fsn2l")
+action = "ui_right"
+
+[node name="Right" type="TouchScreenButton" parent="." unique_id=1513962737]
+position = Vector2(58.000008, 489)
+scale = Vector2(4.15625, 4.15625)
+texture_normal = ExtResource("3_xhwko")
+texture_pressed = ExtResource("4_dvb7b")
+action = "ui_left"
+
+[node name="Jump" type="TouchScreenButton" parent="." unique_id=104534371]
+position = Vector2(959.99994, 489.00003)
+scale = Vector2(4.1874995, 4.187496)
+texture_normal = ExtResource("5_aovxm")
+texture_pressed = ExtResource("6_1qyyn")
+action = "ui_accept"

@@ -14,5 +14,11 @@ func _process(delta: float) -> void:
 func _on_timeout() -> void:
 	if $"../../Mario/Mini_Mario".time != 0:
 		$"../../Mario/Mini_Mario".time -= 1
-	else: 
+	elif $"../../Mario/Mini_Mario".cur_lvl == 1: 
 		get_tree().change_scene_to_file("res://level.tscn")
+	elif $"../../Mario/Mini_Mario".cur_lvl == 2: 
+		get_tree().change_scene_to_file("res://level_2.tscn")
+	elif $"../../Mario/Mini_Mario".cur_lvl == 3: 
+		get_tree().change_scene_to_file("res://level_3.tscn")
+	elif $"../../Mario/Mini_Mario".cur_lvl == 4: 
+		get_tree().change_scene_to_file("res://level_4.tscn")

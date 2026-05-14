@@ -12,6 +12,9 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Mini_Mario":
-		get_tree().change_scene_to_file("res://level_4.tscn")
+		$"../Mario/Mini_Mario".health -= 1
+		$"../Mario/Mini_Mario".Mario_heat = true
+		if $"../Mario/Mini_Mario".score > 0: 
+			$"../Mario/Mini_Mario".score -= 100
 	elif body.name == "Bowser":
 		$"../Enemy/Bowser".alive = false

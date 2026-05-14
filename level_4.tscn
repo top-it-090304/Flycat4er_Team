@@ -33,9 +33,9 @@
 [ext_resource type="AudioStream" uid="uid://ci71l7tnphm8r" path="res://sounds/lezvie-po-kamnyu--iskryi (mp3cut.net).mp3" id="30_p7cwt"]
 [ext_resource type="AudioStream" uid="uid://f8m32ryw2odk" path="res://sounds/Подземный замок с драконом игра Марио (mp3cut.net).mp3" id="32_lypob"]
 [ext_resource type="Script" uid="uid://cvoor26jm7nt4" path="res://quit_button_4.gd" id="33_p7cwt"]
+[ext_resource type="PackedScene" uid="uid://bd47ced4m3fc8" path="res://mobile_control_black.tscn" id="34_beulo"]
 [ext_resource type="PackedScene" uid="uid://c7h7834cci5rx" path="res://very_small_platform.tscn" id="34_p7cwt"]
-[ext_resource type="Script" uid="uid://ciyb2ep32316g" path="res://mobile_control.gd" id="35_beulo"]
-[ext_resource type="PackedScene" uid="uid://dy5t7fcbch4nu" path="res://MobileControl.tscn" id="35_rprjf"]
+[ext_resource type="Script" uid="uid://d4l2rjx32emeu" path="res://mobile_control_black.gd" id="35_v6tvd"]
 
 [sub_resource type="FontVariation" id="FontVariation_i4yqx"]
 base_font = ExtResource("1_lj1an")
@@ -1900,8 +1900,9 @@ theme_override_fonts/font = ExtResource("1_lj1an")
 theme_override_font_sizes/font_size = 22
 text = "Exit"
 
-[node name="MobileControl" parent="." unique_id=59747483 instance=ExtResource("35_rprjf")]
-script = ExtResource("35_beulo")
+[node name="MobileControl_Black" parent="." unique_id=59747483 node_paths=PackedStringArray("mario") instance=ExtResource("34_beulo")]
+script = ExtResource("35_v6tvd")
+mario = NodePath("../Mario/Mini_Mario")
 
 [node name="Level_4_main_sound" type="AudioStreamPlayer" parent="." unique_id=878759313]
 stream = ExtResource("32_lypob")

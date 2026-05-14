@@ -1,31 +1,31 @@
 [gd_scene format=3 uid="uid://dy5t7fcbch4nu"]
 
-[ext_resource type="Texture2D" uid="uid://dio3uc1djteqy" path="res://move/keyboard_72.png" id="1_w4oxd"]
-[ext_resource type="Texture2D" uid="uid://crgauaxyydquq" path="res://move/keyboard_173.png" id="2_fsbdh"]
-[ext_resource type="Texture2D" uid="uid://duiqla5xfe2lv" path="res://move/keyboard_73.png" id="3_n6wdb"]
-[ext_resource type="Texture2D" uid="uid://cqx5chjs74aid" path="res://move/keyboard_174.png" id="4_g3huw"]
-[ext_resource type="Texture2D" uid="uid://ck7slxpxbsr8e" path="res://move/keyboard_70.png" id="5_280g2"]
-[ext_resource type="Texture2D" uid="uid://mqbuso4wtqcf" path="res://move/keyboard_171.png" id="6_5cw7b"]
+[ext_resource type="Texture2D" uid="uid://4suukatdfldb" path="res://move/keyboard_72 (2).png" id="1_k41bi"]
+[ext_resource type="Texture2D" uid="uid://cvjgsgt5e7o6f" path="res://move/keyboard_173 (2).png" id="2_6t3v0"]
+[ext_resource type="Texture2D" uid="uid://cowtv5wsg0ovy" path="res://move/keyboard_73 (2).png" id="3_23ud2"]
+[ext_resource type="Texture2D" uid="uid://cgd3uqqthqpjr" path="res://move/keyboard_174 (2).png" id="4_5qln2"]
+[ext_resource type="Texture2D" uid="uid://uscwgdfx6a72" path="res://move/keyboard_70 (2).png" id="5_mfnls"]
+[ext_resource type="Texture2D" uid="uid://dsmypy6gjqgvh" path="res://move/keyboard_171 (2).png" id="6_pmoju"]
 
 [node name="MobileControl" type="CanvasLayer" unique_id=59747483]
 
 [node name="Left" type="TouchScreenButton" parent="." unique_id=1323475155]
 position = Vector2(232, 489)
 scale = Vector2(4.1874995, 4.1874995)
-texture_normal = ExtResource("1_w4oxd")
-texture_pressed = ExtResource("2_fsbdh")
+texture_normal = ExtResource("1_k41bi")
+texture_pressed = ExtResource("2_6t3v0")
 action = "ui_right"
 
 [node name="Right" type="TouchScreenButton" parent="." unique_id=1513962737]
 position = Vector2(58.000008, 489)
 scale = Vector2(4.15625, 4.15625)
-texture_normal = ExtResource("3_n6wdb")
-texture_pressed = ExtResource("4_g3huw")
+texture_normal = ExtResource("3_23ud2")
+texture_pressed = ExtResource("4_5qln2")
 action = "ui_left"
 
 [node name="Jump" type="TouchScreenButton" parent="." unique_id=104534371]
 position = Vector2(959.99994, 489.00003)
 scale = Vector2(4.1874995, 4.187496)
-texture_normal = ExtResource("5_280g2")
-texture_pressed = ExtResource("6_5cw7b")
+texture_normal = ExtResource("5_mfnls")
+texture_pressed = ExtResource("6_pmoju")
 action = "ui_accept"
