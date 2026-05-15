@@ -64,6 +64,8 @@ func spawn_fireball():
 	var random_y = randf_range(min_fire_y, max_fire_y)
 	fireball.position = Vector2(global_position.x + 40, random_y)
 	get_parent().add_child(fireball)
+	if !$AudioStreamPlayer.playing: 
+		$AudioStreamPlayer.play()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "Mini_Mario":

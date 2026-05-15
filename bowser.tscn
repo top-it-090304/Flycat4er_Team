@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bds3f8suxfvst" path="res://character_body_2d.gd" id="1_hkmv0"]
 [ext_resource type="Texture2D" uid="uid://d2yc8835esilv" path="res://mario_texsture/enemies.png" id="2_bc5fw"]
 [ext_resource type="PackedScene" uid="uid://f66jv08japtk" path="res://firebullet.tscn" id="2_f6uij"]
+[ext_resource type="AudioStream" uid="uid://dpe6qoed15dm4" path="res://sounds/ghast-fireball-minecraft-sound-sound-effect-for-editing (mp3cut.net).mp3" id="4_f6uij"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f6uij"]
 atlas = ExtResource("2_bc5fw")
@@ -68,6 +69,9 @@ shape = SubResource("CircleShape2D_bc5fw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Death" unique_id=811309432]
 skew = -0.30543262
 shape = SubResource("CapsuleShape2D_bc5fw")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=591108122]
+stream = ExtResource("4_f6uij")
 
 [connection signal="body_entered" from="Trigger" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Death" to="." method="_on_death_body_entered"]
