@@ -5,12 +5,12 @@
 ## Установка и запуск
 
 ### Android
-1. Скачай `.apk` из раздела [Releases]()
+1. Скачай `.apk` из раздела [Releases](https://github.com/top-it-090304/Flycat4er_Team/releases)
 2. Разреши установку из неизвестных источников.
 3. Установи и запусти приложение на Android устройстве.
 
 ### Aurora OS
-1. Скачай `.rpm` из раздела [Releases]()
+1. Скачай `.rpm` из раздела [Releases](https://github.com/top-it-090304/Flycat4er_Team/releases)
 2. Разреши установку из неизвестных источников.
 3. Установи и запусти приложение на Aurora устройстве.
 
