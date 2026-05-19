@@ -2023,7 +2023,7 @@ texture = ExtResource("7_5pxul")
 [node name="Mario" type="Node2D" parent="." unique_id=811075618]
 
 [node name="Mini_Mario" parent="Mario" unique_id=779611243 instance=ExtResource("1_u52ul")]
-position = Vector2(97, 519)
+position = Vector2(98, 519)
 
 [node name="Mobs" type="Node2D" parent="." unique_id=511531558]
 

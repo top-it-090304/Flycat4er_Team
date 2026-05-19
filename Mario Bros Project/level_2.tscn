@@ -2484,25 +2484,25 @@ position = Vector2(2227, 632)
 script = ExtResource("18_jcnlr")
 
 [node name="Platform_A2" parent="Platforms_1" unique_id=1820027604 instance=ExtResource("17_lvfll")]
-position = Vector2(2483, 637.3115)
+position = Vector2(2227, 407)
 
 [node name="Platform_A3" parent="Platforms_1" unique_id=2015384835 instance=ExtResource("17_lvfll")]
-position = Vector2(2483, 569.3115)
+position = Vector2(2227, 768)
 
 [node name="Platform_A4" parent="Platforms_1" unique_id=1323617969 instance=ExtResource("17_lvfll")]
-position = Vector2(2483, 501.31152)
+position = Vector2(2227, 836)
 
 [node name="Platform_A5" parent="Platforms_1" unique_id=1446960608 instance=ExtResource("17_lvfll")]
-position = Vector2(2483, 433.31155)
+position = Vector2(2227, 904)
 
 [node name="Platform_A6" parent="Platforms_1" unique_id=975688916 instance=ExtResource("17_lvfll")]
-position = Vector2(2483, 162)
+position = Vector2(2227, 564)
 
 [node name="Platform_A8" parent="Platforms_1" unique_id=1820815273 instance=ExtResource("17_lvfll")]
 position = Vector2(2227, 359)
 
 [node name="Platform_A9" parent="Platforms_1" unique_id=1280520007 instance=ExtResource("17_lvfll")]
-position = Vector2(2483, 295.4852)
+position = Vector2(2227, 427)
 
 [node name="Platform_A10" parent="Platforms_1" unique_id=563393594 instance=ExtResource("17_lvfll")]
 position = Vector2(2227, 495)

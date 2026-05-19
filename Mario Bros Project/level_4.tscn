@@ -1706,7 +1706,7 @@ texture = ExtResource("1_5pu08")
 [node name="Mario" type="Node2D" parent="." unique_id=1766444839]
 
 [node name="Mini_Mario" parent="Mario" unique_id=779611243 instance=ExtResource("5_c8stx")]
-position = Vector2(45, 455.375)
+position = Vector2(2007, 498.375)
 
 [node name="TileMap" type="TileMap" parent="." unique_id=2104094045]
 tile_set = SubResource("TileSet_aqy51")
@@ -1858,7 +1858,7 @@ shape = SubResource("RectangleShape2D_rrs1j")
 script = ExtResource("15_0yqnl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoint_lvl4" unique_id=98119804]
-position = Vector2(45, 447)
+position = Vector2(2007, 490)
 shape = SubResource("RectangleShape2D_45t7y")
 
 [node name="Break_Bridge" type="Area2D" parent="." unique_id=1376384037]
