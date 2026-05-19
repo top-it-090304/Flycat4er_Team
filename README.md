@@ -39,13 +39,28 @@
 - **Язык:** GDScript
 - **Экспорт:** Android (APK), Aurora OS (RPM)
 
-## Скриншоты и видео
+## Скриншоты из игры
+**1 уровень**
+
 ![Уровень 1](https://github.com/top-it-090304/Flycat4er_Team/blob/main/Снимок%20экрана%202026-05-19%20203524.png)  
-![Уровень 2]() 
-![Уровень 3]()  
-![Уровень 4]()  
-![Финальный босс]()  
+
+**2 уровень**
+
+![Уровень 2](https://github.com/top-it-090304/Flycat4er_Team/blob/main/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202026-05-19%20203607.png) 
+
+**3 уровень**
+
+![Уровень 3](https://github.com/top-it-090304/Flycat4er_Team/blob/main/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202026-05-19%20203626.png)  
+
+**4 уровень**
+
+![Уровень 4](https://github.com/top-it-090304/Flycat4er_Team/blob/main/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202026-05-19%20203651.png)  
+
+**Финальный босс**
+
+![Финальный босс](https://github.com/top-it-090304/Flycat4er_Team/blob/main/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%202026-05-19%20203731.png)  
+
 
 ## Поддержка и связь
--  Нашёл баг или хочешь предложить улучшение? Напиши мне на почту
+-  Нашёл баг или хочешь предложить улучшение? Напиши мне на почту flycatcher228@gmail.com
 
