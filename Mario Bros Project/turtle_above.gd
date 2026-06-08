@@ -17,6 +17,12 @@ var right_bounce = false
 var shots = 0
 
 func _physics_process(delta: float) -> void:
+	var mario_pos = $"../../Mario/Mini_Mario".global_position
+	var dist = global_position.distance_to(mario_pos)
+	
+	if dist < 425:
+		trigger = true
+		
 	if alive == true:
 		if position.x >= 541:
 			direction *= -1
@@ -25,7 +31,6 @@ func _physics_process(delta: float) -> void:
 			direction *= -1
 			$AnimatedSprite2D.flip_h = true
 		velocity.x = speed * direction
-		# print("Pos: ", position.x, " Dir: ", direction, " Vel: ", velocity.x)
 		if not is_on_floor():
 			velocity += get_gravity() * delta
 		anim.play("Walk")
@@ -40,11 +45,6 @@ func _physics_process(delta: float) -> void:
 		if right_bounce == true: 
 			velocity.x = -250
 	move_and_slide()
-	
-	
-func _on_trigger_area_body_entered(body: Node2D) -> void: # тригерная зона черепахи
-	if body.name == "Mini_Mario":
-		trigger = true
 
 func _on_turtle_head_body_entered(body: Node2D) -> void:
 	if body.name == "Mini_Mario":

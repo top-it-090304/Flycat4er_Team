@@ -41,9 +41,6 @@ animations = [{
 "speed": 6.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dyrla"]
-radius = 437.0183
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e3q11"]
 size = Vector2(10, 3)
 
@@ -63,12 +60,6 @@ sprite_frames = SubResource("SpriteFrames_4sbx6")
 animation = &"Walk"
 autoplay = "Walk"
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1095981071]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=947357721]
-visible = false
-shape = SubResource("CircleShape2D_dyrla")
-
 [node name="Head" type="Area2D" parent="." unique_id=48236321]
 
 [node name="Head_colision" type="CollisionShape2D" parent="Head" unique_id=1900745622]
@@ -84,7 +75,5 @@ shape = SubResource("RectangleShape2D_nlfmi")
 [node name="Dead_sound" type="AudioStreamPlayer2D" parent="." unique_id=202379121]
 stream = ExtResource("3_nlfmi")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Head" to="." method="_on_head_body_entered"]
 [connection signal="body_entered" from="Body" to="." method="_on_body_body_entered"]

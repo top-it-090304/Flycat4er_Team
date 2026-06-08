@@ -47,9 +47,6 @@ size = Vector2(10, 2)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8mmr4"]
 size = Vector2(14, 4)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4dvvd"]
-radius = 376.01196
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vn2y"]
 size = Vector2(2, 8)
 
@@ -80,12 +77,6 @@ shape = SubResource("RectangleShape2D_stiw5")
 [node name="Body_colision" type="CollisionShape2D" parent="Turle_body" unique_id=1672107114]
 shape = SubResource("RectangleShape2D_8mmr4")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1713757709]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=766042569]
-visible = false
-shape = SubResource("CircleShape2D_4dvvd")
-
 [node name="Left_bounce" type="Area2D" parent="." unique_id=122588057]
 
 [node name="LB_colision" type="CollisionShape2D" parent="Left_bounce" unique_id=1776975687]
@@ -106,6 +97,5 @@ wait_time = 0.1
 
 [connection signal="body_entered" from="Turtle_head" to="." method="_on_turtle_head_body_entered"]
 [connection signal="body_entered" from="Turle_body" to="." method="_on_turle_body_body_entered"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Left_bounce" to="." method="_on_left_bounce_body_entered"]
 [connection signal="body_entered" from="Right_bounce" to="." method="_on_right_bounce_body_entered"]

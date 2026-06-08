@@ -11,6 +11,15 @@ var trigger = false
 var alive = true
 
 func _physics_process(delta: float) -> void:
+	
+	var mario_pos = $"../../Mario/Mini_Mario".global_position
+	var dist = global_position.distance_to(mario_pos)
+	
+	if dist < 425:
+		trigger = true
+	else:
+		trigger = false
+		
 	if trigger == true:
 		velocity.x = direction * speed
 		if not is_on_floor():
@@ -25,15 +34,6 @@ func _physics_process(delta: float) -> void:
 		anim.play("Walk")
 		
 	move_and_slide()
-	
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "Mini_Mario":
-		trigger = true 
-
-func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body.name == "Mini_Mario":
-		trigger = false 
 		
 func _on_head_body_entered(body: Node2D) -> void: #голова 
 	if body.name == "Mini_Mario":

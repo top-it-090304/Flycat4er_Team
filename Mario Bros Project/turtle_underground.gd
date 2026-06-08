@@ -17,6 +17,13 @@ var left_bounce = false
 var right_bounce = false
 
 func _physics_process(delta: float) -> void:
+	
+	var mario_pos = $"../../Mario/Mini_Mario".global_position
+	var dist = global_position.distance_to(mario_pos)
+	
+	if dist < 425:
+		trigger = true
+		
 	if trigger == true: 
 		velocity.x = direction * speed
 		if not is_on_floor():
@@ -35,11 +42,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = 0
 		anim.play("Walk")
 	move_and_slide()
-	
-func _on_area_2d_body_entered(body: Node2D) -> void: 
-	if body.name == "Mini_Mario":
-		trigger = true 
-# не прописываем выход из зоны, т.к. в дальнейшем черепаха будет двигаться сама
 
 func _on_turtle_head_body_entered(body: Node2D) -> void: #голова
 	if body.name == "Mini_Mario":

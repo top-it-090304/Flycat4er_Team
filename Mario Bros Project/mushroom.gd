@@ -3,14 +3,20 @@ extends CharacterBody2D
 @onready var anim = $AnimatedSprite2D
 
 var speed = -25
-
 var alive = true
-
 var direction = 1
-
 var trigger = false
 
-func _physics_process(delta: float) -> void: #обновление 60 раз в секунду
+func _physics_process(delta: float) -> void:
+
+	var mario_pos = $"../../Mario/Mini_Mario".global_position
+	var dist = global_position.distance_to(mario_pos)
+	
+	if dist < 425:
+		trigger = true
+	else:
+		trigger = false
+
 	if trigger == true:
 		if not is_on_floor():
 			velocity += get_gravity() * delta
@@ -63,17 +69,8 @@ func _on_site_body_entered(body: Node2D) -> void:
 		await $Dead_sound.finished
 		queue_free()
 
-func _on_trigger_body_entered(body: Node2D) -> void:
-	if body.name == "Mini_Mario":
-		trigger = true
-		
-func _on_trigger_body_exited(body: Node2D) -> void:
-	if body.name == "Mini_Mario":
-		trigger = false
-
 func death_mashroom ():
 	anim.play("Die")
 	$Site/Death.disabled = true
 	await anim.animation_finished
 	queue_free()
-	
